@@ -12,8 +12,7 @@ let package = Package(
     targets: [
         .target(
           name: "W3WSwiftThemes",
-          dependencies: [.product(name: "W3WSwiftCore", package: "w3w-swift-core")],
-          resources: [.process("Resources")]
+          dependencies: [.product(name: "W3WSwiftCore", package: "w3w-swift-core")]
         ),
 
         .testTarget(name: "w3w-swift-themesTests", dependencies: ["W3WSwiftThemes"])

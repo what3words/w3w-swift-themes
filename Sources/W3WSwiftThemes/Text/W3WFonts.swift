@@ -29,17 +29,17 @@ public struct W3WFonts {
   
   lazy var sizes = self.getFontSizes()
   
-  var largeTitle: UIFont  = .preferredFont(forTextStyle: .largeTitle)
-  var title1:    UIFont  = .preferredFont(forTextStyle: .title1)
-  var title2:   UIFont   = .preferredFont(forTextStyle: .title2)
-  var title3:   UIFont   = .preferredFont(forTextStyle: .title3)
-  var headline: UIFont   = .preferredFont(forTextStyle: .headline)
-  var body:      UIFont   = .preferredFont(forTextStyle: .body)
-  var callout:    UIFont   = .preferredFont(forTextStyle: .callout)
-  var subheadline: UIFont  = .preferredFont(forTextStyle: .subheadline)
-  var footnote:    UIFont  = .preferredFont(forTextStyle: .footnote)
-  var caption1:   UIFont  = .preferredFont(forTextStyle: .caption1)
-  var caption2:  UIFont  = .preferredFont(forTextStyle: .caption2)
+  public var largeTitle: UIFont  = .preferredFont(forTextStyle: .largeTitle)
+  public var title1:    UIFont  = .preferredFont(forTextStyle: .title1)
+  public var title2:   UIFont   = .preferredFont(forTextStyle: .title2)
+  public var title3:   UIFont   = .preferredFont(forTextStyle: .title3)
+  public var headline: UIFont   = .preferredFont(forTextStyle: .headline)
+  public var body:      UIFont   = .preferredFont(forTextStyle: .body)
+  public var callout:    UIFont   = .preferredFont(forTextStyle: .callout)
+  public var subheadline: UIFont  = .preferredFont(forTextStyle: .subheadline)
+  public var footnote:    UIFont  = .preferredFont(forTextStyle: .footnote)
+  public var caption1:   UIFont  = .preferredFont(forTextStyle: .caption1)
+  public var caption2:  UIFont  = .preferredFont(forTextStyle: .caption2)
 
   
   public init() { }

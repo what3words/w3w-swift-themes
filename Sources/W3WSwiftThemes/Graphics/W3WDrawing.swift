@@ -57,7 +57,7 @@ public struct W3WDrawing: Sequence, IteratorProtocol, ExpressibleByArrayLiteral 
   }
   
   
-  func asCGImage(size: CGSize, colors: W3WColors) -> CGImage? {
+  public func asCGImage(size: CGSize, colors: W3WColors) -> CGImage? {
     //let scaledSize =  CGSize(width: size.width / UIScreen.main.scale, height: size.height / UIScreen.main.scale)
     UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
     guard let context = UIGraphicsGetCurrentContext() else { return nil }
