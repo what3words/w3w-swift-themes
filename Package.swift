@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "W3WSwiftThemes",
+    name: "w3w-swift-themes",
     products: [.library(name: "W3WSwiftThemes", targets: ["W3WSwiftThemes"])],
 
     dependencies: [.package(url: "git@github.com:what3words/w3w-swift-core.git", branch: "main")],
