@@ -4,20 +4,18 @@
 import PackageDescription
 
 let package = Package(
-    name: "w3w-swift-themes",
-    products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
-        .library(
-            name: "w3w-swift-themes",
-            targets: ["w3w-swift-themes"]),
-    ],
+    name: "W3WSwiftThemes",
+    products: [.library(name: "W3WSwiftThemes", targets: ["W3WSwiftThemes"])],
+
+    dependencies: [.package(url: "git@github.com:what3words/w3w-swift-core.git", branch: "main")],
+
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "w3w-swift-themes"),
-        .testTarget(
-            name: "w3w-swift-themesTests",
-            dependencies: ["w3w-swift-themes"]),
+          name: "W3WSwiftThemes",
+          dependencies: [.product(name: "W3WSwiftCore", package: "w3w-swift-core")],
+          resources: [.process("Resources")]
+        ),
+
+        .testTarget(name: "w3w-swift-themesTests", dependencies: ["W3WSwiftThemes"])
     ]
 )

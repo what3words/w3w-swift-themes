@@ -1,5 +1,5 @@
 import XCTest
-@testable import w3w_swift_themes
+@testable import W3WSwiftThemes
 
 final class w3w_swift_themesTests: XCTestCase {
     func testExample() throws {
