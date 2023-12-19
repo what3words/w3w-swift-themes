@@ -12,21 +12,22 @@ public struct W3WScheme {
   
   public var colors: W3WColors?
   public var styles: W3WStyles?
+  public var subschemes: [String: W3WScheme]?
   
-  public init(colors: W3WColors? = nil, styles: W3WStyles? = nil) {
+  public init(colors: W3WColors? = nil, styles: W3WStyles? = nil, subschemes: [String: W3WScheme]? = nil) {
     self.colors = colors
     self.styles = styles
+    self.subschemes = subschemes
   }
- 
   
   /// copy a color set from one set to another
   public func copy() -> W3WScheme {
-    return W3WScheme(colors: W3WColors(colors: colors), styles: W3WStyles(style: styles))
+    return W3WScheme(colors: W3WColors(colors: colors), styles: W3WStyles(style: styles), subschemes: subschemes)
   }
 
   
   public var description: String {
-    return (colors?.description ?? "") + "\n" + (styles?.description ?? "")
+    return (colors?.description ?? "") + "\n" + (styles?.description ?? "") + "\n" + (subschemes?.description ?? "")
   }
 
 
@@ -66,4 +67,12 @@ public struct W3WScheme {
   public func with(rowHeight: W3WRowHeight?)        -> W3WScheme  { return self.with(styles: W3WStyles(rowHeight: rowHeight)) }
   public func with(lineThickness: W3WLineThickness?)  -> W3WScheme { return self.with(styles: W3WStyles(lineThickness: lineThickness)) }
 
+}
+
+extension Dictionary where Key == String, Value == W3WScheme {
+  var description: String {
+    return map { element in
+      element.key + " " + element.value.description
+    }.joined(separator: "\n")
+  }
 }
