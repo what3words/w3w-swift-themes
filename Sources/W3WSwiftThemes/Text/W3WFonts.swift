@@ -41,10 +41,12 @@ public struct W3WFonts {
   public var caption1:   UIFont  = .preferredFont(forTextStyle: .caption1)
   public var caption2:  UIFont  = .preferredFont(forTextStyle: .caption2)
 
+  public var originalFont: UIFont?
   
   public init() { }
 
   public init(font: UIFont?) {
+    self.originalFont = font
     if let font = font {
       self.largeTitle = font.withSize(sizes.largeTitle)
       self.title1    = font.withSize(sizes.title1)
