@@ -62,6 +62,7 @@ public struct W3WScheme {
   public func with(cornerRadius: W3WCornerRadius?) -> W3WScheme  { return self.with(styles: W3WStyles(cornerRadius: cornerRadius)) }
   public func with(shadow: W3WShadow?)             -> W3WScheme  { return self.with(styles: W3WStyles(shadow: shadow)) }
   public func with(fonts: W3WFonts?)               -> W3WScheme  { return self.with(styles: W3WStyles(fonts: fonts)) }
+  public func with(textAlignment: W3WTextAlignment?) -> W3WScheme { return self.with(styles: W3WStyles(textAlignment: textAlignment)) }
   public func with(padding: W3WPadding?)           -> W3WScheme  { return self.with(styles: W3WStyles(padding: padding)) }
   public func with(rowHeight: W3WRowHeight?)        -> W3WScheme  { return self.with(styles: W3WStyles(rowHeight: rowHeight)) }
   public func with(lineThickness: W3WLineThickness?)  -> W3WScheme { return self.with(styles: W3WStyles(lineThickness: lineThickness)) }
