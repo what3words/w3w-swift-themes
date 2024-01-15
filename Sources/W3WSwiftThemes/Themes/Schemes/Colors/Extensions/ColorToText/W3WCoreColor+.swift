@@ -53,10 +53,14 @@ extension W3WCoreColor: CustomDebugStringConvertible, CustomStringConvertible {
       cname = "[\(String(format: "%d", Int(red * 100.0)))%,\(String(format: "%d", Int(green * 100.0)))%,\(String(format: "%d", Int(blue * 100.0)))%]"
     }
     
-    if alpha < 1.0 {
+    if alpha == 0.0 {
+      cname = "Clear"
+      
+    } else if alpha < 1.0 {
       cname += " (" + String(format: "%.0f", alpha * 100.0) + "%)"
     }
-        
+    
+
     return cname
   }
   
