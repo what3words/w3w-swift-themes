@@ -99,13 +99,22 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
     string = mString
   }
   
-  
-  public func withSlashes(color: W3WColor = .red, font: UIFont? = nil) -> W3WString {
+  /// Add W3W slashes to string
+  /// - parameters:
+  ///  - color: color of the slashes
+  ///  - font: font of the slashes
+  ///  -  isLeadingSlash: if true, the slashes will be added in the beginning of the string. If false, the slashes will be added in the end of the string
+  public func withSlashes(color: W3WColor = .red, font: UIFont? = nil, isLeadingSlash: Bool = true) -> W3WString {
     //trim(characterSet: CharacterSet(charactersIn: "/"))
-    string = removeLeadingSlashes().string
-    return W3WString("///", color: color, font: font) + self
+    let slashString = W3WString("///", color: color, font: font)
+    if isLeadingSlash {
+      string = removeLeadingSlashes().string
+      return slashString + self
+    } else {
+      string = removeTrailingSlashes().string
+      return self + slashString
+    }
   }
-  
   
   public func addSlashesIfAddress(color: W3WColor = .red, font: UIFont? = nil) -> W3WString {
     if W3WRegex.isPossible3wa(text: asString()) {
@@ -124,7 +133,13 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
     return self
   }
   
-
+  func removeTrailingSlashes() -> W3WString {
+    while string.string.last == "/" {
+      string.deleteCharacters(in: NSRange(location: string.length - 1, length: 1))
+    }
+    return self
+  }
+  
   public func highlight(word: String, color: W3WColor? = nil, font: UIFont? = nil) {
     let style = makeAttributes(color: color, font: font)
 
