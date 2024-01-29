@@ -221,6 +221,11 @@ extension W3WCoreColor {
   static public let systemGray6Light  = W3WCoreColor(hex: 0xF2F2F7)
   static public let systemGray6Dark   = W3WCoreColor(hex: 0x1C1C1E)
   
+  // Temp
+  static public let darkThick = W3WCoreColor(hex: 0x252525, alpha: 0.9)
+  static public let labelQuaternaryLight = W3WCoreColor(hex: 0x73777C)
+  static public let labelQuaternaryDark = W3WCoreColor(hex: 0x8F9193)
+  static public let labelError = W3WCoreColor(hex: 0x3E0500)
 }
 
 
@@ -355,6 +360,11 @@ extension W3WColor {
   static public let systemGray5     = W3WColor(light: .systemGray5Light,  dark: .systemGray5Dark)
   static public let systemGray6     = W3WColor(light: .systemGray6Light,  dark: .systemGray6Dark)
   
+  // Temp
+  static public let bottomSheetBackground = W3WColor(light: .white,  dark: .darkThick)
+  static public let bottomSheetBodyText = W3WColor(light: .darkBlue,  dark: .powderBlue)
+  static public let bottomSheetFootnoteText = W3WColor(light: .labelQuaternaryLight,  dark: .labelQuaternaryDark)
+  static public let labelError = W3WColor(all: .labelError)
 }
 
 
