@@ -1,0 +1,121 @@
+//
+//  File.swift
+//  
+//
+//  Created by Dave Duprey on 15/01/2024.
+//
+
+import UIKit
+
+
+extension W3WColor {
+  
+  // basic colours
+  
+  static public let clear      = W3WColor(all: .clear)
+  static public let white      = W3WColor(all: .white)
+  static public let black      = W3WColor(all: .black)
+  static public let text       = W3WColor(light: .black, dark: .white)
+  static public let basic      = W3WColors(foreground: .text, background: .background)
+  static public let foreground  = W3WColor(light: .black, dark: .white)
+  static public let background   = W3WColor(light: .white, dark: .black)
+  static public let secondary     = W3WColor(light: .darkBlue,   dark: .royalBlue)
+  static public let tint           = W3WColor(light: .red50, dark: .red50)
+
+  // colours for standard theme
+  
+  public static let standardBrandBase    = if #available(iOS 15, *) { UIColor.tintColor.w3wColor } else { W3WColor(light: .blueLight, dark: .blueDark) }
+
+  public static let standardLabelsPrimary   = if #available(iOS 13, *) { UIColor.label.w3wColor } else { W3WColor(light: .grey100, dark: .grey100) }
+  public static let standardLabelsSecondary   = if #available(iOS 13, *) { UIColor.secondaryLabel.w3wColor } else { W3WColor(light: .blueLight, dark: .blueDark) }
+  public static let standardLabelsTertiary      = if #available(iOS 13, *) { UIColor.tertiaryLabel.w3wColor } else { W3WColor(light: .grey30, dark: .grey100) }
+  public static let standardLabelsQuaternary     = if #available(iOS 13, *) { UIColor.quaternaryLabel.w3wColor } else { W3WColor(light: .grey56, dark: .grey60) }
+  public static let standardLabelsPrimaryInverse  = W3WColor(light: .grey100, dark: .grey0)
+  public static let standardLabelsPrimaryBlack    = W3WColor(light: .grey0, dark: .grey100)
+  public static let standardLabelsPrimaryWhite    = W3WColor(light: .grey100, dark: .grey100)
+
+  public static let standardFillsPrimary          = if #available(iOS 13, *) { UIColor.systemFill.w3wColor } else { W3WColor(light: .blueLight, dark: .blueDark) }
+  public static let standardFillsSecondary        = if #available(iOS 13, *) { UIColor.secondarySystemFill.w3wColor } else { W3WColor(light: .blue60, dark: .blue60) }
+  public static let standardFillsTertiary         = if #available(iOS 13, *) { UIColor.tertiarySystemFill.w3wColor } else { W3WColor(light: .blueAlpha15, dark: .blueAlpha15) }
+  public static let standardFillsQuaternary        = if #available(iOS 13, *) { UIColor.quaternarySystemFill.w3wColor } else { W3WColor(light: .grey54Alpha15, dark: .grey54Alpha24) }
+
+  public static let standardSeparatorOpaque          = if #available(iOS 13, *) { UIColor.opaqueSeparator.w3wColor } else { W3WColor(light: .grey82, dark: .grey24) }
+  public static let standardSeparatorNonOpaque        = if #available(iOS 13, *) { UIColor.separator.w3wColor } else { W3WColor(light: .grey32Alpha36, dark: .grey42Alpha65) }
+  
+  public static let standardSystemBackgroundBasePrimary  = if #available(iOS 13, *) { UIColor.systemBackground.w3wColor } else { W3WColor(light: .grey100, dark: .grey0) }
+  public static let standardSystemBackgroundBaseSecondary = if #available(iOS 13, *) { UIColor.secondarySystemBackground.w3wColor } else { W3WColor(light: .grey99, dark: .grey10) }
+  public static let standardSystemBackgroundBaseTertiary   = if #available(iOS 13, *) { UIColor.tertiarySystemBackground.w3wColor } else { W3WColor(light: .grey100, dark: .grey20) }
+
+  public static let standardSystemBackgroundElevatedPrimary  = W3WColor(light: .grey100, dark: .grey10)
+  public static let standardSystemBackgroundElevatedSecondary = W3WColor(light: .grey99,  dark: .grey20)
+  public static let standardSystemBackgroundElevatedTertiary   = W3WColor(light: .grey100, dark: .grey30)
+
+  public static let standardGroupedBackgroundBasePrimary        = if #available(iOS 13, *) { UIColor.systemGroupedBackground.w3wColor } else { W3WColor(light: .grey99, dark: .grey0) }
+  public static let standardGroupedBackgroundBaseSecondary      = if #available(iOS 13, *) { UIColor.secondarySystemGroupedBackground.w3wColor } else { W3WColor(light: .grey100, dark: .grey10) }
+  public static let standardGroupedBackgroundBaseTertiary       = if #available(iOS 13, *) { UIColor.tertiarySystemGroupedBackground.w3wColor } else { W3WColor(light: .grey99, dark: .grey20) }
+
+  public static let standardGroupedBackgroundElevatedPrimary    = W3WColor(light: .grey99, dark: .grey10)
+  public static let standardGroupedBackgroundElevatedSecondary  = W3WColor(light: .grey100, dark: .grey20)
+  public static let standardGroupedBackgroundElevatedTertiary  = W3WColor(light: .grey99, dark: .grey30)
+
+  public static let standardSuccessBase                      = W3WColor(light: .greenAlpha20, dark: .greenAlpha60)
+  public static let standardSuccessElevated                = W3WColor(light: .greenLight, dark: .greenDark)
+  public static let standardSuccessLabel                 = W3WColor(light: .green20, dark: .grey20)
+
+  public static let standardWarningBase               = W3WColor(light: .yellowAlpha20, dark: .yellowAlpha20)
+  public static let standardWarningElevated         = W3WColor(light: .yellowLight, dark: .yellowDark)
+  public static let standardWarningLabel          = W3WColor(light: .yellow20, dark: .yellow20)
+
+  public static let standardErrorBase          = W3WColor(light: .orangeAlpha20, dark: .orangeAlpha40)
+  public static let standardErrorElevated    = W3WColor(light: .orangeLight, dark: .orangeDark)
+  public static let standardErrorLabel     = W3WColor(light: .orange20, dark: .orange20)
+
+  // colours for what3words theme
+
+  public static let w3wBrandBase         = W3WColor(light: .red50, dark: .red50)
+
+  public static let w3wLabelsPrimary     = W3WColor.standardLabelsPrimary // W3WColor(light: .grey100, dark: .grey100)
+  public static let w3wLabelsSecondary    = W3WColor(light: .blue20, dark: .blue90)
+  public static let w3wLabelsTertiary      = W3WColor(light: .grey30, dark: .grey95)
+  public static let w3wLabelsQuaternary     = W3WColor(light: .grey52, dark: .grey60)
+  public static let w3wLabelsPrimaryInverse  = W3WColor(light: .grey100, dark: .grey0)
+  public static let w3wLabelsPrimaryBlack    = W3WColor(light: .grey0, dark: .grey100)
+  public static let w3wLabelsPrimaryWhite    = W3WColor(light: .grey100, dark: .grey100)
+
+  public static let w3wFillsPrimary          = W3WColor(light: .red50, dark: .red50)
+  public static let w3wFillsSecondary        = W3WColor(light: .blue40, dark: .blue40)
+  public static let w3wFillsTertiary         = W3WColor(light: .blue90, dark: .blue20)
+  public static let w3wFillsQuaternary        = W3WColor.standardFillsQuaternary // W3WColor(light: .grey54Alpha15, dark: .grey54Alpha24)
+
+  public static let w3wSeparatorOpaque          = W3WColor.standardSeparatorOpaque // W3WColor(light: .grey82, dark: .grey24)
+  public static let w3wSeparatorNonOpaque        = W3WColor.standardSeparatorNonOpaque // W3WColor(light: .grey32Alpha36, dark: .grey42Alpha65)
+  
+  public static let w3wSystemBackgroundBasePrimary  = W3WColor.standardSystemBackgroundBasePrimary // W3WColor(light: .grey100, dark: .grey0)
+  public static let w3wSystemBackgroundBaseSecondary = W3WColor.standardSystemBackgroundBaseSecondary // W3WColor(light: .grey94, dark: .grey10)
+  public static let w3wSystemBackgroundBaseTertiary   = W3WColor.standardSystemBackgroundBaseTertiary // W3WColor(light: .grey100, dark: .grey20)
+
+  public static let w3wSystemBackgroundElevatedPrimary  = W3WColor.standardSystemBackgroundElevatedPrimary // W3WColor(light: .grey100, dark: .grey10)
+  public static let w3wSystemBackgroundElevatedSecondary = W3WColor.standardSystemBackgroundElevatedSecondary // W3WColor(light: .grey94,  dark: .grey20)
+  public static let w3wSystemBackgroundElevatedTertiary   = W3WColor.standardSystemBackgroundElevatedTertiary // W3WColor(light: .grey100, dark: .grey30)
+
+  public static let w3wGroupedBackgroundBasePrimary        = W3WColor.standardGroupedBackgroundBasePrimary // W3WColor(light: .grey94, dark: .grey0)
+  public static let w3wGroupedBackgroundBaseSecondary      = W3WColor.standardGroupedBackgroundBaseSecondary // W3WColor(light: .grey100, dark: .grey10)
+  public static let w3wGroupedBackgroundBaseTertiary       = W3WColor.standardGroupedBackgroundBaseTertiary // W3WColor(light: .grey94, dark: .grey20)
+
+  public static let w3wGroupedBackgroundElevatedPrimary    = W3WColor.standardGroupedBackgroundElevatedPrimary // W3WColor(light: .grey94, dark: .grey10)
+  public static let w3wGroupedBackgroundElevatedSecondary  = W3WColor.standardGroupedBackgroundElevatedSecondary // W3WColor(light: .grey100, dark: .grey20)
+  public static let w3wGroupedBackgroundElevatedTertiary  = W3WColor.standardGroupedBackgroundElevatedTertiary // W3WColor(light: .grey94, dark: .grey30)
+
+  public static let w3wSuccessBase                      = W3WColor(light: .greenAlpha20, dark: .greenAlpha40)
+  public static let w3wSuccessElevated                = W3WColor(light: .green50, dark: .green50)
+  public static let w3wSuccessLabel                 = W3WColor(light: .green20, dark: .grey20)
+
+  public static let w3wWarningBase               = W3WColor(light: .yellowAlpha20, dark: .yellowAlpha40)
+  public static let w3wWarningElevated         = W3WColor(light: .yellow50, dark: .yellow50)
+  public static let w3wWarningLabel          = W3WColor(light: .yellow10, dark: .yellow10)
+
+  public static let w3wErrorBase           = W3WColor(light: .orangeAlpha20, dark: .orangeAlpha40)
+  public static let w3wErrorElevated     = W3WColor(light: .orange50, dark: .orange50)
+  public static let w3wErrorLabel      = W3WColor(light: .orange10, dark: .orange10)
+
+}

@@ -100,14 +100,14 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
   }
   
   
-  public func withSlashes(color: W3WColor = .red, font: UIFont? = nil) -> W3WString {
+  public func withSlashes(color: W3WColor = .w3wBrandBase, font: UIFont? = nil) -> W3WString {
     //trim(characterSet: CharacterSet(charactersIn: "/"))
     string = removeLeadingSlashes().string
     return W3WString("///", color: color, font: font) + self
   }
   
   
-  public func addSlashesIfAddress(color: W3WColor = .red, font: UIFont? = nil) -> W3WString {
+  public func addSlashesIfAddress(color: W3WColor = .w3wBrandBase, font: UIFont? = nil) -> W3WString {
     if W3WRegex.isPossible3wa(text: asString()) {
       string = removeLeadingSlashes().string
       return withSlashes(color: color, font: font)
