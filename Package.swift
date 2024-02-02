@@ -9,7 +9,7 @@ let package = Package(
     products: [.library(name: "W3WSwiftThemes", targets: ["W3WSwiftThemes"])],
 
     targets: [
-      .target(name: "W3WSwiftThemes"),
+      .target(name: "W3WSwiftThemes", resources: [.process("Resources")]),
       .testTarget(name: "w3w-swift-themesTests", dependencies: ["W3WSwiftThemes"])
     ]
 )
