@@ -11,7 +11,7 @@ import UIKit
 public class W3WImage {
 
   var imageSource: W3WImageSource!
-  var colors: W3WColors!
+  public var colors: W3WColors!
   
   
   public init(systemName: String, colors: W3WColors) {
