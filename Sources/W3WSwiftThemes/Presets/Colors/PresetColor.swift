@@ -31,8 +31,7 @@ extension W3WColor {
   public static let standardLabelsTertiary      = if #available(iOS 13, *) { UIColor.tertiaryLabel.w3wColor } else { W3WColor(light: .grey30, dark: .grey100) }
   public static let standardLabelsQuaternary     = if #available(iOS 13, *) { UIColor.quaternaryLabel.w3wColor } else { W3WColor(light: .grey56, dark: .grey60) }
   public static let standardLabelsPrimaryInverse  = W3WColor(light: .grey100, dark: .grey0)
-  public static let standardLabelsPrimaryBlack    = W3WColor(light: .grey0, dark: .grey100)
-  public static let standardLabelsPrimaryWhite    = W3WColor(light: .grey100, dark: .grey100)
+  public static let standardLabelsPrimaryBlackInverse = W3WColor(light: .grey0, dark: .grey100)
 
   public static let standardFillsPrimary          = if #available(iOS 13, *) { UIColor.systemFill.w3wColor } else { W3WColor(light: .blueLight, dark: .blueDark) }
   public static let standardFillsSecondary        = if #available(iOS 13, *) { UIColor.secondarySystemFill.w3wColor } else { W3WColor(light: .blue60, dark: .blue60) }
@@ -79,8 +78,7 @@ extension W3WColor {
   public static let w3wLabelsTertiary      = W3WColor(light: .grey30, dark: .grey95)
   public static let w3wLabelsQuaternary     = W3WColor(light: .grey52, dark: .grey60)
   public static let w3wLabelsPrimaryInverse  = W3WColor(light: .grey100, dark: .grey0)
-  public static let w3wLabelsPrimaryBlack    = W3WColor(light: .grey0, dark: .grey100)
-  public static let w3wLabelsPrimaryWhite    = W3WColor(light: .grey100, dark: .grey100)
+  public static let w3wLabelsPrimaryBlackInverse = W3WColor(light: .grey0, dark: .grey100)
 
   public static let w3wFillsPrimary          = W3WColor(light: .red50, dark: .red50)
   public static let w3wFillsSecondary        = W3WColor(light: .blue40, dark: .blue40)

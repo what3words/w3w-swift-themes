@@ -118,7 +118,7 @@ extension W3WCoreColor: CustomDebugStringConvertible, CustomStringConvertible {
     "C2E1EB": "Light Cyan",
 
     // reds
-    "E11F26": "red 50",
+    "E11F26": "Red 50",
 
     // blues
     "007AFF": "Blue Light",

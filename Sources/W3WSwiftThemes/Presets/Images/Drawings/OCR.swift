@@ -10,6 +10,9 @@ import UIKit
 
 /// commonly used w3w drawlists such as mic icon, tripple slashes etc
 extension W3WDrawing {
+ 
+  /// ocr icon, corners and slashes
+  public static let ocr = .makeOcrOutline(lineWidth: 0.1, length: 0.25) + .makeSlashes(offset: 0.075, spacing: 0.175, width: 0.06, verticalInset: 0.28)
   
   /// corners of the OCR icon
   public static let ocrOutline: W3WDrawing = .makeOcrOutline()
@@ -31,9 +34,5 @@ extension W3WDrawing {
       .line(W3WDrawLine(start: CGPoint(x: 1.0, y: 0.0), end: CGPoint(x: 1.0 - length, y: 0.0), color: .foreground, width: lineWidth)),
     ]
   }
- 
-  
-  /// ocr icon, corners and slashes
-  public static let ocr = .makeOcrOutline(lineWidth: 0.1, length: 0.25) + .makeSlashes(offset: 0.075, spacing: 0.175, width: 0.06, verticalInset: 0.28)
-  
+   
 }

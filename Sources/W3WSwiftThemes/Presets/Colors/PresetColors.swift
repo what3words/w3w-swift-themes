@@ -13,7 +13,7 @@ extension W3WColors {
   // MARK: Standard Colours
   
   static public let standard = W3WColors(
-    foreground: .standardLabelsPrimaryBlack,
+    foreground: .standardLabelsPrimaryBlackInverse,
     background: .standardSystemBackgroundBasePrimary,
     tint:       .standardBrandBase,
     secondary:  .standardLabelsSecondary,
@@ -22,7 +22,7 @@ extension W3WColors {
   )
  
   static public let standardButtons    = W3WColors(
-    foreground: .standardLabelsPrimaryBlack,
+    foreground: .standardLabelsPrimaryBlackInverse,
     background: .standardFillsPrimary,
     tint: .standardLabelsQuaternary,
     secondary: .standardSeparatorNonOpaque,
@@ -31,7 +31,7 @@ extension W3WColors {
   )
   
   static public let standardTextFields = W3WColors(
-    foreground: .standardLabelsPrimaryBlack,
+    foreground: .standardLabelsPrimaryBlackInverse,
     background: .standardSystemBackgroundBasePrimary,
     tint: .standardLabelsQuaternary,
     secondary: .standardSeparatorNonOpaque,
@@ -40,7 +40,7 @@ extension W3WColors {
   )
   
   static public let standardLabels = W3WColors(
-    foreground: .standardLabelsPrimaryBlack,
+    foreground: .standardLabelsPrimaryBlackInverse,
     background: .standardSystemBackgroundBasePrimary,
     tint: .standardLabelsQuaternary,
     secondary: .standardSeparatorNonOpaque,
@@ -50,18 +50,18 @@ extension W3WColors {
   )
   
   static public let standardCells = W3WColors(
-    foreground: .standardLabelsPrimaryBlack,
+    foreground: .standardLabelsPrimaryBlackInverse,
     background: .standardSystemBackgroundBasePrimary,
     tint: .standardLabelsQuaternary,
     secondary: .standardSeparatorNonOpaque,
     brand: .standardBrandBase,
-    highlight: W3WBasicColors(foreground: .standardLabelsPrimaryBlack, background: .standardFillsPrimary),
+    highlight: W3WBasicColors(foreground: .standardLabelsPrimaryBlackInverse, background: .standardFillsPrimary),
     border: .standardSeparatorOpaque,
     header: W3WBasicColors(foreground: .standardSeparatorNonOpaque, background: .standardSystemBackgroundBaseTertiary)
   )
   
   static public let standardIcons = W3WColors(
-    foreground: .standardLabelsPrimaryBlack,
+    foreground: .standardLabelsPrimaryBlackInverse,
     background: .clear,
     tint: .text,
     secondary: .text
@@ -74,17 +74,20 @@ extension W3WColors {
     secondary: .standardBrandBase
   )
   
-  static public let standardOcr = W3WColors.ocrColors(
-    text: W3WColor(all: .blueDark),
-    background: W3WColor(all: .blueDark.with(alpha: 0.9)),
-    outline: .white,
-    outlineFound: .standardSuccessElevated,
-    outlineError: .standardErrorElevated,
-    wordsOutline: .white
+  static public let standardOcr = W3WColors(
+    background: .standardSystemBackgroundBasePrimary,
+    separator: .standardLabelsPrimary,
+    success: W3WBasicColors(
+      foreground: .standardLabelsPrimary,
+      background: .standardSuccessElevated),
+    error: W3WBasicColors(
+      foreground: .standardLabelsPrimary,
+      background: .standardErrorElevated),
+    line: .standardLabelsPrimary
   )
 
   static public let standardButtonFilled = W3WColors(
-    foreground: .standardLabelsPrimaryWhite,
+    foreground: .standardLabelsPrimary,
     background: .standardFillsPrimary
   )
   
@@ -104,7 +107,7 @@ extension W3WColors {
   )
 
   static public let maps = W3WColors(
-    foreground: .standardLabelsPrimaryWhite,
+    foreground: .standardLabelsPrimary,
     background: .standardFillsSecondary,
     tint: .standardBrandBase,
     secondary: .w3wSeparatorNonOpaque,
@@ -115,7 +118,7 @@ extension W3WColors {
   // MARK: what3words Colours
 
   static public let w3w = W3WColors(
-    foreground: .w3wLabelsPrimaryBlack,
+    foreground: .w3wLabelsPrimaryBlackInverse,
     background: .w3wSystemBackgroundBasePrimary,
     tint:       .w3wBrandBase,
     secondary:  .w3wLabelsSecondary,
@@ -124,7 +127,7 @@ extension W3WColors {
   )
  
   static public let w3wButtons    = W3WColors(
-    foreground: .w3wLabelsPrimaryBlack,
+    foreground: .w3wLabelsPrimaryBlackInverse,
     background: .w3wFillsPrimary,
     tint: .w3wLabelsQuaternary,
     secondary: .w3wSeparatorNonOpaque,
@@ -133,7 +136,7 @@ extension W3WColors {
   )
   
   static public let w3wTextFields = W3WColors(
-    foreground: .w3wLabelsPrimaryBlack,
+    foreground: .w3wLabelsPrimaryBlackInverse,
     background: .w3wSystemBackgroundBasePrimary,
     tint: .w3wLabelsQuaternary,
     secondary: .w3wSeparatorNonOpaque,
@@ -142,7 +145,7 @@ extension W3WColors {
   )
   
   static public let w3wLabels = W3WColors(
-    foreground: .w3wLabelsPrimaryBlack,
+    foreground: .w3wLabelsPrimaryBlackInverse,
     background: .w3wSystemBackgroundBasePrimary,
     tint: .w3wLabelsQuaternary,
     secondary: .w3wSeparatorNonOpaque,
@@ -152,18 +155,18 @@ extension W3WColors {
   )
   
   static public let w3wCells = W3WColors(
-    foreground: .w3wLabelsPrimaryBlack,
+    foreground: .w3wLabelsPrimaryBlackInverse,
     background: .w3wSystemBackgroundBasePrimary,
     tint: .w3wLabelsQuaternary,
     secondary: .w3wSeparatorNonOpaque,
     brand: .w3wBrandBase,
-    highlight: W3WBasicColors(foreground: .w3wLabelsPrimaryBlack, background: .w3wFillsPrimary),
+    highlight: W3WBasicColors(foreground: .w3wLabelsPrimaryBlackInverse, background: .w3wFillsPrimary),
     border: .w3wSeparatorOpaque,
     header: W3WBasicColors(foreground: .w3wSeparatorNonOpaque, background: .w3wSystemBackgroundBaseTertiary)
   )
   
   static public let w3wIcons = W3WColors(
-    foreground: .w3wLabelsPrimaryBlack,
+    foreground: .w3wLabelsPrimaryBlackInverse,
     background: .clear,
     tint: .text,
     secondary: .text
@@ -176,17 +179,20 @@ extension W3WColors {
     secondary: .w3wBrandBase
   )
   
-  static public let w3wOcr = W3WColors.ocrColors(
-    text: W3WColor(all: .blueDark),
-    background: W3WColor(all: .blueDark.with(alpha: 0.9)),
-    outline: .white,
-    outlineFound: .w3wSuccessElevated,
-    outlineError: .w3wErrorElevated,
-    wordsOutline: .white
+  static public let w3wOcr = W3WColors(
+    background: .standardSystemBackgroundBasePrimary,
+    separator: .standardLabelsPrimary,
+    success: W3WBasicColors(
+      foreground: .standardLabelsPrimary,
+      background: .standardSuccessElevated),
+    error: W3WBasicColors(
+      foreground: .standardLabelsPrimary,
+      background: .standardErrorElevated),
+    line: .standardLabelsPrimary
   )
 
   static public let w3wButtonFilled = W3WColors(
-    foreground: .w3wLabelsPrimaryWhite,
+    foreground: .w3wLabelsPrimary,
     background: .w3wFillsPrimary
   )
   
@@ -206,7 +212,7 @@ extension W3WColors {
   )
 
   static public let w3wMaps = W3WColors(
-    foreground: .w3wLabelsPrimaryWhite,
+    foreground: .w3wLabelsPrimary,
     background: .w3wFillsSecondary,
     tint: .w3wBrandBase,
     secondary: .w3wSeparatorNonOpaque,
