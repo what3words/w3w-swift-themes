@@ -10,7 +10,6 @@ import UIKit
 
 extension W3WBasicColors: CustomDebugStringConvertible, CustomStringConvertible {
   
-  
     public var description: String {
       return debugDescription
     }
