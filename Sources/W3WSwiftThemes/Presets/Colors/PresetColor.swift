@@ -12,7 +12,7 @@ extension W3WColor {
   
   // basic colours
   
-  static public let clear      = W3WColor(all: .clear)
+  static public let clear      = W3WColor(all: .grey0Alpha0)
   static public let white      = W3WColor(all: .white)
   static public let black      = W3WColor(all: .black)
   static public let text       = W3WColor(light: .black, dark: .white)

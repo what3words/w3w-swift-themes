@@ -20,10 +20,11 @@ extension W3WScheme {
   public static let standardButtonTinted = W3WScheme(colors: .standardButtonTinted,   styles: .standardButtons)
   public static let standardTextFields  = W3WScheme(colors: .standardTextFields,     styles: .standardTextFields)
   public static let standardLabels     = W3WScheme(colors: .standardLabels,        styles: .standardLabels)
-  public static let standardCells     = W3WScheme(colors: .standardCells,       styles: .standardCells)
-  public static let standardIcons    = W3WScheme(colors: .standardIcons,     styles: nil)
-  public static let standardVoice   = W3WScheme(colors: .standardVoice,   styles: nil)
-  public static let standardOcr    = W3WScheme(colors: .standardOcr,   styles: .standardOcr)
+  public static let standardMaps      = W3WScheme(colors: .standardMaps,       styles: .standardMaps)
+  public static let standardCells    = W3WScheme(colors: .standardCells,       styles: .standardCells)
+  public static let standardIcons   = W3WScheme(colors: .standardIcons,     styles: nil)
+  public static let standardVoice  = W3WScheme(colors: .standardVoice,   styles: nil)
+  public static let standardOcr   = W3WScheme(colors: .standardOcr,   styles: .standardOcr)
 
   
   // MARK: what3words Schemes
@@ -36,9 +37,10 @@ extension W3WScheme {
   public static let w3wButtonTinted = W3WScheme(colors: .w3wButtonTinted,   styles: .w3wButtons)
   public static let w3wTextFields  = W3WScheme(colors: .w3wTextFields,     styles: .w3wTextFields)
   public static let w3wLabels     = W3WScheme(colors: .w3wLabels,        styles: .w3wLabels)
-  public static let w3wCells     = W3WScheme(colors: .w3wCells,       styles: .w3wCells)
-  public static let w3wIcons    = W3WScheme(colors: .w3wIcons,     styles: nil)
-  public static let w3wVoice   = W3WScheme(colors: .w3wVoice,   styles: nil)
-  public static let w3wOcr    = W3WScheme(colors: .w3wOcr,   styles: .w3wOcr)
+  public static let w3wMaps      = W3WScheme(colors: .w3wMaps,          styles: .w3wMaps)
+  public static let w3wCells    = W3WScheme(colors: .w3wCells,       styles: .w3wCells)
+  public static let w3wIcons   = W3WScheme(colors: .w3wIcons,     styles: nil)
+  public static let w3wVoice  = W3WScheme(colors: .w3wVoice,   styles: nil)
+  public static let w3wOcr   = W3WScheme(colors: .w3wOcr,   styles: .w3wOcr)
 
 }
