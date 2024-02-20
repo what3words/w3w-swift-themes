@@ -92,9 +92,9 @@ public class W3WColor {
   
 #if canImport(SwiftUI)
   @available(iOS 13.0, *)
-  public var color: Color {
+  public var suColor: Color {
     get {
-      return Color(current.uiColor)
+      return current.suColor
     }
   }
 #endif
