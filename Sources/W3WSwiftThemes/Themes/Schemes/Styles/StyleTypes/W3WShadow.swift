@@ -9,9 +9,9 @@ import CoreGraphics
 
 
 public struct W3WShadow {
-  let opacity: CGFloat
-  let offset: CGFloat
-  let radius: CGFloat
+  public let opacity: CGFloat
+  public let offset: CGFloat
+  public let radius: CGFloat
   
   public init(opacity: CGFloat, offset: CGFloat, radius: CGFloat) {
     self.opacity = opacity
