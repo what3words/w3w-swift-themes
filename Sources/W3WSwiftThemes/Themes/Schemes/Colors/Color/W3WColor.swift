@@ -12,6 +12,9 @@ import UIKit
 import AppKit
 #endif
 
+#if canImport(SwiftUI)
+import SwiftUI
+#endif
 
 /// stores a color for each colour mode, such as "light mode" and "dark mode"
 public class W3WColor {
@@ -86,6 +89,15 @@ public class W3WColor {
     return W3WColor(colors: modes)
   }
 
+  
+#if canImport(SwiftUI)
+  @available(iOS 13.0, *)
+  public var suColor: Color {
+    get {
+      return current.suColor
+    }
+  }
+#endif
   
   
   /// returns the color for the current color mode automatically

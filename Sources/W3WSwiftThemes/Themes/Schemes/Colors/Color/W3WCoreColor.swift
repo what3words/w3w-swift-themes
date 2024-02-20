@@ -28,6 +28,10 @@ import UIKit
 import AppKit
 #endif
 
+#if canImport(SwiftUI)
+import SwiftUI
+#endif
+
 
 /// A basic colour struct, this is used as opposed to the built in
 /// operating system provided colours because this is a multi-operating
@@ -169,6 +173,16 @@ public struct W3WCoreColor {
 
   /// This returns NSColor on mac and UIColor on iOS
   public var color:   UIColor { get { return uiColor } }
+  
+#if canImport(SwiftUI)
+  @available(iOS 13.0, *)
+  public var suColor: Color {
+    get {
+      return Color(uiColor)
+    }
+  }
+#endif
+  
 #else
   /// returns a CGColor colour
   public var cgColor: CGColor { get { return nsColor.cgColor } }
@@ -178,6 +192,15 @@ public struct W3WCoreColor {
 
   /// This returns UIColor on iOS and NSColor on mac
   public var color:   NSColor { get { return nsColor } }
+  
+#if canImport(SwiftUI)
+  public var suColor: Color {
+    get {
+      return Color(nsColor: nsColor)
+    }
+  }
+#endif
+  
 #endif
 
   
