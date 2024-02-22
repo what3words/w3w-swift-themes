@@ -161,7 +161,7 @@ extension W3WColors {
     foreground: .w3wLabelsTertiary,
     background: .w3wSystemBackgroundBasePrimary,
     tint:       .w3wLabelsQuaternary,
-    secondary:  .w3wLabelsQuaternary,
+    secondary:  .w3wLabelsSecondary,
     brand:      .w3wBrandBase,
     highlight:  W3WBasicColors(foreground: .w3wLabelsPrimaryBlackInverse, background: .w3wFillsPrimary),
     border:     .w3wSeparatorOpaque,
