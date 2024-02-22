@@ -74,8 +74,8 @@ extension W3WColor {
   public static let w3wBrandBase         = W3WColor(light: .red50, dark: .red50)
 
   public static let w3wLabelsPrimary     = W3WColor.standardLabelsPrimary // W3WColor(light: .grey100, dark: .grey100)
-  public static let w3wLabelsSecondary    = W3WColor(light: .blue20, dark: .blue90)
-  public static let w3wLabelsTertiary      = W3WColor(light: .grey30, dark: .grey95)
+  public static let w3wLabelsSecondary    = W3WColor(light: .blue50, dark: .blue72)
+  public static let w3wLabelsTertiary      = W3WColor(light: .blue20, dark: .grey95)
   public static let w3wLabelsQuaternary      = W3WColor(light: .grey52, dark: .grey60)
   public static let w3wLabelsPrimaryInverse    = W3WColor(light: .grey100, dark: .grey0)
   public static let w3wLabelsPrimaryBlackInverse = W3WColor(light: .grey0, dark: .grey100)
