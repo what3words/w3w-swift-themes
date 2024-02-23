@@ -77,7 +77,7 @@ extension W3WColors {
   static public let standardOcr = W3WColors(
     foreground: .standardLabelsPrimaryBlackInverse,
     background: .standardSystemBackgroundBasePrimary,
-    secondary:  .standardLabelsQuaternary,
+    secondary:  .standardSystemBackgroundBaseSecondary,
     border:     .clear,
     separator:  .standardLabelsPrimary,
     success: W3WBasicColors(
@@ -185,7 +185,7 @@ extension W3WColors {
   static public let w3wOcr = W3WColors(
     foreground: .w3wLabelsPrimaryBlackInverse,
     background: .w3wSystemBackgroundBasePrimary,
-    secondary:  .w3wLabelsQuaternary,
+    secondary:  .w3wSystemBackgroundBaseSecondary,
     border:     .clear,
     separator:  .w3wLabelsPrimary,
     success: W3WBasicColors(
