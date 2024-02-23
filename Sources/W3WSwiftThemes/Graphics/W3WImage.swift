@@ -89,6 +89,7 @@ public class W3WImage {
   
   
   func from(symbol: String, size: CGSize) -> UIImage {
+    var resultImage: UIImage? = nil
     
     // if SF Symbols can take multi-colour, and colours are available
     if #available(iOS 15.0, *) {
@@ -109,27 +110,28 @@ public class W3WImage {
       let configuration = UIImage.SymbolConfiguration(paletteColors: colorArray)
       
       if let image = UIImage(systemName: symbol, withConfiguration: configuration) {
-        return image.withRenderingMode(.automatic)
+        resultImage = image.withRenderingMode(.automatic)
       }
     }
-      
+    
+
     if #available(iOS 13.0, *) { // if we have SF Symbols available at all
       // if there is a tint colour
       if let tint = colors?.tint?.current.uiColor {
-        return UIImage(systemName: symbol)!.withTintColor(tint)
+        resultImage = UIImage(systemName: symbol)?.withTintColor(tint)
         
       // no tint colour, go with foreground color
       } else if let color = colors?.foreground?.current.uiColor {
-        return UIImage(systemName: symbol)!.withTintColor(color)
+        resultImage = UIImage(systemName: symbol)!.withTintColor(color)
         
       } else {
-        return UIImage(systemName: symbol)!
+        resultImage = UIImage(systemName: symbol)!
       }
     }
       
     // if there are no SF Symbols
     // TODO: Add backwards compatibility, or make 'missing image' image
-    return UIImage()
+    return resultImage ?? UIImage()
   }
   
 }
