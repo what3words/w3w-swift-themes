@@ -24,7 +24,7 @@ extension W3WStyles {
   public static let w3wTextFields =  W3WStyles(cornerRadius: .soft, padding: W3WPadding.fine)
   public static let w3wLabels    =  W3WStyles(fonts: W3WFonts(), padding: W3WPadding.medium)
   public static let w3wMaps     =  W3WStyles(fonts: W3WFonts(), padding: W3WPadding.medium)
-  public static let w3wCells   =  W3WStyles(fonts: W3WFonts().with(body: .semibold), padding: W3WPadding.medium)
+  public static let w3wCells   =  W3WStyles(fonts: W3WFonts(), padding: W3WPadding.medium)
   public static let w3wOcr    =  W3WStyles(border: .twoPoint, 
                                            fonts: W3WFonts().with(headline: .bold).with(body: .semibold).with(footnote: .bold),
                                            lineThickness: .fourPoint)

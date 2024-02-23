@@ -20,6 +20,7 @@ public extension W3WImage {
   static let tickCircle       = { return W3WImage(file: "tickCircle", colors: .standardIcons) }()
   static let close            = { return W3WImage(file: "close", colors: .standardIcons) }()
   static let w3wLogo          = { return W3WImage(file: "w3wLogo", colors: .standardIcons) }()
+  static let accessibility    = { return W3WImage(file: "accessibility", colors: .standardIcons) }()
   static let scan             = { return W3WImage(drawing: .ocr, colors: .standardIcons) }()
   static let slashes          = { return W3WImage(drawing: .makeSlashes(), colors: .standardIcons) }()
   static let mic              = { return W3WImage(drawing: .micWithSlashes, colors: .standardIcons) }()
@@ -31,7 +32,6 @@ public extension W3WImage {
 
   static let arrowLeft           = { return W3WImage(systemName: "arrow.left", colors: .standardIcons) }()
   static let accessibilityFill   = { return W3WImage(systemName: "accessibility.fill", colors: .standardIcons) }()
-  static let accessibility       = { return W3WImage(systemName: "accessibility", colors: .standardIcons) }()
   static let badgeFill           = { return W3WImage(systemName: "app.badge.fill", colors: .standardIcons) }()
   static let badge               = { return W3WImage(systemName: "app.badge", colors: .standardIcons) }()
   static let arrowRight          = { return W3WImage(systemName: "arrow.right", colors: .standardIcons) }()
