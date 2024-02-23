@@ -21,6 +21,7 @@ extension W3WColor {
   static public let background   = W3WColor(light: .white, dark: .black)
   static public let secondary     = W3WColor(light: .darkBlue,   dark: .royalBlue)
   static public let tint           = W3WColor(light: .red50, dark: .red50)
+  static public let lightBlue  = W3WColor(all: .darkBlueAlpha60)
 
   // colours for standard theme
   

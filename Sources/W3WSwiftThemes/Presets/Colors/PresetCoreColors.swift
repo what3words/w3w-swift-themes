@@ -134,6 +134,7 @@ extension W3WCoreColor {
   static public let charcoal      = W3WCoreColor(hex: 0x363636)
   static public let coral         = W3WCoreColor(hex: 0xf26c50)
   static public let darkBlue      = W3WCoreColor(hex: 0x0a3049)
+  static public let darkBlueAlpha60 = W3WCoreColor(hex: 0x0a3049, alpha: 0.6)
   static public let green         = W3WCoreColor.green50
   static public let lightBlue     = W3WCoreColor(hex: 0x98d5e5)
   static public let lightGrey     = W3WCoreColor(hex: 0xe0e0e0)
