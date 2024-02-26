@@ -5,31 +5,38 @@
 //  Created by Thy Nguyen on 25/02/2024.
 //
 
-import Foundation
+public enum W3WVisualEffectBlur {
+  case ultraThin
+  case thin
+  case regular
+  case thick
+  case ultraThick
+}
+
+
+public enum W3WVisualEffectFill {
+  case label
+  case secondaryLabel
+  case tertiaryLabel
+  case quaternaryLabel
+  case fill
+  case secondaryFill
+  case tertiaryFill
+  case separator
+}
+
 
 public struct W3WVisualEffect {
-  public let blurEffectStyle: Int
-  public let vibrancyEffectStyle: Int
-  public var padding: W3WPadding = 0.0
-  public var cornerRadius: W3WCornerRadius = 0.0
+  public let style: W3WVisualEffectBlur
+  public let fill: W3WVisualEffectFill
+  public let padding: W3WPadding
+  public let cornerRadius: W3WCornerRadius
   
-  public init(blurEffectStyle: Int,
-              padding: W3WPadding = 0.0,
-              cornerRadius: W3WCornerRadius = 0.0) {
-    self.blurEffectStyle = blurEffectStyle
-    self.vibrancyEffectStyle = 0
-    self.padding = padding
-    self.cornerRadius = cornerRadius
-  }
-  
-  @available(iOS 13.0, *)
-  public init(blurEffectStyle: Int,
-              vibrancyEffectStyle: Int,
-              padding: W3WPadding = 0.0,
-              cornerRadius: W3WCornerRadius = 0.0) {
-    self.blurEffectStyle = blurEffectStyle
-    self.vibrancyEffectStyle = vibrancyEffectStyle
+  public init(style: W3WVisualEffectBlur, fill: W3WVisualEffectFill, padding: W3WPadding, cornerRadius: W3WCornerRadius) {
+    self.style = style
+    self.fill = fill
     self.padding = padding
     self.cornerRadius = cornerRadius
   }
 }
+
