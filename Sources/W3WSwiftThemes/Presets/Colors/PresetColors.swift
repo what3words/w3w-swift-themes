@@ -78,6 +78,7 @@ extension W3WColors {
     foreground: .standardLabelsPrimaryBlackInverse,
     background: .standardSystemBackgroundBasePrimary,
     secondary:  .standardSystemBackgroundBaseSecondary,
+    secondaryBackground: .standardSystemBackgroundBaseSecondary,
     border:     .clear,
     separator:  .standardLabelsPrimary,
     success: W3WBasicColors(
@@ -186,6 +187,7 @@ extension W3WColors {
     foreground: .w3wLabelsPrimaryBlackInverse,
     background: .w3wSystemBackgroundBasePrimary,
     secondary:  .w3wSystemBackgroundBaseSecondary,
+    secondaryBackground: .w3wSystemBackgroundBaseSecondary,
     border:     .clear,
     separator:  .w3wLabelsPrimary,
     success: W3WBasicColors(
