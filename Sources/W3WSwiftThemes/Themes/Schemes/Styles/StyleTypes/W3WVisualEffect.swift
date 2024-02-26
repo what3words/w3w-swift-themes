@@ -5,32 +5,30 @@
 //  Created by Thy Nguyen on 25/02/2024.
 //
 
-import UIKit
+import Foundation
 
 public struct W3WVisualEffect {
-  public let blurEffect: UIBlurEffect
-  public let vibrantEffect: UIVibrancyEffect?
+  public let blurEffectStyle: Int
+  public let vibrancyEffectStyle: Int
   public var padding: W3WPadding = 0.0
   public var cornerRadius: W3WCornerRadius = 0.0
-}
-
-public extension W3WVisualEffect {
-  init(blurEffectStyle: UIBlurEffect.Style,
-       padding: W3WPadding = 0.0,
-       cornerRadius: W3WCornerRadius = 0.0) {
-    self.blurEffect = UIBlurEffect(style: blurEffectStyle)
-    self.vibrantEffect = UIVibrancyEffect(blurEffect: blurEffect)
+  
+  public init(blurEffectStyle: Int,
+              padding: W3WPadding = 0.0,
+              cornerRadius: W3WCornerRadius = 0.0) {
+    self.blurEffectStyle = blurEffectStyle
+    self.vibrancyEffectStyle = 0
     self.padding = padding
     self.cornerRadius = cornerRadius
   }
   
   @available(iOS 13.0, *)
-  init(blurEffectStyle: UIBlurEffect.Style, 
-       vibrancyEffectStyle: UIVibrancyEffectStyle,
-       padding: W3WPadding = 0.0,
-       cornerRadius: W3WCornerRadius = 0.0) {
-    self.blurEffect = UIBlurEffect(style: blurEffectStyle)
-    self.vibrantEffect = UIVibrancyEffect(blurEffect: blurEffect, style: vibrancyEffectStyle)
+  public init(blurEffectStyle: Int,
+              vibrancyEffectStyle: Int,
+              padding: W3WPadding = 0.0,
+              cornerRadius: W3WCornerRadius = 0.0) {
+    self.blurEffectStyle = blurEffectStyle
+    self.vibrancyEffectStyle = vibrancyEffectStyle
     self.padding = padding
     self.cornerRadius = cornerRadius
   }

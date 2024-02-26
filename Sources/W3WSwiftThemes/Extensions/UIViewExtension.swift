@@ -81,10 +81,23 @@ public extension UIView {
     guard let w3wVisualEffect = w3wVisualEffect else {
       return
     }
-    addVisualEffect(blurEffect: w3wVisualEffect.blurEffect,
-                    vibrantEffect: w3wVisualEffect.vibrantEffect,
-                    inset: w3wVisualEffect.padding.insets,
-                    cornerRadius: w3wVisualEffect.cornerRadius.value)
+    if #available(iOS 13.0, *) {
+      guard let blurEffectStyle = UIBlurEffect.Style(rawValue: w3wVisualEffect.blurEffectStyle),
+            let vibrancyEffectStyle = UIVibrancyEffectStyle(rawValue: w3wVisualEffect.vibrancyEffectStyle) else {
+        return
+      }
+      addVisualEffect(blurEffectStyle: blurEffectStyle,
+                      vibrantEffectStyle: vibrancyEffectStyle,
+                      inset: w3wVisualEffect.padding.insets,
+                      cornerRadius: w3wVisualEffect.cornerRadius.value)
+    } else {
+      guard let blurEffectStyle = UIBlurEffect.Style(rawValue: w3wVisualEffect.blurEffectStyle) else {
+        return
+      }
+      addVisualEffect(blurEffectStyle: blurEffectStyle,
+                      inset: w3wVisualEffect.padding.insets,
+                      cornerRadius: w3wVisualEffect.cornerRadius.value)
+    }
   }
   
   /// Add visual effect to current view
