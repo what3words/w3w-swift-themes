@@ -58,7 +58,7 @@ public class W3WImage {
   
   
   func from(drawing: W3WDrawing, size: CGSize) -> UIImage {
-    return UIImage(cgImage: drawing.asCGImage(size: size, colors: colors ?? .standardIcons)!)
+    return UIImage(cgImage: drawing.asCGImage(size: size, colors: colors ?? .standard)!)
   }
   
   

@@ -41,19 +41,33 @@ public struct W3WScheme {
   
   // colours
   
+  @available(*, deprecated, message: "This value is depricated")
   public func with(foreground: W3WColor? = nil) -> W3WScheme { return self.with(colors: colors?.with(foreground: foreground)) }
+  @available(*, deprecated, message: "This value is depricated")
   public func with(background: W3WColor? = nil) -> W3WScheme  { return self.with(colors: colors?.with(background: background)) }
+  @available(*, deprecated, message: "This value is depricated")
   public func with(tint: W3WColor? = nil) -> W3WScheme         { return self.with(colors: colors?.with(tint: tint)) }
+  @available(*, deprecated, message: "This value is depricated")
   public func with(secondary: W3WColor? = nil) -> W3WScheme      { return self.with(colors: colors?.with(secondary: secondary)) }
+  @available(*, deprecated, message: "This value is depricated")
   public func with(brand: W3WColor? = nil) -> W3WScheme           { return self.with(colors: colors?.with(brand: brand)) }
+  @available(*, deprecated, message: "This value is depricated")
   public func with(highlight: W3WBasicColors? = nil) -> W3WScheme { return self.with(colors: colors?.with(highlight: highlight)) }
+  @available(*, deprecated, message: "This value is depricated")
   public func with(border: W3WColor? = nil) -> W3WScheme          { return self.with(colors: colors?.with(border: border)) }
+  @available(*, deprecated, message: "This value is depricated")
   public func with(separator: W3WColor? = nil) -> W3WScheme      { return self.with(colors: colors?.with(separator: separator)) }
+  @available(*, deprecated, message: "This value is depricated")
   public func with(shadow: W3WColor? = nil) -> W3WScheme        { return self.with(colors: colors?.with(shadow: shadow)) }
+  @available(*, deprecated, message: "This value is depricated")
   public func with(placeholder: W3WColor? = nil) -> W3WScheme   { return self.with(colors: colors?.with(placeholder: placeholder)) }
+  @available(*, deprecated, message: "This value is depricated")
   public func with(success: W3WBasicColors? = nil) -> W3WScheme { return self.with(colors: colors?.with(success: success)) }
+  @available(*, deprecated, message: "This value is depricated")
   public func with(error: W3WBasicColors? = nil) -> W3WScheme   { return self.with(colors: colors?.with(error: error)) }
+  @available(*, deprecated, message: "This value is depricated")
   public func with(header: W3WBasicColors? = nil) -> W3WScheme  { return self.with(colors: colors?.with(header: header)) }
+  @available(*, deprecated, message: "This value is depricated")
   public func with(line: W3WColor? = nil) -> W3WScheme          { return self.with(colors: colors?.with(line: line)) }
   
   // styles

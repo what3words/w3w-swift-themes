@@ -103,45 +103,38 @@ public class W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
   }
   
   
+  @available(*, deprecated, message: "This value is depricated")
   public func with(background: W3WColor?, into: W3WSetTypes = .base) -> W3WTheme {
     let newTheme = W3WTheme(theme: self)
-
-    newTheme[into]?.colors = W3WColors(colors: newTheme[into]?.colors)
-    newTheme[into]?.colors?.background = background
-    
+    newTheme[into]?.colors = W3WColors(colors: newTheme[into]?.colors?.with(background: background))
     return newTheme
   }
   
+  @available(*, deprecated, message: "This value is depricated")
   public func with(foreground: W3WColor?, into: W3WSetTypes = .base) -> W3WTheme {
     let newTheme = W3WTheme(theme: self)
-    
-    newTheme[into]?.colors = W3WColors(colors: newTheme[into]?.colors)
-    newTheme[into]?.colors?.foreground = foreground
-    
+    newTheme[into]?.colors = W3WColors(colors: newTheme[into]?.colors?.with(foreground: foreground))
     return newTheme
   }
   
   
+  @available(*, deprecated, message: "This value is depricated")
   public func with(secondary: W3WColor?, into: W3WSetTypes = .base) -> W3WTheme {
     let newTheme = W3WTheme(theme: self)
-    
-    newTheme[into]?.colors = W3WColors(colors: newTheme[into]?.colors)
-    newTheme[into]?.colors?.secondary = secondary
-    
+    newTheme[into]?.colors = W3WColors(colors: newTheme[into]?.colors?.with(secondary: secondary))
     return newTheme
   }
   
   
+  @available(*, deprecated, message: "This value is depricated")
   public func with(tint: W3WColor?, into: W3WSetTypes = .base) -> W3WTheme {
     let newTheme = W3WTheme(theme: self)
-    
-    newTheme[into]?.colors = W3WColors(colors: newTheme[into]?.colors)
-    newTheme[into]?.colors?.tint = tint
-    
+    newTheme[into]?.colors = W3WColors(colors: newTheme[into]?.colors?.with(tint: tint))
     return newTheme
   }
 
   
+  @available(*, deprecated, message: "This value is depricated")
   public func with(line: W3WColor?, into: W3WSetTypes = .base) -> W3WTheme {
     let newTheme = W3WTheme(theme: self)
     
@@ -152,6 +145,7 @@ public class W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
   }
 
   
+  @available(*, deprecated, message: "This value is depricated")
   public func with(border: W3WColor?, into: W3WSetTypes = .base) -> W3WTheme {
     let newTheme = W3WTheme(theme: self)
     
@@ -162,6 +156,7 @@ public class W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
   }
 
   
+  @available(*, deprecated, message: "This value is depricated")
   public func with(padding: W3WPadding?, into: W3WSetTypes = .base) -> W3WTheme {
     let newTheme = W3WTheme(theme: self)
     newTheme[into]?.styles = W3WStyles(style: newTheme[into]?.styles).with(padding: padding)
@@ -169,6 +164,7 @@ public class W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
   }
   
   
+  @available(*, deprecated, message: "This value is depricated")
   public func with(cornerRadius: W3WCornerRadius?, into: W3WSetTypes = .base) -> W3WTheme {
     let newTheme = W3WTheme(theme: self)
     newTheme[into]?.styles = W3WStyles(style: newTheme[into]?.styles).with(cornerRadius: cornerRadius)
@@ -176,6 +172,7 @@ public class W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
   }
   
   
+  @available(*, deprecated, message: "This value is depricated")
   public func with(border: W3WLineThickness?, into: W3WSetTypes = .base) -> W3WTheme {
     let newTheme = W3WTheme(theme: self)
     newTheme[into]?.styles = W3WStyles(style: newTheme[into]?.styles).with(border: border)
@@ -183,6 +180,7 @@ public class W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
   }
   
   
+  @available(*, deprecated, message: "This value is depricated")
   public func with(rowHeight: W3WRowHeight?, into: W3WSetTypes = .base) -> W3WTheme {
     let newTheme = W3WTheme(theme: self)
     newTheme[into]?.styles = W3WStyles(style: newTheme[into]?.styles).with(rowHeight: rowHeight )

@@ -9,18 +9,87 @@ import Foundation
 
 
 extension W3WColors {
+  
+  static public let w3w = W3WColors(
+    brandBase:    .w3wBrandBase,
+    labelsPrimary:   .w3wLabelsPrimary,
+    labelsSecondary:   .w3wLabelsSecondary,
+    labelsTertiary:      .w3wLabelsTertiary,
+    labelsQuaternary:      .w3wLabelsQuaternary,
+    labelsPrimaryInverse:    .w3wLabelsPrimaryInverse,
+    labelsPrimaryBlackInverse: .w3wLabelsPrimaryBlackInverse,
+    fillsPrimary:               .w3wFillsPrimary,
+    fillsSecondary:             .w3wFillsSecondary,
+    fillsTertiary:             .w3wFillsTertiary,
+    fillsQuaternary:          .w3wFillsQuaternary,
+    separatorOpaque:          .w3wSeparatorOpaque,
+    separatorNonOpaque:        .w3wSeparatorNonOpaque,
+    systemBackgroundBasePrimary:  .w3wSystemBackgroundBasePrimary,
+    systemBackgroundBaseSecondary: .w3wSystemBackgroundBaseSecondary,
+    systemBackgroundBaseTertiary:   .w3wSystemBackgroundBaseTertiary,
+    systemBackgroundElevatedPrimary:  .w3wSystemBackgroundElevatedPrimary,
+    systemBackgroundElevatedSecondary: .w3wSystemBackgroundElevatedSecondary,
+    systemBackgroundElevatedTertiary:   .w3wSystemBackgroundElevatedTertiary,
+    groupedBackgroundBasePrimary:        .w3wGroupedBackgroundBasePrimary,
+    groupedBackgroundBaseSecondary:      .w3wGroupedBackgroundBaseSecondary,
+    groupedBackgroundBaseTertiary:       .w3wGroupedBackgroundBaseTertiary,
+    groupedBackgroundElevatedPrimary:    .w3wGroupedBackgroundElevatedPrimary,
+    groupedBackgroundElevatedSecondary:  .w3wGroupedBackgroundElevatedSecondary,
+    groupedBackgroundElevatedTertiary:  .w3wGroupedBackgroundElevatedTertiary,
+    successBase:                      .w3wSuccessBase,
+    successElevated:                .w3wSuccessElevated,
+    successLabel:                 .w3wSuccessLabel,
+    warningBase:               .w3wWarningBase,
+    warningElevated:         .w3wWarningElevated,
+    warningLabel:          .w3wWarningElevated,
+    errorBase:          .w3wErrorBase,
+    errorElevated:    .w3wErrorElevated,
+    errorLabel:     .w3wErrorLabel
+  )
+
+  
+  static public let standard = W3WColors(
+    brandBase:    .standardBrandBase,
+    labelsPrimary:   .standardLabelsPrimary,
+    labelsSecondary:   .standardLabelsSecondary,
+    labelsTertiary:      .standardLabelsTertiary,
+    labelsQuaternary:      .standardLabelsQuaternary,
+    labelsPrimaryInverse:    .standardLabelsPrimaryInverse,
+    labelsPrimaryBlackInverse: .standardLabelsPrimaryBlackInverse,
+    fillsPrimary:               .standardFillsPrimary,
+    fillsSecondary:             .standardFillsSecondary,
+    fillsTertiary:             .standardFillsTertiary,
+    fillsQuaternary:          .standardFillsQuaternary,
+    separatorOpaque:          .standardSeparatorOpaque,
+    separatorNonOpaque:        .standardSeparatorNonOpaque,
+    systemBackgroundBasePrimary:  .standardSystemBackgroundBasePrimary,
+    systemBackgroundBaseSecondary: .standardSystemBackgroundBaseSecondary,
+    systemBackgroundBaseTertiary:   .standardSystemBackgroundBaseTertiary,
+    systemBackgroundElevatedPrimary:  .standardSystemBackgroundElevatedPrimary,
+    systemBackgroundElevatedSecondary: .standardSystemBackgroundElevatedSecondary,
+    systemBackgroundElevatedTertiary:   .standardSystemBackgroundElevatedTertiary,
+    groupedBackgroundBasePrimary:        .standardGroupedBackgroundBasePrimary,
+    groupedBackgroundBaseSecondary:      .standardGroupedBackgroundBaseSecondary,
+    groupedBackgroundBaseTertiary:       .standardGroupedBackgroundBaseTertiary,
+    groupedBackgroundElevatedPrimary:    .standardGroupedBackgroundElevatedPrimary,
+    groupedBackgroundElevatedSecondary:  .standardGroupedBackgroundElevatedSecondary,
+    groupedBackgroundElevatedTertiary:  .standardGroupedBackgroundElevatedTertiary,
+    successBase:                      .standardSuccessBase,
+    successElevated:                .standardSuccessElevated,
+    successLabel:                 .standardSuccessLabel,
+    warningBase:               .standardWarningBase,
+    warningElevated:         .standardWarningElevated,
+    warningLabel:          .standardWarningElevated,
+    errorBase:          .standardErrorBase,
+    errorElevated:    .standardErrorElevated,
+    errorLabel:     .standardErrorLabel
+  )
+  
+
 
   // MARK: Standard Colours
   
-  static public let standard = W3WColors(
-    foreground: .standardLabelsPrimaryBlackInverse,
-    background: .standardSystemBackgroundBasePrimary,
-    tint:       .standardBrandBase,
-    secondary:  .standardLabelsQuaternary,
-    highlight:  W3WBasicColors(background: .standardFillsTertiary),
-    border:     .standardSeparatorOpaque
-  )
- 
+  @available(*, deprecated, message: "Use .standard instead")
   static public let standardButtons    = W3WColors(
     foreground: .standardLabelsPrimaryBlackInverse,
     background: .standardFillsPrimary,
@@ -30,6 +99,7 @@ extension W3WColors {
     border:     .standardSeparatorOpaque
   )
   
+  @available(*, deprecated, message: "Use .standard instead")
   static public let standardTextFields = W3WColors(
     foreground: .standardLabelsPrimaryBlackInverse,
     background: .standardSystemBackgroundBasePrimary,
@@ -39,6 +109,7 @@ extension W3WColors {
     border:     .standardSeparatorOpaque
   )
   
+  @available(*, deprecated, message: "Use .standard instead")
   static public let standardLabels = W3WColors(
     foreground: .standardLabelsPrimaryBlackInverse,
     background: .standardSystemBackgroundBasePrimary,
@@ -49,6 +120,7 @@ extension W3WColors {
     error:      W3WBasicColors(foreground: .standardErrorElevated, background: .clear)
   )
   
+  @available(*, deprecated, message: "Use .standard instead")
   static public let standardCells = W3WColors(
     foreground: .standardLabelsTertiary,
     background: .standardSystemBackgroundBasePrimary,
@@ -60,6 +132,7 @@ extension W3WColors {
     header:     W3WBasicColors(foreground: .standardSeparatorNonOpaque, background: .standardSystemBackgroundBaseTertiary)
   )
   
+  @available(*, deprecated, message: "Use .standard instead")
   static public let standardIcons = W3WColors(
     foreground: .standardLabelsPrimaryBlackInverse,
     background: .clear,
@@ -67,6 +140,7 @@ extension W3WColors {
     secondary:  .text
   )
   
+  @available(*, deprecated, message: "Use .standard instead")
   static public let standardVoice = W3WColors(
     foreground: .standardBrandBase,
     background: .clear,
@@ -74,6 +148,7 @@ extension W3WColors {
     secondary:  .standardLabelsQuaternary
   )
   
+  @available(*, deprecated, message: "Use .standard instead")
   static public let standardOcr = W3WColors(
     foreground: .standardLabelsPrimaryBlackInverse,
     background: .standardSystemBackgroundBasePrimary,
@@ -110,6 +185,7 @@ extension W3WColors {
     background: .clear
   )
 
+  @available(*, deprecated, message: "Use .standard instead")
   static public let standardMaps = W3WColors(
     foreground: .standardLabelsPrimary,
     background: .standardFillsSecondary,
@@ -121,15 +197,7 @@ extension W3WColors {
   
   // MARK: what3words Colours
 
-  static public let w3w = W3WColors(
-    foreground: .w3wLabelsPrimaryBlackInverse,
-    background: .w3wSystemBackgroundBasePrimary,
-    tint:       .w3wBrandBase,
-    secondary:  .w3wLabelsQuaternary,
-    highlight:  W3WBasicColors(background: .w3wFillsTertiary),
-    border:     .w3wSeparatorOpaque
-  )
- 
+  @available(*, deprecated, message: "Use .w3w instead")
   static public let w3wButtons    = W3WColors(
     foreground: .w3wLabelsPrimaryBlackInverse,
     background: .w3wFillsPrimary,
@@ -139,6 +207,7 @@ extension W3WColors {
     border:     .w3wSeparatorOpaque
   )
   
+  @available(*, deprecated, message: "Use .w3w instead")
   static public let w3wTextFields = W3WColors(
     foreground: .w3wLabelsPrimaryBlackInverse,
     background: .w3wSystemBackgroundBasePrimary,
@@ -148,6 +217,7 @@ extension W3WColors {
     border:     .w3wSeparatorOpaque
   )
   
+  @available(*, deprecated, message: "Use .w3w instead")
   static public let w3wLabels = W3WColors(
     foreground: .w3wLabelsPrimaryBlackInverse,
     background: .w3wSystemBackgroundBasePrimary,
@@ -158,6 +228,7 @@ extension W3WColors {
     error:      W3WBasicColors(foreground: .w3wErrorElevated, background: .clear)
   )
   
+  @available(*, deprecated, message: "Use .w3w instead")
   static public let w3wCells = W3WColors(
     foreground: .w3wLabelsTertiary,
     background: .w3wSystemBackgroundBasePrimary,
@@ -169,6 +240,7 @@ extension W3WColors {
     header:     W3WBasicColors(foreground: .w3wSeparatorNonOpaque, background: .w3wSystemBackgroundBaseTertiary)
   )
   
+  @available(*, deprecated, message: "Use .w3w instead")
   static public let w3wIcons = W3WColors(
     foreground: .w3wLabelsPrimaryBlackInverse,
     background: .clear,
@@ -176,6 +248,7 @@ extension W3WColors {
     secondary:  .text
   )
   
+  @available(*, deprecated, message: "Use .w3w instead")
   static public let w3wVoice = W3WColors(
     foreground: .w3wBrandBase,
     background: .clear,
@@ -183,6 +256,7 @@ extension W3WColors {
     secondary:  .w3wLabelsQuaternary
   )
   
+  @available(*, deprecated, message: "Use .w3w instead")
   static public let w3wOcr = W3WColors(
     foreground: .w3wLabelsPrimaryBlackInverse,
     background: .w3wSystemBackgroundBasePrimary,
@@ -199,26 +273,31 @@ extension W3WColors {
     line: .w3wLabelsPrimary
   )
 
+  @available(*, deprecated, message: "Use .w3w instead")
   static public let w3wButtonFilled = W3WColors(
     foreground: .w3wLabelsPrimary,
     background: .w3wFillsPrimary
   )
   
+  @available(*, deprecated, message: "Use .w3w instead")
   static public let w3wButtonTinted = W3WColors(
     foreground: .w3wFillsPrimary,
     background: W3WColor(all: .blue90)
   )
   
+  @available(*, deprecated, message: "Use .w3w instead")
   static public let w3wButtonGray = W3WColors(
     foreground: .text,
     background: W3WColor(light: .clear, dark: .black)
   )
   
+  @available(*, deprecated, message: "Use .w3w instead")
   static public let w3wButtonPlain = W3WColors(
     foreground: .w3wFillsPrimary,
     background: .clear
   )
 
+  @available(*, deprecated, message: "Use .w3w instead")
   static public let w3wMaps = W3WColors(
     foreground: .w3wLabelsPrimary,
     background: .w3wFillsSecondary,
@@ -227,5 +306,4 @@ extension W3WColors {
     line: .w3wLabelsQuaternary
   )
 
-  
 }
