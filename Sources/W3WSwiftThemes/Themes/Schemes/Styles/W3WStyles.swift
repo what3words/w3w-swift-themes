@@ -27,6 +27,7 @@ public struct W3WStyles: CustomDebugStringConvertible, CustomStringConvertible {
   public let separator:     W3WLineThickness?
   public let rowHeight:     W3WRowHeight?
   public let lineThickness: W3WLineThickness?
+  public let visualEffect:  W3WVisualEffect?
   
   
   /// initiate with any number of optional parameters, all other settings will be ignored / left as default
@@ -38,7 +39,8 @@ public struct W3WStyles: CustomDebugStringConvertible, CustomStringConvertible {
               padding: W3WPadding? = nil,
               separator: W3WLineThickness? = nil,
               rowHeight: W3WRowHeight? = nil,
-              lineThickness: W3WLineThickness? = nil) {
+              lineThickness: W3WLineThickness? = nil,
+              visualEffect: W3WVisualEffect? = nil) {
     self.border         = border
     self.cornerRadius   = cornerRadius
     self.shadow         = shadow
@@ -48,6 +50,7 @@ public struct W3WStyles: CustomDebugStringConvertible, CustomStringConvertible {
     self.separator      = separator
     self.rowHeight      = rowHeight
     self.lineThickness  = lineThickness
+    self.visualEffect   = visualEffect
   }
   
   
@@ -61,20 +64,22 @@ public struct W3WStyles: CustomDebugStringConvertible, CustomStringConvertible {
     self.separator      = style?.separator
     self.rowHeight      = style?.rowHeight
     self.lineThickness  = style?.lineThickness
+    self.visualEffect   = style?.visualEffect
   }
 
   
   // MARK: Withs (builders)
   
 
-  public func with(border: W3WLineThickness?)      -> W3WStyles  { return W3WStyles(border: border, cornerRadius: cornerRadius, shadow: shadow, fonts: fonts, textAlignment: textAlignment, padding: padding, rowHeight: rowHeight, lineThickness: lineThickness) }
-  public func with(cornerRadius: W3WCornerRadius?) -> W3WStyles  { return W3WStyles(border: border, cornerRadius: cornerRadius, shadow: shadow, fonts: fonts, textAlignment: textAlignment, padding: padding, rowHeight: rowHeight, lineThickness: lineThickness) }
-  public func with(shadow: W3WShadow?)             -> W3WStyles  { return W3WStyles(border: border, cornerRadius: cornerRadius, shadow: shadow, fonts: fonts, textAlignment: textAlignment, padding: padding, rowHeight: rowHeight, lineThickness: lineThickness) }
-  public func with(fonts: W3WFonts?)               -> W3WStyles  { return W3WStyles(border: border, cornerRadius: cornerRadius, shadow: shadow, fonts: fonts, textAlignment: textAlignment, padding: padding, rowHeight: rowHeight, lineThickness: lineThickness) }
-  public func with(textAlignment: W3WTextAlignment?) -> W3WStyles  { return W3WStyles(border: border, cornerRadius: cornerRadius, shadow: shadow, fonts: fonts, textAlignment: textAlignment, padding: padding, rowHeight: rowHeight, lineThickness: lineThickness) }
-  public func with(padding: W3WPadding?)           -> W3WStyles  { return W3WStyles(border: border, cornerRadius: cornerRadius, shadow: shadow, fonts: fonts, textAlignment: textAlignment, padding: padding, rowHeight: rowHeight, lineThickness: lineThickness) }
-  public func with(rowHeight: W3WRowHeight?)        -> W3WStyles  { return W3WStyles(border: border, cornerRadius: cornerRadius, shadow: shadow, fonts: fonts, textAlignment: textAlignment, padding: padding, rowHeight: rowHeight, lineThickness: lineThickness) }
-  public func with(lineThickness: W3WLineThickness?)  -> W3WStyles { return W3WStyles(border: border, cornerRadius: cornerRadius, shadow: shadow, fonts: fonts, textAlignment: textAlignment, padding: padding, rowHeight: rowHeight, lineThickness: lineThickness) }
+  public func with(border: W3WLineThickness?)      -> W3WStyles  { return W3WStyles(border: border, cornerRadius: cornerRadius, shadow: shadow, fonts: fonts, textAlignment: textAlignment, padding: padding, rowHeight: rowHeight, lineThickness: lineThickness, visualEffect: visualEffect) }
+  public func with(cornerRadius: W3WCornerRadius?) -> W3WStyles  { return W3WStyles(border: border, cornerRadius: cornerRadius, shadow: shadow, fonts: fonts, textAlignment: textAlignment, padding: padding, rowHeight: rowHeight, lineThickness: lineThickness, visualEffect: visualEffect) }
+  public func with(shadow: W3WShadow?)             -> W3WStyles  { return W3WStyles(border: border, cornerRadius: cornerRadius, shadow: shadow, fonts: fonts, textAlignment: textAlignment, padding: padding, rowHeight: rowHeight, lineThickness: lineThickness, visualEffect: visualEffect) }
+  public func with(fonts: W3WFonts?)               -> W3WStyles  { return W3WStyles(border: border, cornerRadius: cornerRadius, shadow: shadow, fonts: fonts, textAlignment: textAlignment, padding: padding, rowHeight: rowHeight, lineThickness: lineThickness, visualEffect: visualEffect) }
+  public func with(textAlignment: W3WTextAlignment?) -> W3WStyles  { return W3WStyles(border: border, cornerRadius: cornerRadius, shadow: shadow, fonts: fonts, textAlignment: textAlignment, padding: padding, rowHeight: rowHeight, lineThickness: lineThickness, visualEffect: visualEffect) }
+  public func with(padding: W3WPadding?)           -> W3WStyles  { return W3WStyles(border: border, cornerRadius: cornerRadius, shadow: shadow, fonts: fonts, textAlignment: textAlignment, padding: padding, rowHeight: rowHeight, lineThickness: lineThickness, visualEffect: visualEffect) }
+  public func with(rowHeight: W3WRowHeight?)        -> W3WStyles  { return W3WStyles(border: border, cornerRadius: cornerRadius, shadow: shadow, fonts: fonts, textAlignment: textAlignment, padding: padding, rowHeight: rowHeight, lineThickness: lineThickness, visualEffect: visualEffect) }
+  public func with(lineThickness: W3WLineThickness?)  -> W3WStyles { return W3WStyles(border: border, cornerRadius: cornerRadius, shadow: shadow, fonts: fonts, textAlignment: textAlignment, padding: padding, rowHeight: rowHeight, lineThickness: lineThickness, visualEffect: visualEffect) }
+  public func with(visualEffect: W3WVisualEffect?)  -> W3WStyles { return W3WStyles(border: border, cornerRadius: cornerRadius, shadow: shadow, fonts: fonts, textAlignment: textAlignment, padding: padding, rowHeight: rowHeight, lineThickness: lineThickness, visualEffect: visualEffect) }
 
 
   public var description: String {
