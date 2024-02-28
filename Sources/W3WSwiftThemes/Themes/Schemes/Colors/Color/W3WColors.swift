@@ -242,6 +242,12 @@ public struct W3WColors {
   }
   
   
+  /// return the same colorset the secondary background color changed
+  public func with(secondaryBackground: W3WColor? = nil) -> W3WColors {
+    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, error: error, header: header, line: line)
+  }
+  
+  
   /// return the same colorset the secondary color changed
   public func with(brand: W3WColor? = nil) -> W3WColors {
     return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, error: error, header: header, line: line)
