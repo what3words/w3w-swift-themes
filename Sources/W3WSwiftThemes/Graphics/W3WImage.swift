@@ -77,7 +77,7 @@ public class W3WImage {
       
       if let image = UIGraphicsGetImageFromCurrentImageContext()?.cgImage {
         UIGraphicsEndImageContext()
-        return UIImage(cgImage: image, scale: 1.0, orientation: .down)
+        return UIImage(cgImage: image, scale: 1.0, orientation: .downMirrored)
       } else {
         UIGraphicsEndImageContext()
       }
