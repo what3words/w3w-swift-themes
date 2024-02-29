@@ -81,7 +81,7 @@ extension W3WColors {
     secondaryBackground: .standardSystemBackgroundBaseSecondary,
     brand:      .standardBrandBase,
     border:     .clear,
-    separator:  .standardLabelsPrimary,
+    separator:  .standardSeparatorNonOpaque,
     success: W3WBasicColors(
       foreground: .standardLabelsPrimary,
       background: .standardSuccessElevated),
@@ -191,7 +191,7 @@ extension W3WColors {
     secondaryBackground: .w3wSystemBackgroundBaseSecondary,
     brand:      .w3wBrandBase,
     border:     .clear,
-    separator:  .w3wLabelsPrimary,
+    separator:  .w3wSeparatorNonOpaque,
     success: W3WBasicColors(
       foreground: .w3wLabelsPrimary,
       background: .w3wSuccessElevated),

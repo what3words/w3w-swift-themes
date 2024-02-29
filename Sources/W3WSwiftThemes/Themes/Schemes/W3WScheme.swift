@@ -66,5 +66,6 @@ public struct W3WScheme {
   public func with(padding: W3WPadding?)           -> W3WScheme  { return self.with(styles: styles?.with(padding: padding)) }
   public func with(rowHeight: W3WRowHeight?)        -> W3WScheme  { return self.with(styles: styles?.with(rowHeight: rowHeight)) }
   public func with(lineThickness: W3WLineThickness?)  -> W3WScheme { return self.with(styles: styles?.with(lineThickness: lineThickness)) }
+  public func with(visualEffect: W3WVisualEffect?)  -> W3WScheme { return self.with(styles: styles?.with(visualEffect: visualEffect)) }
 
 }
