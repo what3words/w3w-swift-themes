@@ -160,6 +160,15 @@ public class W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
     
     return newTheme
   }
+  
+  public func with(separator: W3WColor?, into: W3WSetTypes = .base) -> W3WTheme {
+    let newTheme = W3WTheme(theme: self)
+    
+    newTheme[into]?.colors = W3WColors(colors: newTheme[into]?.colors)
+    newTheme[into]?.colors?.separator = separator
+    
+    return newTheme
+  }
 
   
   public func with(padding: W3WPadding?, into: W3WSetTypes = .base) -> W3WTheme {
