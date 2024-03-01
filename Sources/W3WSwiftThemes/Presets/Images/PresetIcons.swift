@@ -20,6 +20,7 @@ public extension W3WImage {
   static let tickCircle       = { return W3WImage(file: "tickCircle", colors: .standardIcons) }()
   static let close            = { return W3WImage(file: "close", colors: .standardIcons) }()
   static let w3wLogo          = { return W3WImage(file: "w3wLogo", colors: .standardIcons) }()
+  static let w3wLogoWithText  = { return W3WImage(file: "w3wLogoWithText", colors: .standardIcons) }()
   static let accessibility    = { return W3WImage(file: "accessibility", colors: .standardIcons) }()
   static let scan             = { return W3WImage(drawing: .ocr, colors: .standardIcons) }()
   static let slashes          = { return W3WImage(drawing: .makeSlashes(), colors: .standardIcons) }()
