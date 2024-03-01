@@ -22,6 +22,7 @@ public extension W3WIconSize {
   static let mediumIcon = W3WIconSize(value: CGSize(width: 32.0, height: 32.0))
   static let largeIcon  = W3WIconSize(value: CGSize(width: 64.0, height: 64.0))
   static let handleIcon = W3WIconSize(value: CGSize(width: 40.0, height: 6.0))
+  static let w3wLogoWithTextIcon = W3WIconSize(value: CGSize(width: 84.0, height: 14.0))
 }
 
 
