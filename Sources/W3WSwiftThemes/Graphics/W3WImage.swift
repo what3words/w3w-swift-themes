@@ -7,12 +7,17 @@
 
 import UIKit
 
-
 public class W3WImage {
 
   var imageSource: W3WImageSource!
   public var colors: W3WColors!
   
+  public var configuration: NSObject?
+  
+  @available(iOS 13.0, *)
+  public func setImageConfiguration(_ configuration: UIImage.Configuration) {
+    self.configuration = configuration
+  }
   
   public init(systemName: String, colors: W3WColors) {
     self.imageSource = .system(systemName)
@@ -126,6 +131,10 @@ public class W3WImage {
         
       } else {
         resultImage = UIImage(systemName: symbol)!
+      }
+      
+      if let imageConfiguration = configuration as? UIImage.SymbolConfiguration {
+        resultImage = resultImage?.withConfiguration(imageConfiguration)
       }
     }
       
