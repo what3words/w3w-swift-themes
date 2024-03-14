@@ -22,6 +22,7 @@ public extension W3WImage {
   static let w3wLogo          = { return W3WImage(file: "w3wLogo", colors: .standardIcons) }()
   static let w3wLogoWithText  = { return W3WImage(file: "w3wLogoWithText", colors: .standardIcons) }()
   static let accessibility    = { return W3WImage(file: "accessibility", colors: .standardIcons) }()
+  static let warning          = { return W3WImage(file: "warning", colors: .standardIcons) }()
   static let scan             = { return W3WImage(drawing: .ocr, colors: .standardIcons) }()
   static let slashes          = { return W3WImage(drawing: .makeSlashes(), colors: .standardIcons) }()
   static let mic              = { return W3WImage(drawing: .micWithSlashes, colors: .standardIcons) }()
@@ -74,8 +75,6 @@ public extension W3WImage {
   static let playFill            = { return W3WImage(systemName: "play.fill", colors: .standardIcons) }()
   static let docOnDoc           = { return W3WImage(systemName: "doc.on.doc", colors: .standardIcons) }()
 
-  @available(*, deprecated)
-  static let warning          = { return W3WImage(systemName: "exclamationmark.triangle", colors: .standardIcons) }()
   @available(*, deprecated)
   static let ellipsisCircle   = { return W3WImage(systemName: "ellipsis.circle", colors: .standardIcons) }()
   @available(*, deprecated)
