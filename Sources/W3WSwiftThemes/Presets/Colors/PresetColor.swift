@@ -67,7 +67,7 @@ extension W3WColor {
   public static let standardWarningLabel          = W3WColor(light: .yellow20, dark: .yellow20)
 
   public static let standardErrorBase          = W3WColor(light: .orangeAlpha20, dark: .orangeAlpha40)
-  public static let standardErrorElevated    = W3WColor(light: .orangeLight, dark: .orangeDark)
+  public static let standardErrorElevated    = W3WColor(light: .orange95, dark: .orange99)
   public static let standardErrorLabel     = W3WColor(light: .orange20, dark: .orange20)
 
   // colours for what3words theme
