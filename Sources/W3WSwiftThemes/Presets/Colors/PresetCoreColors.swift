@@ -55,6 +55,8 @@ extension W3WCoreColor {
 
   // oranges
   static public let orangeLight   = W3WCoreColor(hex: 0xFF3B30)
+  static public let orange99      = W3WCoreColor(hex: 0xFC927C)
+  static public let orange95      = W3WCoreColor(hex: 0xF2826A)
   static public let orange80      = W3WCoreColor(hex: 0xCC372E)
   static public let orange60      = W3WCoreColor(hex: 0x992923)
   static public let orange50      = W3WCoreColor(hex: 0xF2826A)

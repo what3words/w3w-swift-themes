@@ -114,7 +114,7 @@ extension W3WColor {
   public static let w3wWarningLabel          = W3WColor(light: .yellow10, dark: .yellow10)
 
   public static let w3wErrorBase           = W3WColor(light: .orangeAlpha20, dark: .orangeAlpha40)
-  public static let w3wErrorElevated     = W3WColor(light: .orange50, dark: .orange50)
+  public static let w3wErrorElevated     = W3WColor(light: .orange95, dark: .orange99)
   public static let w3wErrorLabel      = W3WColor(light: .orange10, dark: .orange10)
 
 }

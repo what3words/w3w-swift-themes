@@ -86,7 +86,7 @@ extension W3WColors {
       foreground: .standardLabelsPrimary,
       background: .standardSuccessElevated),
     error: W3WBasicColors(
-      foreground: .standardLabelsPrimary,
+      foreground: .standardErrorLabel,
       background: .standardErrorElevated),
     line: .standardLabelsPrimary
   )
@@ -196,7 +196,7 @@ extension W3WColors {
       foreground: .w3wLabelsPrimary,
       background: .w3wSuccessElevated),
     error: W3WBasicColors(
-      foreground: .w3wLabelsPrimary,
+      foreground: .w3wErrorLabel,
       background: .w3wErrorElevated),
     line: .w3wLabelsPrimary
   )
