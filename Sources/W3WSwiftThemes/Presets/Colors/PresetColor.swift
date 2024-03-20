@@ -21,7 +21,6 @@ extension W3WColor {
   static public let background   = W3WColor(light: .white, dark: .black)
   static public let secondary     = W3WColor(light: .darkBlue,   dark: .royalBlue)
   static public let tint           = W3WColor(light: .red50, dark: .red50)
-  static public let lightBlue  = W3WColor(all: .darkBlueAlpha60)
 
   // colours for standard theme
   
@@ -37,7 +36,7 @@ extension W3WColor {
   public static let standardFillsPrimary               = W3WColor(light: .blueLight, dark: .blueDark)
   public static let standardFillsSecondary             = W3WColor(light: .blue60, dark: .blue60)
   public static let standardFillsTertiary             = W3WColor(light: .blueAlpha15, dark: .blueAlpha15)
-  public static let standardFillsQuaternary          = W3WColor(light: .grey54Alpha15, dark: .grey54Alpha24)
+  public static let standardFillsQuaternary          = W3WColor(light: .grey54Alpha16, dark: .grey54Alpha24)
 
   public static let standardSeparatorOpaque          = W3WColor(light: .grey82, dark: .grey24)
   public static let standardSeparatorNonOpaque        = W3WColor(light: .grey32Alpha36, dark: .grey42Alpha65)
@@ -117,4 +116,36 @@ extension W3WColor {
   public static let w3wErrorElevated     = W3WColor(light: .orange50, dark: .orange50)
   public static let w3wErrorLabel      = W3WColor(light: .orange10, dark: .orange10)
 
+  // brand
+  
+  static public let aqua          = W3WColor(all: .aqua)
+  static public let blue          = W3WColor(all: .blue)
+  static public let charcoal      = W3WColor(all: .charcoal)
+  static public let coral         = W3WColor(all: .coral)
+  static public let darkBlue       = W3WColor(all: .darkBlue)
+  static public let darkBlueAlpha60 = W3WColor(all: .darkBlueAlpha60)
+  static public let green          = W3WColor(all: .green)
+  static public let lightBlue     = W3WColor(all: .lightBlue)
+  static public let lightGrey     = W3WColor(all: .lightGrey)
+  static public let mediumGrey    = W3WColor(all: .mediumGrey)
+  static public let mustard       = W3WColor(all: .mustard)
+  static public let orange        = W3WColor(all: .orange)
+  static public let red           = W3WColor(all: .red)
+  static public let yellow        = W3WColor(all: .yellow)
+  static public let royalBlue     = W3WColor(all: .royalBlue)
+  static public let cranberry     = W3WColor(all: .cranberry)
+  static public let purple        = W3WColor(all: .purple)
+  static public let powderBlue    = W3WColor(all: .powderBlue)
+  static public let brightGreen   = W3WColor(all: .brightGreen)
+  static public let darkGreen     = W3WColor(all: .darkGreen)
+  static public let darkCyan      = W3WColor(all: .darkCyan)
+  static public let darkerCyan    = W3WColor(all: .darkerCyan)
+  static public let darkBrown     = W3WColor(all: .darkBrown)
+  static public let brown         = W3WColor(all: .brown)
+  static public let darkerBrown   = W3WColor(all: .darkerBrown)
+  static public let dullRed       = W3WColor(all: .dullRed)
+  static public let darkDarkBlue  = W3WColor(all: .darkDarkBlue)
+  static public let lightCyan     = W3WColor(all: .lightCyan)
+
+  
 }
