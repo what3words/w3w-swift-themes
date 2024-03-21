@@ -19,6 +19,7 @@ extension W3WCoreColor {
   static public let blue72        = W3WCoreColor(hex: 0x8DD4EB)
   static public let blue50        = W3WCoreColor(hex: 0x187DB9)
   static public let blue40        = W3WCoreColor(hex: 0x003166)
+  static public let blue30        = W3WCoreColor(hex: 0x005379)
   static public let blue20        = W3WCoreColor(hex: 0x001833)
   static public let blueAlpha80   = W3WCoreColor.blueLight.with(alpha: 0.80)
   static public let blueAlpha60   = W3WCoreColor.blueLight.with(alpha: 0.60)
