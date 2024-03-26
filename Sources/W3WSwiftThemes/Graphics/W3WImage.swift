@@ -68,6 +68,9 @@ public class W3WImage {
   
   
   func from(file: String, size: CGSize) -> UIImage {
+    guard let foreground = colors?.foreground else {
+      return UIImage(named: file, in: Bundle.module, compatibleWith: nil) ?? UIImage()
+    }
     if let maskImage = UIImage(named: file, in: Bundle.module, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate) {
       let bounds = CGRect(origin: .zero, size: size)
 
@@ -75,9 +78,7 @@ public class W3WImage {
       let context = UIGraphicsGetCurrentContext()
       
       context?.clip(to: bounds, mask: maskImage.cgImage!)
-      if let color = colors?.foreground?.current.cgColor {
-        context?.setFillColor(color)
-      }
+      context?.setFillColor(foreground.current.cgColor)
       context?.fill(bounds)
       
       if let image = UIGraphicsGetImageFromCurrentImageContext()?.cgImage {
