@@ -8,9 +8,11 @@
 
 extension W3WCoreColor {
   
+  // MARK: iOS Mobile Design System Primitives from iOS Design System
+  
   // reds
   static public let red50         = W3WCoreColor(hex: 0xE11F26)
-
+  
   // blues
   static public let blueLight     = W3WCoreColor(hex: 0x007AFF)
   static public let blue80        = W3WCoreColor(hex: 0x0062CC)
@@ -53,7 +55,7 @@ extension W3WCoreColor {
   static public let greenAlpha40  = W3WCoreColor.greenLight.with(alpha: 0.40)
   static public let greenAlpha20  = W3WCoreColor.greenLight.with(alpha: 0.20)
   static public let greenDark     = W3WCoreColor(hex: 0x30D158)
-
+  
   // oranges
   static public let orangeLight   = W3WCoreColor(hex: 0xFF3B30)
   static public let orange80      = W3WCoreColor(hex: 0xCC372E)
@@ -93,7 +95,7 @@ extension W3WCoreColor {
   static public let yellowAlpha40 = W3WCoreColor.yellowLight.with(alpha: 0.40)
   static public let yellowAlpha20 = W3WCoreColor.yellowLight.with(alpha: 0.20)
   static public let yellowDark    = W3WCoreColor(hex: 0xFFD60A)
-
+  
   // greys
   static public let grey0         = W3WCoreColor(hex: 0x000000)
   static public let grey4         = W3WCoreColor(hex: 0x0C0E11)
@@ -127,20 +129,19 @@ extension W3WCoreColor {
   static public let grey54Alpha16 = W3WCoreColor.grey54.with(alpha: 0.16)
   static public let grey54Alpha24 = W3WCoreColor.grey54.with(alpha: 0.24)
   static public let grey54Alpha32 = W3WCoreColor.grey54.with(alpha: 0.32)
-
+  
   // basics
   static public let black         = W3WCoreColor.grey0
   static public let white         = W3WCoreColor.grey100
   static public let clear         = W3WCoreColor.grey0Alpha0
-
+  
   // what3words brand colours
   static public let aqua          = W3WCoreColor(hex: 0x87e1d1)
   static public let blue          = W3WCoreColor(hex: 0x2e71b8)
   static public let charcoal      = W3WCoreColor(hex: 0x363636)
   static public let coral         = W3WCoreColor(hex: 0xf26c50)
-  static public let darkBlue       = W3WCoreColor(hex: 0x0a3049)
-  static public let darkBlueAlpha60 = W3WCoreColor.darkBlue.with(alpha: 0.6)
-  static public let green          = W3WCoreColor.green50
+  static public let darkBlue      = W3WCoreColor(hex: 0x0a3049)
+  static public let green         = W3WCoreColor.green50
   static public let lightBlue     = W3WCoreColor(hex: 0x98d5e5)
   static public let lightGrey     = W3WCoreColor(hex: 0xe0e0e0)
   static public let mediumGrey    = W3WCoreColor(hex: 0xa7a7a7)
@@ -162,5 +163,155 @@ extension W3WCoreColor {
   static public let dullRed       = W3WCoreColor(hex: 0xB24000)
   static public let darkDarkBlue  = W3WCoreColor(hex: 0x001626)
   static public let lightCyan     = W3WCoreColor(hex: 0xC2E1EB)
+  
+  
+  // MARK: Core Design System Primitives
 
+  
+  static public let coreRed10 = W3WCoreColor(hex: 0x410000)
+  static public let coreRed20 = W3WCoreColor(hex: 0x690001)
+  static public let coreRed30 = W3WCoreColor(hex: 0x930002)
+  static public let coreRed40 = W3WCoreColor(hex: 0xc00004)
+  static public let coreRed50 = W3WCoreColor(hex: 0xe11f26)
+  static public let coreRed60 = W3WCoreColor(hex: 0xff5543)
+  static public let coreRed70 = W3WCoreColor(hex: 0xff8a79)
+  static public let coreRed80 = W3WCoreColor(hex: 0xffb4a9)
+  static public let coreRed90 = W3WCoreColor(hex: 0xffcac2)
+  static public let coreRed95 = W3WCoreColor(hex: 0xffedea)
+  static public let coreRed99 = W3WCoreColor(hex: 0xfffbff)
+  
+  static public let coreRed50Alpha80 = coreRed50.with(alpha: 0.8)
+  static public let coreRed50Alpha60 = coreRed50.with(alpha: 0.6)
+  static public let coreRed50Alpha40 = coreRed50.with(alpha: 0.4)
+  static public let coreRed50Alpha20 = coreRed50.with(alpha: 0.2)
+  
+  static public let coreBlue10 = W3WCoreColor(hex: 0x001d31)
+  static public let coreBlue20 = W3WCoreColor(hex: 0x0a3049)
+  static public let coreBlue30 = W3WCoreColor(hex: 0x005379)
+  static public let coreBlue40 = W3WCoreColor(hex: 0x006397)
+  static public let coreBlue50 = W3WCoreColor(hex: 0x187db9)
+  static public let coreBlue52 = W3WCoreColor(hex: 0x1c86cc)
+  static public let coreBlue60 = W3WCoreColor(hex: 0x4097d5)
+  static public let coreBlue70 = W3WCoreColor(hex: 0x60b2f2)
+  static public let coreBlue72 = W3WCoreColor(hex: 0x8dd4eb)
+  static public let coreBlue74 = W3WCoreColor(hex: 0x98d5e5)
+  static public let coreBlue76 = W3WCoreColor(hex: 0xb6dcf5)
+  static public let coreBlue80 = W3WCoreColor(hex: 0xc2e1eb)
+  static public let coreBlue90 = W3WCoreColor(hex: 0xdbeffa)
+  static public let coreBlue95 = W3WCoreColor(hex: 0xe3f4fd)
+  static public let coreBlue99 = W3WCoreColor(hex: 0xfcfcff)
+  
+  static public let coreBlue50Alpha80 = coreBlue50.with(alpha: 0.8)
+  static public let coreBlue50Alpha60 = coreBlue50.with(alpha: 0.6)
+  static public let coreBlue50Alpha40 = coreBlue50.with(alpha: 0.4)
+  static public let coreBlue50Alpha20 = coreBlue50.with(alpha: 0.2)
+  
+  static public let coreBlue90Alpha60 = coreBlue50.with(alpha: 0.6)
+  static public let coreBlue20Alpha60 = coreBlue20.with(alpha: 0.6)
+  static public let darkBlueAlpha60   = coreBlue20Alpha60
+    
+  static public let coreGreen10 = W3WCoreColor(hex: 0x002112)
+  static public let coreGreen20 = W3WCoreColor(hex: 0x003822)
+  static public let coreGreen30 = W3WCoreColor(hex: 0x006c45)
+  static public let coreGreen40 = W3WCoreColor(hex: 0x008857)
+  static public let coreGreen50 = W3WCoreColor(hex: 0x53c18a)
+  static public let coreGreen60 = W3WCoreColor(hex: 0x6ecb9c)
+  static public let coreGreen70 = W3WCoreColor(hex: 0x88d5ad)
+  static public let coreGreen80 = W3WCoreColor(hex: 0xa2dfbd)
+  static public let coreGreen90 = W3WCoreColor(hex: 0x8bf8bd)
+  static public let coreGreen95 = W3WCoreColor(hex: 0xc0ffd7)
+  static public let coreGreen99 = W3WCoreColor(hex: 0xf5fff5)
+
+  static public let coreGreen50Alpha80 = coreGreen50.with(alpha: 0.8)
+  static public let coreGreen50Alpha60 = coreGreen50.with(alpha: 0.6)
+  static public let coreGreen50Alpha40 = coreGreen50.with(alpha: 0.4)
+  static public let coreGreen50Alpha20 = coreGreen50.with(alpha: 0.2)
+
+  static public let coreYellow10 = W3WCoreColor(hex: 0x221b00)
+  static public let coreYellow20 = W3WCoreColor(hex: 0x2f2500)
+  static public let coreYellow30 = W3WCoreColor(hex: 0xc7aa00)
+  static public let coreYellow40 = W3WCoreColor(hex: 0xe7c500)
+  static public let coreYellow50 = W3WCoreColor(hex: 0xf6d31f)
+  static public let coreYellow60 = W3WCoreColor(hex: 0xffe262)
+  static public let coreYellow70 = W3WCoreColor(hex: 0xffec8a)
+  static public let coreYellow80 = W3WCoreColor(hex: 0xfff09e)
+  static public let coreYellow90 = W3WCoreColor(hex: 0xfff4b2)
+  static public let coreYellow95 = W3WCoreColor(hex: 0xfff0bf)
+  static public let coreYellow99 = W3WCoreColor(hex: 0xfffbff)
+
+  static public let coreYellow50Alpha80 = coreYellow50.with(alpha: 0.8)
+  static public let coreYellow50Alpha60 = coreYellow50.with(alpha: 0.6)
+  static public let coreYellow50Alpha40 = coreYellow50.with(alpha: 0.4)
+  static public let coreYellow50Alpha20 = coreYellow50.with(alpha: 0.2)
+
+  static public let coreOrange10 = W3WCoreColor(hex: 0x3e0500)
+  static public let coreOrange20 = W3WCoreColor(hex: 0x640d00)
+  static public let coreOrange30 = W3WCoreColor(hex: 0xca4f36)
+  static public let coreOrange40 = W3WCoreColor(hex: 0xf26c50)
+  static public let coreOrange50 = W3WCoreColor(hex: 0xf2826a)
+  static public let coreOrange60 = W3WCoreColor(hex: 0xfc927c)
+  static public let coreOrange70 = W3WCoreColor(hex: 0xff9a85)
+  static public let coreOrange80 = W3WCoreColor(hex: 0xffb4a4)
+  static public let coreOrange90 = W3WCoreColor(hex: 0xffdad3)
+  static public let coreOrange95 = W3WCoreColor(hex: 0xffede9)
+  static public let coreOrange99 = W3WCoreColor(hex: 0xfffbff)
+
+  static public let coreOrange50Alpha80 = coreOrange50.with(alpha: 0.8)
+  static public let coreOrange50Alpha60 = coreOrange50.with(alpha: 0.6)
+  static public let coreOrange50Alpha40 = coreOrange50.with(alpha: 0.4)
+  static public let coreOrange50Alpha20 = coreOrange50.with(alpha: 0.2)
+  
+  static public let corePurple10 = W3WCoreColor(hex: 0x330045)
+  static public let corePurple20 = W3WCoreColor(hex: 0x53006f)
+  static public let corePurple30 = W3WCoreColor(hex: 0x75049a)
+  static public let corePurple40 = W3WCoreColor(hex: 0x8b4ca1)
+  static public let corePurple50 = W3WCoreColor(hex: 0xac4bd0)
+  static public let corePurple60 = W3WCoreColor(hex: 0xc967ec)
+  static public let corePurple70 = W3WCoreColor(hex: 0xe188ff)
+  static public let corePurple80 = W3WCoreColor(hex: 0xeeb1ff)
+  static public let corePurple90 = W3WCoreColor(hex: 0xfad7ff)
+  static public let corePurple95 = W3WCoreColor(hex: 0xffebff)
+  static public let corePurple99 = W3WCoreColor(hex: 0xfffbff)
+
+  static public let corePurple50Alpha80 = corePurple50.with(alpha: 0.8)
+  static public let corePurple50Alpha60 = corePurple50.with(alpha: 0.6)
+  static public let corePurple50Alpha40 = corePurple50.with(alpha: 0.4)
+  static public let corePurple50Alpha20 = corePurple50.with(alpha: 0.2)
+
+  static public let coreGrey0  = W3WCoreColor(hex: 0x000000)
+  static public let coreGrey4  = W3WCoreColor(hex: 0x0c0e11)
+  static public let coreGrey6  = W3WCoreColor(hex: 0x111416)
+  static public let coreGrey8  = W3WCoreColor(hex: 0x181c20)
+  static public let coreGrey10 = W3WCoreColor(hex: 0x1a1c1e)
+  static public let coreGrey12 = W3WCoreColor(hex: 0x1e2022)
+  static public let coreGrey17 = W3WCoreColor(hex: 0x282a2d)
+  static public let coreGrey20 = W3WCoreColor(hex: 0x2e3133)
+  static public let coreGrey21 = W3WCoreColor(hex: 0x2d3135)
+  static public let coreGrey22 = W3WCoreColor(hex: 0x333537)
+  static public let coreGrey23 = W3WCoreColor(hex: 0x38383a)
+  static public let coreGrey24 = W3WCoreColor(hex: 0x37393c)
+  static public let coreGrey30 = W3WCoreColor(hex: 0x454749)
+  static public let coreGrey32 = W3WCoreColor(hex: 0x43474b)
+  static public let coreGrey40 = W3WCoreColor(hex: 0x5d5e61)
+  static public let coreGrey42 = W3WCoreColor(hex: 0x5b5f63)
+  static public let coreGrey50 = W3WCoreColor(hex: 0x75777a)
+  static public let coreGrey52 = W3WCoreColor(hex: 0x73777c)
+  static public let coreGrey60 = W3WCoreColor(hex: 0x8f9193)
+  static public let coreGrey62 = W3WCoreColor(hex: 0x8d9196)
+  static public let coreGrey70 = W3WCoreColor(hex: 0xaaabae)
+  static public let coreGrey72 = W3WCoreColor(hex: 0xa8abb0)
+  static public let coreGrey80 = W3WCoreColor(hex: 0xc5c6c9)
+  static public let coreGrey82 = W3WCoreColor(hex: 0xc3c7cc)
+  static public let coreGrey87 = W3WCoreColor(hex: 0xd9dadd)
+  static public let coreGrey90 = W3WCoreColor(hex: 0xe2e2e5)
+  static public let coreGrey91 = W3WCoreColor(hex: 0xdfe3e8)
+  static public let coreGrey92 = W3WCoreColor(hex: 0xe7e8eb)
+  static public let coreGrey93 = W3WCoreColor(hex: 0xedeef0)
+  static public let coreGrey95 = W3WCoreColor(hex: 0xf0f0f3)
+  static public let coreGrey96 = W3WCoreColor(hex: 0xf3f3f6)
+  static public let coreGrey97 = W3WCoreColor(hex: 0xeef1f6)
+  static public let coreGrey98 = W3WCoreColor(hex: 0xf9f9fc)
+  static public let coreGrey99 = W3WCoreColor(hex: 0xfcfcff)
+  static public let coreGrey100 = W3WCoreColor(hex: 0xffffff)
+  
 }
