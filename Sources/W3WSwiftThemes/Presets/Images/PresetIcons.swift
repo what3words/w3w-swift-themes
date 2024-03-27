@@ -21,6 +21,8 @@ public extension W3WImage {
   static let close            = { return W3WImage(file: "close", colors: .standardIcons) }()
   static let w3wLogo          = { return W3WImage(file: "w3wLogo", colors: .standardIcons) }()
   static let w3wLogoWithText  = { return W3WImage(file: "w3wLogoWithText", colors: .standardIcons) }()
+  static let w3wLogoWithLightText  = { return W3WImage(file: "w3wLogoWithLightText", colors: .emptyColorSet) }()
+  static let w3wLogoWithDarkText  = { return W3WImage(file: "w3wLogoWithDarkText", colors: .emptyColorSet) }()
   static let accessibility    = { return W3WImage(file: "accessibility", colors: .standardIcons) }()
   static let warning          = { return W3WImage(file: "warning", colors: .standardIcons) }()
   static let scan             = { return W3WImage(drawing: .ocr, colors: .standardIcons) }()
