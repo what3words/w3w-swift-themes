@@ -80,7 +80,7 @@ extension W3WColors {
 
 
 extension W3WCoreColor {
-     
+
   // design docs names (same colours as above)
   @available(*, deprecated)
   static public let w3wRed        = red
@@ -298,33 +298,8 @@ extension W3WColor {
   
   // brand
   @available(*, deprecated)
-  static public let red                       = W3WColor(all: .red)
-  @available(*, deprecated)
-  static public let blue                      = W3WColor(all: .blue)
-  @available(*, deprecated)
-  static public let darkBlue                  = W3WColor(all: .darkBlue)
-  @available(*, deprecated)
-  static public let powderBlue                = W3WColor(all: .powderBlue)
-  @available(*, deprecated)
   static public let offDarkGrey               = W3WColor(all: .offDarkGrey)
-  @available(*, deprecated)
-  static public let lightGrey                 = W3WColor(all: .lightGrey)
-  @available(*, deprecated)
-  static public let mediumGrey                = W3WColor(all: .mediumGrey)
-  @available(*, deprecated)
-  static public let green                     = W3WColor(all: .green)
-  @available(*, deprecated)
-  static public let aqua                      = W3WColor(all: .aqua)
-  @available(*, deprecated)
-  static public let orange                    = W3WColor(all: .orange)
-  @available(*, deprecated)
-  static public let coral                     = W3WColor(all: .coral)
-  
-  // extended brand
-  
-  @available(*, deprecated)
-  static public let dullRed                   = W3WColor(all: .dullRed)
-  
+    
   // custom
   
   @available(*, deprecated)
