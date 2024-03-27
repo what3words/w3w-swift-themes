@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class W3WImage {
+open class W3WImage {
 
   var imageSource: W3WImageSource!
   public var colors: W3WColors!
@@ -68,26 +68,29 @@ public class W3WImage {
   
   
   func from(file: String, size: CGSize) -> UIImage {
-    guard let foreground = colors?.foreground else {
-      return UIImage(named: file, in: Bundle.module, compatibleWith: nil) ?? UIImage()
+    defer { UIGraphicsEndImageContext() }
+    
+    var maskImage = UIImage(named: file, in: Bundle.module, compatibleWith: nil)
+    if colors?.foreground != nil {
+      maskImage = maskImage?.withRenderingMode(.alwaysTemplate)
     }
-    if let maskImage = UIImage(named: file, in: Bundle.module, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate) {
-      let bounds = CGRect(origin: .zero, size: size)
-
-      UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+    
+    UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+    
+    if let foregroundColor = colors?.foreground {
       let context = UIGraphicsGetCurrentContext()
-      
-      context?.clip(to: bounds, mask: maskImage.cgImage!)
-      context?.setFillColor(foreground.current.cgColor)
-      context?.fill(bounds)
-      
-      if let image = UIGraphicsGetImageFromCurrentImageContext()?.cgImage {
-        UIGraphicsEndImageContext()
-        return UIImage(cgImage: image, scale: 1.0, orientation: .downMirrored)
-      } else {
-        UIGraphicsEndImageContext()
+      let bounds = CGRect(origin: .zero, size: size)
+      if let cgImage = maskImage?.cgImage {
+        context?.clip(to: bounds, mask: cgImage)
       }
-
+      context?.setFillColor(foregroundColor.current.cgColor)
+      context?.fill(bounds)
+      if let image = UIGraphicsGetImageFromCurrentImageContext()?.cgImage {
+        return UIImage(cgImage: image, scale: 1.0, orientation: .downMirrored)
+      }
+    } else {
+      maskImage?.draw(in: CGRect(origin: .zero, size: size))
+      return UIGraphicsGetImageFromCurrentImageContext() ?? UIImage()
     }
     
     return UIImage()
