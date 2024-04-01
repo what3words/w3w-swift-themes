@@ -48,56 +48,41 @@ open class W3WImage {
   }
 
   
-  public func get(size: CGSize = W3WIconSize.largeIcon.value) -> UIImage {
+  public func get() -> UIImage {
     switch imageSource {
     case .drawing(let drawing):
-      return from(drawing: drawing, size: size)
+      return from(drawing: drawing)
     case .system(let system):
-      return from(symbol: system, size: size)
+      return from(symbol: system)
     case .file(let file):
-      return from(file: file, size: size)
+      return from(file: file)
     case .none:
       return UIImage()
     }
   }
   
   
-  func from(drawing: W3WDrawing, size: CGSize) -> UIImage {
-    return UIImage(cgImage: drawing.asCGImage(size: size, colors: colors ?? .standardIcons)!)
+  func from(drawing: W3WDrawing) -> UIImage {
+    return UIImage(cgImage: drawing.asCGImage(colors: colors ?? .standardIcons)!)
   }
   
   
-  func from(file: String, size: CGSize) -> UIImage {
-    defer { UIGraphicsEndImageContext() }
-    
-    var maskImage = UIImage(named: file, in: Bundle.module, compatibleWith: nil)
-    if colors?.foreground != nil {
-      maskImage = maskImage?.withRenderingMode(.alwaysTemplate)
+  func from(file: String) -> UIImage {
+    guard let maskImage = UIImage(named: file, in: Bundle.module, compatibleWith: nil) else {
+      return UIImage()
     }
-    
-    UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
-    
-    if let foregroundColor = colors?.foreground {
-      let context = UIGraphicsGetCurrentContext()
-      let bounds = CGRect(origin: .zero, size: size)
-      if let cgImage = maskImage?.cgImage {
-        context?.clip(to: bounds, mask: cgImage)
+    if let color = colors?.foreground?.current.uiColor {
+      if #available(iOS 13.0, *) {
+        return maskImage.withTintColor(color)
+      } else {
+        return maskImage.mask(with: color)
       }
-      context?.setFillColor(foregroundColor.current.cgColor)
-      context?.fill(bounds)
-      if let image = UIGraphicsGetImageFromCurrentImageContext()?.cgImage {
-        return UIImage(cgImage: image, scale: 1.0, orientation: .downMirrored)
-      }
-    } else {
-      maskImage?.draw(in: CGRect(origin: .zero, size: size))
-      return UIGraphicsGetImageFromCurrentImageContext() ?? UIImage()
     }
-    
-    return UIImage()
+    return maskImage
   }
   
   
-  func from(symbol: String, size: CGSize) -> UIImage {
+  func from(symbol: String) -> UIImage {
     var resultImage: UIImage? = nil
     
     // if SF Symbols can take multi-colour, and colours are available
@@ -147,4 +132,22 @@ open class W3WImage {
     return resultImage ?? UIImage()
   }
   
+}
+
+
+extension UIImage {
+  func mask(with color: UIColor) -> UIImage {
+    UIGraphicsBeginImageContextWithOptions(size, false, scale)
+    // Create a rectangle equal to the size of the image
+    let drawRect = CGRect(origin: .zero, size: size)
+    // Set a color and fill the whole space with that color
+    color.setFill()
+    UIRectFill(drawRect)
+    // Draw an image over the space with a blend mode of .destinationIn, which is a mode that treats the image as an image mask
+    draw(in: drawRect, blendMode: .destinationIn, alpha: 1.0)
+    
+    let tintedImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    return tintedImage!
+  }
 }

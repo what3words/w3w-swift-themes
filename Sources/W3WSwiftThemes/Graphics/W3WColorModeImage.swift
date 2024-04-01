@@ -36,7 +36,7 @@ public class W3WColorModeImage: W3WImage {
   
   
   /// return the image for current color mode
-  public override func get(size: CGSize = W3WIconSize.largeIcon.value) -> UIImage {
-    return images[W3WColor.theme]?.get(size: size) ?? UIImage()
+  public override func get() -> UIImage {
+    return images[W3WColor.theme]?.get() ?? UIImage()
   }
 }
