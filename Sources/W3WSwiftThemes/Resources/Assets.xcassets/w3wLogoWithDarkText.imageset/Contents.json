@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "w3wLogoWithDarkText.png",
+      "filename" : "w3wLogoWithDarkText@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "w3wLogoWithDarkText@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "w3wLogoWithDarkText@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
