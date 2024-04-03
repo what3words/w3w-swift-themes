@@ -51,6 +51,7 @@ extension UIColor {
   /// if this UIColor is a UI element color (semantic color) then find the subcolor for light or dark mode
   /// - Parameters:
   ///   - mode: specify .light or .dark
+  @available(iOS 12.0, *)
   func colorFor(mode: UIUserInterfaceStyle) -> UIColor {
     if #available(iOS 13, *) {
       return self.resolvedColor(with: UITraitCollection(userInterfaceStyle: mode))
