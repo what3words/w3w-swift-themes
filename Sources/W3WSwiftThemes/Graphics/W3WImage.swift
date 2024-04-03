@@ -48,41 +48,37 @@ open class W3WImage {
   }
 
   
-  public func get() -> UIImage {
+  public func get(size: W3WIconSize? = nil) -> UIImage {
     switch imageSource {
     case .drawing(let drawing):
-      return from(drawing: drawing)
+      return from(drawing: drawing, size: size)
     case .system(let system):
-      return from(symbol: system)
+      return from(symbol: system, size: size)
     case .file(let file):
-      return from(file: file)
+      return from(file: file, size: size)
     case .none:
       return UIImage()
     }
   }
   
   
-  func from(drawing: W3WDrawing) -> UIImage {
-    return UIImage(cgImage: drawing.asCGImage(colors: colors ?? .standardIcons)!)
+  func from(drawing: W3WDrawing, size: W3WIconSize? = nil) -> UIImage {
+    return UIImage(cgImage: drawing.asCGImage(size: size?.value ?? W3WIconSize.largeIcon.value, colors: colors ?? .standardIcons)!)
   }
   
   
-  func from(file: String) -> UIImage {
+  func from(file: String, size: W3WIconSize? = nil) -> UIImage {
     guard let maskImage = UIImage(named: file, in: Bundle.module, compatibleWith: nil) else {
       return UIImage()
     }
     if let color = colors?.foreground?.current.uiColor {
-      if #available(iOS 13.0, *) {
-        return maskImage.withTintColor(color)
-      } else {
-        return maskImage.mask(with: color)
-      }
+      return maskImage.mask(with: color, size: size?.value)
     }
     return maskImage
   }
   
   
-  func from(symbol: String) -> UIImage {
+  func from(symbol: String, size: W3WIconSize? = nil) -> UIImage {
     var resultImage: UIImage? = nil
     
     // if SF Symbols can take multi-colour, and colours are available
@@ -122,6 +118,9 @@ open class W3WImage {
         resultImage = UIImage(systemName: symbol)!
       }
       
+      if let size = size, let sizeConfiguration = resultImage?.configuration?.applying(UIImage.SymbolConfiguration(pointSize: size.value.width)) {
+        resultImage = resultImage?.withConfiguration(sizeConfiguration)
+      }
       if let imageConfiguration = configuration as? UIImage.SymbolConfiguration {
         resultImage = resultImage?.withConfiguration(imageConfiguration)
       }
@@ -136,10 +135,11 @@ open class W3WImage {
 
 
 extension UIImage {
-  func mask(with color: UIColor) -> UIImage {
-    UIGraphicsBeginImageContextWithOptions(size, false, scale)
+  func mask(with color: UIColor, size: CGSize? = nil) -> UIImage {
+    let targetSize = size ?? self.size
+    UIGraphicsBeginImageContextWithOptions(targetSize, false, scale)
     // Create a rectangle equal to the size of the image
-    let drawRect = CGRect(origin: .zero, size: size)
+    let drawRect = CGRect(origin: .zero, size: targetSize)
     // Set a color and fill the whole space with that color
     color.setFill()
     UIRectFill(drawRect)
