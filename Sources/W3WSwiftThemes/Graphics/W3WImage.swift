@@ -68,7 +68,7 @@ public class W3WImage {
   
   
   func from(file: String, size: CGSize) -> UIImage {
-    if let maskImage = UIImage(named: file, in: Bundle.current, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate) {
+    if let maskImage = UIImage(named: file, in: Bundle.module, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate) {
       let bounds = CGRect(origin: .zero, size: size)
 
       UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
