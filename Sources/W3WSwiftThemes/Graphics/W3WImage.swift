@@ -48,6 +48,12 @@ open class W3WImage {
   }
 
   
+  @available(*, deprecated, message: "Use get(size: W3WIconSize?) instead")
+  public func get(size: CGSize?) -> UIImage {
+    return get(size: W3WIconSize(value: size ?? CGSize.zero))
+  }
+
+  
   public func get(size: W3WIconSize? = nil) -> UIImage {
     switch imageSource {
     case .drawing(let drawing):
