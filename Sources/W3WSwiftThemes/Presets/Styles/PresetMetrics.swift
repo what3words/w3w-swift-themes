@@ -9,11 +9,20 @@ import UIKit
 
 
 public extension W3WCornerRadius {
-  static let none:     W3WCornerRadius =  0.0
+  static let none:       W3WCornerRadius =  0.0
+  static let extraSmall: W3WCornerRadius =  4.0
+  static let small:      W3WCornerRadius =  8.0
+  static let large:      W3WCornerRadius =  16.0
+  static let extraLarge: W3WCornerRadius =  32.0
+
+  @available(*, deprecated, renamed: "extraSmall")
   static let medium:   W3WCornerRadius =  4.0
-  static let soft:     W3WCornerRadius =  8.0
-  static let softer:   W3WCornerRadius = 14.0
-  static let verySoft: W3WCornerRadius = 16.0
+  @available(*, deprecated, renamed: "small")
+  static let soft:       W3WCornerRadius =  8.0
+  @available(*, deprecated, message: "use: large")
+  static let softer:     W3WCornerRadius = 14.0
+  @available(*, deprecated, message: "use: large")
+  static let verySoft:   W3WCornerRadius = 16.0
 }
 
 
@@ -37,10 +46,22 @@ public extension W3WLineThickness {
 
 public extension W3WMargin {
   static let none:   W3WMargin =  0.0
+  static let half:   W3WMargin =  4.0
+  static let one:    W3WMargin =  8.0
+  static let two:    W3WMargin = 16.0
+  static let three:  W3WMargin = 24.0
+  static let four:   W3WMargin = 32.0
+  static let five:   W3WMargin = 40.0
+
+  @available(*, deprecated, renamed: "half")
   static let thin:   W3WMargin =  4.0
+  @available(*, deprecated, renamed: "one")
   static let light:  W3WMargin =  8.0
+  @available(*, deprecated, message: "use: two")
   static let medium: W3WMargin = 12.0
+  @available(*, deprecated, message: "use: two")
   static let bold:   W3WMargin = 16.0
+  @available(*, deprecated, renamed: "three")
   static let heavy:  W3WMargin = 24.0
 }
 

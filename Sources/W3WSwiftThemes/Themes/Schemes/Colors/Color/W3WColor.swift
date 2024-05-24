@@ -158,7 +158,7 @@ public class W3WColor {
   
   
   /// automatically detect the current colour mode
-  static var theme: W3WColorMode {
+  public static var theme: W3WColorMode {
     if let colorOverride = colorModeOverride {
       return colorOverride
     } else {
