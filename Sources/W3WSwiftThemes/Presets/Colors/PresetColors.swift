@@ -13,6 +13,104 @@ extension W3WColors {
   // MARK: Standard Colours
   
   static public let standard = W3WColors(
+    brandBase: .standardBrandBase,
+    labelsPrimary: .standardLabelsPrimary,
+    labelsSecondary: .standardLabelsSecondary,
+    labelsTertiary: .standardLabelsTertiary,
+    labelsQuaternary: .standardLabelsQuaternary,
+    labelsPrimaryInverse: .standardLabelsPrimaryInverse,
+    labelsPrimaryBlackInverse: .standardLabelsPrimaryBlackInverse,
+    fillsPrimary: .standardFillsPrimary,
+    fillsSecondary: .standardFillsSecondary,
+    fillsTertiary: .standardFillsTertiary,
+    fillsQuaternary: .standardFillsQuaternary,
+    separatorOpaque: .standardSeparatorOpaque,
+    separatorNonOpaque: .standardSeparatorNonOpaque,
+    systemBackgroundBasePrimary: .standardSystemBackgroundBasePrimary,
+    systemBackgroundBaseSecondary: .standardSystemBackgroundBaseSecondary,
+    systemBackgroundBaseTertiary: .standardSystemBackgroundBaseTertiary,
+    systemBackgroundElevatedPrimary: .standardSystemBackgroundElevatedPrimary,
+    systemBackgroundElevatedSecondary: .standardSystemBackgroundElevatedSecondary,
+    systemBackgroundElevatedTertiary: .standardSystemBackgroundElevatedTertiary,
+    groupedBackgroundBasePrimary: .standardGroupedBackgroundBasePrimary,
+    groupedBackgroundBaseSecondary: .standardGroupedBackgroundBaseSecondary,
+    groupedBackgroundBaseTertiary: .standardGroupedBackgroundBaseTertiary,
+    groupedBackgroundElevatedPrimary: .standardGroupedBackgroundElevatedPrimary,
+    groupedBackgroundElevatedSecondary: .standardGroupedBackgroundElevatedSecondary,
+    groupedBackgroundElevatedTertiary: .standardGroupedBackgroundElevatedTertiary,
+    successBase: .standardSuccessBase,
+    successElevated: .standardSuccessElevated,
+    successLabel: .standardSuccessLabel,
+    warningBase: .standardWarningBase,
+    warningElevated: .standardWarningElevated,
+    warningLabel: .standardWarningLabel,
+    errorBase: .standardErrorBase,
+    errorElevated: .standardErrorElevated,
+    errorLabel: .standardErrorLabel,
+    
+    foreground: .standardLabelsPrimaryBlackInverse,
+    background: .standardSystemBackgroundBasePrimary,
+    tint:       .standardBrandBase,
+    secondary:  .standardLabelsQuaternary,
+    highlight:  W3WBasicColors(background: .standardFillsTertiary),
+    border:     .standardSeparatorOpaque
+  )
+  
+  
+  // MARK: what3words Colours
+  
+  static public let w3w = W3WColors(
+    brandBase: .w3wBrandBase,
+    labelsPrimary: .w3wLabelsPrimary,
+    labelsSecondary: .w3wLabelsSecondary,
+    labelsTertiary: .w3wLabelsTertiary,
+    labelsQuaternary: .w3wLabelsQuaternary,
+    labelsPrimaryInverse: .w3wLabelsPrimaryInverse,
+    labelsPrimaryBlackInverse: .w3wLabelsPrimaryBlackInverse,
+    fillsPrimary: .w3wFillsPrimary,
+    fillsSecondary: .w3wFillsSecondary,
+    fillsTertiary: .w3wFillsTertiary,
+    fillsQuaternary: .w3wFillsQuaternary,
+    separatorOpaque: .w3wSeparatorOpaque,
+    separatorNonOpaque: .w3wSeparatorNonOpaque,
+    systemBackgroundBasePrimary: .w3wSystemBackgroundBasePrimary,
+    systemBackgroundBaseSecondary: .w3wSystemBackgroundBaseSecondary,
+    systemBackgroundBaseTertiary: .w3wSystemBackgroundBaseTertiary,
+    systemBackgroundElevatedPrimary: .w3wSystemBackgroundElevatedPrimary,
+    systemBackgroundElevatedSecondary: .w3wSystemBackgroundElevatedSecondary,
+    systemBackgroundElevatedTertiary: .w3wSystemBackgroundElevatedTertiary,
+    groupedBackgroundBasePrimary: .w3wGroupedBackgroundBasePrimary,
+    groupedBackgroundBaseSecondary: .w3wGroupedBackgroundBaseSecondary,
+    groupedBackgroundBaseTertiary: .w3wGroupedBackgroundBaseTertiary,
+    groupedBackgroundElevatedPrimary: .w3wGroupedBackgroundElevatedPrimary,
+    groupedBackgroundElevatedSecondary: .w3wGroupedBackgroundElevatedSecondary,
+    groupedBackgroundElevatedTertiary: .w3wGroupedBackgroundElevatedTertiary,
+    successBase: .w3wSuccessBase,
+    successElevated: .w3wSuccessElevated,
+    successLabel: .w3wSuccessLabel,
+    warningBase: .w3wWarningBase,
+    warningElevated: .w3wWarningElevated,
+    warningLabel: .w3wWarningLabel,
+    errorBase: .w3wErrorBase,
+    errorElevated: .w3wErrorElevated,
+    errorLabel: .w3wErrorLabel,
+    
+    foreground: .w3wLabelsPrimaryBlackInverse,
+    background: .w3wSystemBackgroundBasePrimary,
+    tint:       .w3wBrandBase,
+    secondary:  .w3wLabelsQuaternary,
+    highlight:  W3WBasicColors(background: .w3wFillsTertiary),
+    border:     .w3wSeparatorOpaque
+  )
+  
+
+  
+  
+  
+  
+  
+  
+  static public let standardOld = W3WColors(
     foreground: .standardLabelsPrimaryBlackInverse,
     background: .standardSystemBackgroundBasePrimary,
     tint:       .standardBrandBase,
@@ -122,7 +220,7 @@ extension W3WColors {
   
   // MARK: what3words Colours
 
-  static public let w3w = W3WColors(
+  static public let w3wOld = W3WColors(
     foreground: .w3wLabelsPrimaryBlackInverse,
     background: .w3wSystemBackgroundBasePrimary,
     tint:       .w3wBrandBase,

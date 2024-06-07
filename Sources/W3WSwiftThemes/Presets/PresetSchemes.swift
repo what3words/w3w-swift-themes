@@ -9,10 +9,13 @@ import Foundation
 
 
 extension W3WScheme {
+
+  public static let standard = W3WScheme(colors: .standard, styles: .standard)
+  public static let w3w      = W3WScheme(colors: .w3w,      styles: .w3w)
+
   
   // MARK: Standard Schemes
   
-  public static let standard          = W3WScheme(colors: .standard,         styles: .standard)
   public static let standardButtons    = W3WScheme(colors: .standardButtons,    styles: .standardButtons)
   public static let standardButtonGray  = W3WScheme(colors: .standardButtonGray,   styles: .standardButtons)
   public static let standardButtonsPlain = W3WScheme(colors: .standardButtonPlain,   styles: .standardButtons)
@@ -29,7 +32,6 @@ extension W3WScheme {
   
   // MARK: what3words Schemes
 
-  public static let w3w          = W3WScheme(colors: .w3w,         styles: .w3w)
   public static let w3wButtons    = W3WScheme(colors: .w3wButtons,    styles: .w3wButtons)
   public static let w3wButtonGray  = W3WScheme(colors: .w3wButtonGray,   styles: .w3wButtons)
   public static let w3wButtonsPlain = W3WScheme(colors: .w3wButtonPlain,   styles: .w3wButtons)

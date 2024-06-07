@@ -21,30 +21,102 @@ public struct W3WColors {
   
   // MARK: Vars
   
+  public var brandBase: W3WColor?
   
-  // autosuggest
-  public var foreground: W3WColor?
-  public var background: W3WColor?
-  public var tint: W3WColor?
-  public var secondary: W3WColor?
-  public var secondaryBackground: W3WColor?
-  public var brand: W3WColor?
-  public var highlight: W3WBasicColors?
-  public var border: W3WColor?
-  public var separator: W3WColor?
-  public var shadow: W3WColor?
-  public var placeholder: W3WColor?
-  public var success: W3WBasicColors?
-  public var error: W3WBasicColors?
-  public var header: W3WBasicColors?
-  public var line: W3WColor?
+  public var labelsPrimary: W3WColor?
+  public var labelsSecondary: W3WColor?
+  public var labelsTertiary: W3WColor?
+  public var labelsQuaternary: W3WColor?
+  public var labelsPrimaryInverse: W3WColor?
+  public var labelsPrimaryBlackInverse: W3WColor?
+
+  public var fillsPrimary: W3WColor?
+  public var fillsSecondary: W3WColor?
+  public var fillsTertiary: W3WColor?
+  public var fillsQuaternary: W3WColor?
+
+  public var separatorOpaque: W3WColor?
+  public var separatorNonOpaque: W3WColor?
+  
+  public var systemBackgroundBasePrimary: W3WColor?
+  public var systemBackgroundBaseSecondary: W3WColor?
+  public var systemBackgroundBaseTertiary: W3WColor?
+
+  public var systemBackgroundElevatedPrimary: W3WColor?
+  public var systemBackgroundElevatedSecondary: W3WColor?
+  public var systemBackgroundElevatedTertiary: W3WColor?
+
+  public var groupedBackgroundBasePrimary: W3WColor?
+  public var groupedBackgroundBaseSecondary: W3WColor?
+  public var groupedBackgroundBaseTertiary: W3WColor?
+
+  public var groupedBackgroundElevatedPrimary: W3WColor?
+  public var groupedBackgroundElevatedSecondary: W3WColor?
+  public var groupedBackgroundElevatedTertiary: W3WColor?
+
+  public var successBase: W3WColor?
+  public var successElevated: W3WColor?
+  public var successLabel: W3WColor?
+
+  public var warningBase: W3WColor?
+  public var warningElevated: W3WColor?
+  public var warningLabel: W3WColor?
+
+  public var errorBase: W3WColor?
+  public var errorElevated: W3WColor?
+  public var errorLabel: W3WColor?
   
   
   // MARK: Init
   
   
   /// initialise with a foreground, background, highlight and secondary colour
-  public init(foreground: W3WColor? = nil, background: W3WColor? = nil, tint: W3WColor? = nil, secondary: W3WColor? = nil, secondaryBackground: W3WColor? = nil, brand: W3WColor? = nil, highlight: W3WBasicColors? = nil, border: W3WColor? = nil, separator: W3WColor? = nil, shadow: W3WColor? = nil, placeholder: W3WColor? = nil, success: W3WBasicColors? = nil, error: W3WBasicColors? = nil, header: W3WBasicColors? = nil, line: W3WColor? = nil) {
+  public init(brandBase: W3WColor? = nil, labelsPrimary: W3WColor? = nil, labelsSecondary: W3WColor? = nil, labelsTertiary: W3WColor? = nil, labelsQuaternary: W3WColor? = nil, labelsPrimaryInverse: W3WColor? = nil, labelsPrimaryBlackInverse: W3WColor? = nil, fillsPrimary: W3WColor? = nil, fillsSecondary: W3WColor? = nil, fillsTertiary: W3WColor? = nil, fillsQuaternary: W3WColor? = nil, separatorOpaque: W3WColor? = nil, separatorNonOpaque: W3WColor? = nil, systemBackgroundBasePrimary: W3WColor? = nil, systemBackgroundBaseSecondary: W3WColor? = nil, systemBackgroundBaseTertiary: W3WColor? = nil, systemBackgroundElevatedPrimary: W3WColor? = nil, systemBackgroundElevatedSecondary: W3WColor? = nil, systemBackgroundElevatedTertiary: W3WColor? = nil, groupedBackgroundBasePrimary: W3WColor? = nil, groupedBackgroundBaseSecondary: W3WColor? = nil, groupedBackgroundBaseTertiary: W3WColor? = nil, groupedBackgroundElevatedPrimary: W3WColor? = nil, groupedBackgroundElevatedSecondary: W3WColor? = nil, groupedBackgroundElevatedTertiary: W3WColor? = nil, successBase: W3WColor? = nil, successElevated: W3WColor? = nil, successLabel: W3WColor? = nil, warningBase: W3WColor? = nil, warningElevated: W3WColor? = nil, warningLabel: W3WColor? = nil, errorBase: W3WColor? = nil, errorElevated: W3WColor? = nil, errorLabel: W3WColor? = nil, foreground: W3WColor? = nil, background: W3WColor? = nil, tint: W3WColor? = nil, secondary: W3WColor? = nil, secondaryBackground: W3WColor? = nil, brand: W3WColor? = nil, highlight: W3WBasicColors? = nil, border: W3WColor? = nil, separator: W3WColor? = nil, shadow: W3WColor? = nil, placeholder: W3WColor? = nil, success: W3WBasicColors? = nil, error: W3WBasicColors? = nil, header: W3WBasicColors? = nil, line: W3WColor? = nil) {
+    self.brandBase = brandBase
+
+    self.labelsPrimary = labelsPrimary
+    self.labelsSecondary = labelsSecondary
+    self.labelsTertiary = labelsTertiary
+    self.labelsQuaternary = labelsQuaternary
+    self.labelsPrimaryInverse = labelsPrimaryInverse
+    self.labelsPrimaryBlackInverse = labelsPrimaryBlackInverse
+
+    self.fillsPrimary = fillsPrimary
+    self.fillsSecondary = fillsSecondary
+    self.fillsTertiary = fillsTertiary
+    self.fillsQuaternary = fillsQuaternary
+
+    self.separatorOpaque = separatorOpaque
+    self.separatorNonOpaque = separatorNonOpaque
+    
+    self.systemBackgroundBasePrimary = systemBackgroundBasePrimary
+    self.systemBackgroundBaseSecondary = systemBackgroundBaseSecondary
+    self.systemBackgroundBaseTertiary = systemBackgroundBaseTertiary
+
+    self.systemBackgroundElevatedPrimary = systemBackgroundElevatedPrimary
+    self.systemBackgroundElevatedSecondary = systemBackgroundElevatedSecondary
+    self.systemBackgroundElevatedTertiary = systemBackgroundElevatedTertiary
+
+    self.groupedBackgroundBasePrimary = groupedBackgroundBasePrimary
+    self.groupedBackgroundBaseSecondary = groupedBackgroundBaseSecondary
+    self.groupedBackgroundBaseTertiary = groupedBackgroundBaseTertiary
+
+    self.groupedBackgroundElevatedPrimary = groupedBackgroundElevatedPrimary
+    self.groupedBackgroundElevatedSecondary = groupedBackgroundElevatedSecondary
+    self.groupedBackgroundElevatedTertiary = groupedBackgroundElevatedTertiary
+
+    self.successBase = successBase
+    self.successElevated = successElevated
+    self.successLabel = successLabel
+
+    self.warningBase = warningBase
+    self.warningElevated = warningElevated
+    self.warningLabel = warningLabel
+
+    self.errorBase = errorBase
+    self.errorElevated = errorElevated
+    self.errorLabel = errorLabel
+    
     self.foreground   = foreground
     self.background  = background
     self.tint       = tint
@@ -60,6 +132,7 @@ public struct W3WColors {
     self.error      = error
     self.header    = header
     self.line     = line
+
   }
   
   
@@ -312,6 +385,41 @@ public struct W3WColors {
   public func findTint() -> W3WColor? {
     return tint ?? foreground
   }
+  
+  
+  // MARK:  depricated
+  
+  @available(*, deprecated)
+  public var foreground: W3WColor?
+  @available(*, deprecated)
+  public var background: W3WColor?
+  @available(*, deprecated)
+  public var tint: W3WColor?
+  @available(*, deprecated)
+  public var secondary: W3WColor?
+  @available(*, deprecated)
+  public var secondaryBackground: W3WColor?
+  @available(*, deprecated)
+  public var brand: W3WColor?
+  @available(*, deprecated)
+  public var highlight: W3WBasicColors?
+  @available(*, deprecated)
+  public var border: W3WColor?
+  @available(*, deprecated)
+  public var separator: W3WColor?
+  @available(*, deprecated)
+  public var shadow: W3WColor?
+  @available(*, deprecated)
+  public var placeholder: W3WColor?
+  @available(*, deprecated)
+  public var success: W3WBasicColors?
+  @available(*, deprecated)
+  public var error: W3WBasicColors?
+  @available(*, deprecated)
+  public var header: W3WBasicColors?
+  @available(*, deprecated)
+  public var line: W3WColor?
+
   
 }
 

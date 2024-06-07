@@ -6,7 +6,6 @@
 //
 
 
-// experimental...
 
 public struct W3WScheme {
   

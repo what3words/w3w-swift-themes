@@ -44,7 +44,7 @@ import SwiftUI
 /// suColor, uiColor, and nsColor members.
 /// A bug in Xcode 13 meant the `suColor: Color` functions had to move
 /// to an extension in the w3w SwiftUI Interface Elements package
-public struct W3WCoreColor {
+public struct W3WCoreColor: Equatable {
   
   /// red component of the colour
   public let red:   CGFloat
