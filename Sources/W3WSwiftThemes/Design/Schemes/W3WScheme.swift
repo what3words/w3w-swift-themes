@@ -60,11 +60,17 @@ public struct W3WScheme {
   public func with(border: W3WLineThickness?)      -> W3WScheme  { return self.with(styles: styles?.with(border: border)) }
   public func with(cornerRadius: W3WCornerRadius?) -> W3WScheme  { return self.with(styles: styles?.with(cornerRadius: cornerRadius)) }
   public func with(shadow: W3WShadow?)             -> W3WScheme  { return self.with(styles: styles?.with(shadow: shadow)) }
-  public func with(fonts: W3WFonts?)               -> W3WScheme  { return self.with(styles: styles?.with(fonts: fonts)) }
+  public func with(fonts: W3WFonts?)                -> W3WScheme  { return self.with(styles: styles?.with(fonts: fonts)) }
   public func with(textAlignment: W3WTextAlignment?) -> W3WScheme { return self.with(styles: styles?.with(textAlignment: textAlignment)) }
-  public func with(padding: W3WPadding?)           -> W3WScheme  { return self.with(styles: styles?.with(padding: padding)) }
-  public func with(rowHeight: W3WRowHeight?)        -> W3WScheme  { return self.with(styles: styles?.with(rowHeight: rowHeight)) }
-  public func with(lineThickness: W3WLineThickness?)  -> W3WScheme { return self.with(styles: styles?.with(lineThickness: lineThickness)) }
+  public func with(padding: W3WPadding?)              -> W3WScheme { return self.with(styles: styles?.with(padding: padding)) }
+  public func with(rowHeight: W3WRowHeight?)          -> W3WScheme { return self.with(styles: styles?.with(rowHeight: rowHeight)) }
+  public func with(lineThickness: W3WLineThickness?) -> W3WScheme { return self.with(styles: styles?.with(lineThickness: lineThickness)) }
   public func with(visualEffect: W3WVisualEffect?)  -> W3WScheme { return self.with(styles: styles?.with(visualEffect: visualEffect)) }
 
+  // convenience
+  
+  public func with(border: W3WColor?, thickness: W3WLineThickness?) -> W3WScheme {
+    return self.with(border: border).with(border: thickness)
+  }
+  
 }

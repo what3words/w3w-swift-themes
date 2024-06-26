@@ -12,6 +12,8 @@
 
 extension W3WColors {
   
+  static public let emptyColorSet   = W3WColors(foreground: nil, background: nil, tint: nil, secondary: nil)
+  
   @available(*, deprecated)
   static public let iconGray      = W3WColors(foreground: .systemGray, background: .clear, tint: .systemGray, secondary: .systemGray)
   @available(*, deprecated)
@@ -26,9 +28,6 @@ extension W3WColors {
   static public let iconRed       = W3WColors(foreground: .red, background: .clear, tint: .red, secondary: .red)
   @available(*, deprecated)
   static public let iconRedFill    = W3WColors(foreground: .red, background: .clear, tint: .white, secondary: .red)
-  
-  @available(*, deprecated)
-  static public let emptyColorSet   = W3WColors(foreground: nil, background: nil, tint: nil, secondary: nil)
   
   @available(*, deprecated)
   static public let blackGrayRed     = W3WColors(foreground: .black,    background: .white,        tint: .red,     secondary: .secondaryDarkGray)

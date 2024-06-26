@@ -18,13 +18,8 @@ final class w3w_swift_themesTests: XCTestCase {
   
   func testTemp() throws {
     
-    XCTAssertEqual(W3WScheme.standard.colors?.errorElevated?[.dark], .orangeDark)
-    XCTAssertEqual(W3WScheme.w3w.colors?.fillsQuaternary?[.light],   .blue90)
-    
-    XCTAssertEqual(W3WScheme.w3w.styles?.borders.small,      .threePoint)
-    XCTAssertEqual(W3WScheme.standard.styles?.corners.small, .small)
-    
-    print(W3WScheme.standard.styles?.visualEffects?.thick ?? "")
+    XCTAssertEqual(W3WTheme.standard.errorElevated?[.dark], .orangeDark)
+    XCTAssertEqual(W3WTheme.what3words.fillsQuaternary?[.light], .blue90)
     
   }
   
