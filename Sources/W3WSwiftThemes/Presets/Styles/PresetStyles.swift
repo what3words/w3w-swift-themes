@@ -12,8 +12,12 @@ extension W3WStyles {
   
   public static let w3w = W3WStyles.standard
 
-  
   public static let standard =  W3WStyles(fonts: W3WFonts(), padding: W3WPadding.medium)
+  
+  static public let buttonSmall    = W3WStyles(cornerRadius: .oval, padding: W3WPadding(top: 20.0, left: 20.0, bottom: 20.0, right: 20.0))
+  static public let buttonMeduim   = W3WStyles(cornerRadius: .oval,  padding: W3WPadding(top: 10.0, left: 14.0, bottom: 10.0, right: 14.0))
+  static public let buttonLarge    = W3WStyles(cornerRadius: 12.0,   padding: W3WPadding(top:  8.0, left: 10.0, bottom:  8.0, right: 10.0))
+  static public let buttonCircular = W3WStyles(cornerRadius: .circle, padding: W3WPadding(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0))
   
   public static let standardOld          =  W3WStyles(fonts: W3WFonts(), padding: W3WPadding.medium)
   public static let standardButtons    =  W3WStyles(cornerRadius: .large, fonts: W3WFonts(), padding: W3WPadding.medium)

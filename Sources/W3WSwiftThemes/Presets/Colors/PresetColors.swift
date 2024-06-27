@@ -35,6 +35,20 @@ extension W3WColors {
   )
   
   
+  // MARK: Buttons
+  
+  static public func buttonPrimary(theme: W3WTheme? = .standard)    -> W3WColors { W3WColors(foreground: theme?.labelsPrimary, background: theme?.brandBase) }
+  static public func buttonSecondary(theme: W3WTheme? = .standard)  -> W3WColors { W3WColors(foreground: theme?.labelsPrimary, background: theme?.fillsSecondary) }
+  static public func buttonTertiary(theme: W3WTheme? = .standard)   -> W3WColors { W3WColors(foreground: theme?.labelsPrimary, background: theme?.fillsTertiary) }
+  static public func buttonQuaternary(theme: W3WTheme? = .standard) -> W3WColors { W3WColors(foreground: theme?.labelsSecondary, background: theme?.fillsQuaternary) }
+  static public func buttonQuinary(theme: W3WTheme? = .standard)    -> W3WColors { W3WColors(foreground: theme?.labelsSecondary, background: theme?.fillsQuinary) }
+  static public func buttonSenary(theme: W3WTheme? = .standard)     -> W3WColors { W3WColors(foreground: theme?.labelsTertiary) }
+  static public func buttonSeptenary(theme: W3WTheme? = .standard)  -> W3WColors { W3WColors(foreground: theme?.labelsQuaternary) }
+  
+  
+  // MARK: Old
+  
+  
   static public let standardOld = W3WColors(
     foreground: .standardLabelsPrimaryBlackInverse,
     background: .standardSystemBackgroundBasePrimary,
