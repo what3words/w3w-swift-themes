@@ -23,4 +23,21 @@ final class w3w_swift_themesTests: XCTestCase {
     
   }
   
+  func testCornerRaduis() {
+    let x = W3WCornerRadius.circle
+    let y = W3WCornerRadius.oval
+    let z = W3WCornerRadius(value: 42.0)
+
+    XCTAssertFalse(x == y)
+    XCTAssertFalse(x == z)
+    XCTAssertFalse(y == z)
+    XCTAssertTrue(x != y)
+    XCTAssertTrue(x != z)
+    XCTAssertTrue(y != z)
+    XCTAssertTrue(x == x)
+    XCTAssertTrue(y == y)
+    XCTAssertTrue(z == z)
+  }
+  
+  
 }

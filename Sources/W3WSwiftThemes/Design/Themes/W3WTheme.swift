@@ -29,6 +29,7 @@ public class W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
   public var fillsSecondary: W3WColor?
   public var fillsTertiary: W3WColor?
   public var fillsQuaternary: W3WColor?
+  public var fillsQuinary: W3WColor?
 
   public var separatorOpaque: W3WColor?
   public var separatorNonOpaque: W3WColor?
@@ -95,20 +96,18 @@ public class W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
   
   /// initialise with a foreground, background, highlight and secondary colour
   public init(brandBase: W3WColor? = nil, labelsPrimary: W3WColor? = nil, labelsSecondary: W3WColor? = nil, 
-              labelsTertiary: W3WColor? = nil, labelsQuaternary: W3WColor? = nil, labelsPrimaryInverse: W3WColor? = nil,
-              labelsPrimaryBlackInverse: W3WColor? = nil, fillsPrimary: W3WColor? = nil, fillsSecondary: W3WColor? = nil,
-              fillsTertiary: W3WColor? = nil, fillsQuaternary: W3WColor? = nil, separatorOpaque: W3WColor? = nil,
-              separatorNonOpaque: W3WColor? = nil, systemBackgroundBasePrimary: W3WColor? = nil,
-              systemBackgroundBaseSecondary: W3WColor? = nil, systemBackgroundBaseTertiary: W3WColor? = nil,
-              systemBackgroundElevatedPrimary: W3WColor? = nil, systemBackgroundElevatedSecondary: W3WColor? = nil,
-              systemBackgroundElevatedTertiary: W3WColor? = nil, groupedBackgroundBasePrimary: W3WColor? = nil,
-              groupedBackgroundBaseSecondary: W3WColor? = nil, groupedBackgroundBaseTertiary: W3WColor? = nil,
-              groupedBackgroundElevatedPrimary: W3WColor? = nil, groupedBackgroundElevatedSecondary: W3WColor? = nil,
-              groupedBackgroundElevatedTertiary: W3WColor? = nil, successBase: W3WColor? = nil, successElevated: W3WColor? = nil,
-              successLabel: W3WColor? = nil, warningBase: W3WColor? = nil, warningElevated: W3WColor? = nil, warningLabel: W3WColor? = nil,
+              labelsTertiary: W3WColor? = nil, labelsQuaternary: W3WColor? = nil, labelsPrimaryInverse: W3WColor? = nil, labelsPrimaryBlackInverse: W3WColor? = nil, 
+              fillsPrimary: W3WColor? = nil, fillsSecondary: W3WColor? = nil, fillsTertiary: W3WColor? = nil, fillsQuaternary: W3WColor? = nil, fillsQuinary: W3WColor? = nil,
+              separatorOpaque: W3WColor? = nil, separatorNonOpaque: W3WColor? = nil,
+              systemBackgroundBasePrimary: W3WColor? = nil, systemBackgroundBaseSecondary: W3WColor? = nil, systemBackgroundBaseTertiary: W3WColor? = nil,
+              systemBackgroundElevatedPrimary: W3WColor? = nil, systemBackgroundElevatedSecondary: W3WColor? = nil, systemBackgroundElevatedTertiary: W3WColor? = nil,
+              groupedBackgroundBasePrimary: W3WColor? = nil, groupedBackgroundBaseSecondary: W3WColor? = nil, groupedBackgroundBaseTertiary: W3WColor? = nil,
+              groupedBackgroundElevatedPrimary: W3WColor? = nil, groupedBackgroundElevatedSecondary: W3WColor? = nil, groupedBackgroundElevatedTertiary: W3WColor? = nil,
+              successBase: W3WColor? = nil, successElevated: W3WColor? = nil, successLabel: W3WColor? = nil,
+              warningBase: W3WColor? = nil, warningElevated: W3WColor? = nil, warningLabel: W3WColor? = nil,
               errorBase: W3WColor? = nil, errorElevated: W3WColor? = nil, errorLabel: W3WColor? = nil,
-              base: W3WScheme = .w3w, buttons: W3WScheme? = nil, textFields: W3WScheme? = nil, labels: W3WScheme? = nil, maps: W3WScheme? = nil,
-              cells: W3WScheme? = nil, icons: W3WScheme? = nil, voice: W3WScheme? = nil, ocr: W3WScheme? = nil) {
+              base: W3WScheme = .w3w, buttons: W3WScheme? = nil, textFields: W3WScheme? = nil, labels: W3WScheme? = nil, 
+              maps: W3WScheme? = nil, cells: W3WScheme? = nil, icons: W3WScheme? = nil, voice: W3WScheme? = nil, ocr: W3WScheme? = nil) {
     self.brandBase = brandBase
 
     self.labelsPrimary = labelsPrimary
@@ -122,6 +121,7 @@ public class W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
     self.fillsSecondary = fillsSecondary
     self.fillsTertiary = fillsTertiary
     self.fillsQuaternary = fillsQuaternary
+    self.fillsQuinary = fillsQuinary
 
     self.separatorOpaque = separatorOpaque
     self.separatorNonOpaque = separatorNonOpaque

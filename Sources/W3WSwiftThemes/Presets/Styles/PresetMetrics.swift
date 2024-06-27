@@ -14,6 +14,8 @@ public extension W3WCornerRadius {
   static let small:      W3WCornerRadius =  8.0
   static let large:      W3WCornerRadius =  16.0
   static let extraLarge: W3WCornerRadius =  32.0
+  static let oval      = W3WCornerRadius(floatLiteral: .infinity)
+  static let circle    = W3WCornerRadius(floatLiteral: .nan)
 
   @available(*, deprecated, renamed: "extraSmall")
   static let medium:   W3WCornerRadius =  4.0
