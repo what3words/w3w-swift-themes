@@ -12,6 +12,7 @@ public extension W3WCornerRadius {
   static let none:       W3WCornerRadius =  0.0
   static let extraSmall: W3WCornerRadius =  4.0
   static let small:      W3WCornerRadius =  8.0
+  static let regular:    W3WCornerRadius =  12.0
   static let large:      W3WCornerRadius =  16.0
   static let extraLarge: W3WCornerRadius =  32.0
   static let oval      = W3WCornerRadius(floatLiteral: .infinity)

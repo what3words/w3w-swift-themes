@@ -52,6 +52,8 @@ extension W3WTheme {
     errorBase: .standardErrorBase,
     errorElevated: .standardErrorElevated,
     errorLabel: .standardErrorLabel,
+    
+    typefaces: W3WTypefaces(),
 
     base:      .standard,
     buttons:    .standardButtons,
@@ -103,6 +105,8 @@ extension W3WTheme {
     errorBase: .w3wErrorBase,
     errorElevated: .w3wErrorElevated,
     errorLabel: .w3wErrorLabel,
+
+    typefaces: W3WTypefaces(),
 
     base:      .w3w,
     buttons:    .w3wButtons,

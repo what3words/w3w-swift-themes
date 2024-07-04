@@ -9,24 +9,10 @@ import CoreGraphics
 import UIKit
 
 
-struct W3WFontSizes {
-  var largeTitle: CGFloat
-  var title1:    CGFloat
-  var title2:   CGFloat
-  var title3:   CGFloat
-  var headline: CGFloat
-  var body:      CGFloat
-  var callout:    CGFloat
-  var subheadline: CGFloat
-  var footnote:    CGFloat
-  var caption1:   CGFloat
-  var caption2:  CGFloat
-}
-
-
 /// This contains a set of fonts to use in an app or component.  it is based on iOS's
 /// font styles.  It can be initialized using other fonts and it will then generate a collection
 /// of fonts in appropriates sizes.
+@available(*, deprecated, message: "use W3WTypefaces instead")
 public struct W3WFonts {
   
   public var applyDynamicTypeScaling = true

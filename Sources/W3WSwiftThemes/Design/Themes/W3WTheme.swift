@@ -5,7 +5,7 @@
 //  Created by Dave Duprey on 17/03/2023.
 //
 
-import UIKit
+//import UIKit
 
 
 
@@ -62,6 +62,8 @@ public class W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
   public var errorElevated: W3WColor?
   public var errorLabel: W3WColor?
 
+  public var typefaces: W3WTypefaces?
+
   
   /// Init
 
@@ -106,7 +108,8 @@ public class W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
               successBase: W3WColor? = nil, successElevated: W3WColor? = nil, successLabel: W3WColor? = nil,
               warningBase: W3WColor? = nil, warningElevated: W3WColor? = nil, warningLabel: W3WColor? = nil,
               errorBase: W3WColor? = nil, errorElevated: W3WColor? = nil, errorLabel: W3WColor? = nil,
-              base: W3WScheme = .w3w, buttons: W3WScheme? = nil, textFields: W3WScheme? = nil, labels: W3WScheme? = nil, 
+              typefaces: W3WTypefaces? = W3WTypefaces(),
+              base: W3WScheme = .w3w, buttons: W3WScheme? = nil, textFields: W3WScheme? = nil, labels: W3WScheme? = nil,
               maps: W3WScheme? = nil, cells: W3WScheme? = nil, icons: W3WScheme? = nil, voice: W3WScheme? = nil, ocr: W3WScheme? = nil) {
     self.brandBase = brandBase
 
@@ -153,6 +156,8 @@ public class W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
     self.errorBase = errorBase
     self.errorElevated = errorElevated
     self.errorLabel = errorLabel
+    
+    self.typefaces = typefaces
 
     schemes[.base] = base
     add(type: .buttons,    scheme: buttons)

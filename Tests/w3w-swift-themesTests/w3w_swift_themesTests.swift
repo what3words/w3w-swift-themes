@@ -40,4 +40,59 @@ final class w3w_swift_themesTests: XCTestCase {
   }
   
   
+  func testFont() {
+    
+    var font = W3WFont(name: "Courier", size: 32.0, weight: 0.0, italic: false)
+    XCTAssertTrue(font.name.contains("Courier"))
+    XCTAssertEqual(font.size, 32.0)
+    XCTAssertEqual(font.italic, false)
+    XCTAssertEqual(font.bold, false)
+
+    var uiFont = font.uiFont
+    XCTAssertTrue(uiFont.fontName.contains("Courier"))
+    XCTAssertEqual(uiFont.pointSize, 32.0)
+    XCTAssertTrue(!uiFont.fontDescriptor.symbolicTraits.contains(.traitBold))
+    XCTAssertTrue(!uiFont.fontDescriptor.symbolicTraits.contains(.traitItalic))
+
+    font = W3WFont(name: "Helvetica", size: 32.0, weight: 1.0, italic: true)
+    XCTAssertTrue(font.name.contains("Helvetica"))
+    XCTAssertEqual(font.size, 32.0)
+    XCTAssertEqual(font.italic, true)
+    XCTAssertEqual(font.bold, true)
+
+    uiFont = font.uiFont
+    XCTAssertTrue(uiFont.fontName.contains("Helvetica"))
+    XCTAssertEqual(uiFont.pointSize, 32.0)
+    XCTAssertTrue(uiFont.fontDescriptor.symbolicTraits.contains(.traitBold))
+    XCTAssertTrue(uiFont.fontDescriptor.symbolicTraits.contains(.traitItalic))
+
+    font = W3WFont.buttonCircular(theme: .standard)
+    XCTAssertTrue(font.name.contains("Helvetica"))
+
+    //if #available(iOS 13.0, *) {
+    //  let suFont = font.suFont
+    //  print("SuFont", suFont)
+    //}
+    
+  }
+  
+  
+  func testTypefaces() {
+    let typefaces = W3WTypefaces()
+    
+    XCTAssertEqual(typefaces.largeTitle.size, W3WFontSizes().largeTitle)
+    XCTAssertEqual(typefaces.title1.size, W3WFontSizes().title1)
+    XCTAssertEqual(typefaces.title2.size, W3WFontSizes().title2)
+    XCTAssertEqual(typefaces.title3.size, W3WFontSizes().title3)
+    XCTAssertEqual(typefaces.headline.size, W3WFontSizes().headline)
+    XCTAssertEqual(typefaces.body.size, W3WFontSizes().body)
+    XCTAssertEqual(typefaces.callout.size, W3WFontSizes().callout)
+    XCTAssertEqual(typefaces.subheadline.size, W3WFontSizes().subheadline)
+    XCTAssertEqual(typefaces.footnote.size, W3WFontSizes().footnote)
+    XCTAssertEqual(typefaces.caption1.size, W3WFontSizes().caption1)
+    XCTAssertEqual(typefaces.caption2.size, W3WFontSizes().caption2)
+    
+    XCTAssertTrue(W3WTypefaces.defaultTypefaceName.contains("AppleSystemUIFont"))
+  }
+  
 }
