@@ -77,10 +77,27 @@ public struct W3WLineThicknesses {
   public var extraLarge:  W3WLineThickness? = .fourPoint
 }
 
-
 public struct W3WVisualEffects {
   public var thick:      W3WVisualEffect? = W3WVisualEffect(style: .thick, fill: .fill, padding: .fine, cornerRadius: .large)
   public var regular:    W3WVisualEffect? = W3WVisualEffect(style: .regular, fill: .fill, padding: .fine, cornerRadius: .large)
   public var thin:       W3WVisualEffect? = W3WVisualEffect(style: .thin, fill: .fill, padding: .fine, cornerRadius: .large)
   public var ultrathin:  W3WVisualEffect? = W3WVisualEffect(style: .ultraThin, fill: .fill, padding: .fine, cornerRadius: .large)
+}
+
+public enum W3WButtonShape {
+  case small
+  case medium
+  case large
+  case circular
+  case oval
+}
+
+public enum W3WOrdinal {
+  case primary
+  case secondary
+  case tertiary
+  case quaternary
+  case quinary
+  case senary
+  case septenary
 }

@@ -18,10 +18,10 @@ public struct W3WFont: CustomStringConvertible {
   }
   
   
-  public init(name: String, size: CGFloat, weight: CGFloat = 0.0, italic: Bool = false) {
+  public init(name: String, size: CGFloat, weight: W3WFontWeight = .none, italic: Bool = false) {
 
     // set up description
-    let fontDescriptorAttributes = [kCTFontFamilyNameAttribute: name, kCTFontTraitsAttribute: [ kCTFontWeightTrait: weight ]] as [CFString : Any] //kCTFontNameAttribute: "Courier",
+    let fontDescriptorAttributes = [kCTFontFamilyNameAttribute: name, kCTFontTraitsAttribute: [ kCTFontWeightTrait: weight.value ]] as [CFString : Any] //kCTFontNameAttribute: "Courier",
     let fontDescriptor           = CTFontDescriptorCreateWithAttributes(fontDescriptorAttributes as CFDictionary)
     
     // make the font
@@ -93,10 +93,10 @@ extension W3WFont {
   
   public init(uiFont: UIFont) {
     let traits = uiFont.fontDescriptor.object(forKey: .traits) as? [UIFontDescriptor.TraitKey: Any] ?? [:]
-    let weight = traits[.weight] as? Double ?? 17.0
-    let italic = traits[.slant] as? Double != 0.0
+    let weight = traits[.weight] as? Float ?? 17.0
+    let italic = traits[.slant] as? Float != 0.0
     
-    self.init(name: uiFont.familyName, size: uiFont.pointSize, weight: weight, italic: italic)
+    self.init(name: uiFont.familyName, size: uiFont.pointSize, weight: W3WFontWeight(value: weight), italic: italic)
   }
   
 }

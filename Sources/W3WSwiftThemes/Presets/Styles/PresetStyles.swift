@@ -12,8 +12,8 @@ extension W3WStyles {
 
   public static let standard =  W3WStyles(font: W3WTypefaces().body, padding: W3WPadding.medium)
   
-  static public func buttonSmall(theme: W3WTheme? = .standard) -> W3WStyles { return W3WStyles(cornerRadius: .oval, font: .buttonSmall(theme: theme), padding: W3WPadding(top: 20.0, left: 20.0, bottom: 20.0, right: 20.0)) }
-  static public func buttonMeduim(theme: W3WTheme? = .standard) -> W3WStyles { return W3WStyles(cornerRadius: .oval, font: .buttonMedium(theme: theme), padding: W3WPadding(top: 10.0, left: 14.0, bottom: 10.0, right: 14.0)) }
+  static public func buttonSmall(theme: W3WTheme? = .standard) -> W3WStyles { return W3WStyles(cornerRadius: .oval, font: .buttonSmall(theme: theme), padding: W3WPadding(10.0)) }
+  static public func buttonMedium(theme: W3WTheme? = .standard) -> W3WStyles { return W3WStyles(cornerRadius: .oval, font: .buttonMedium(theme: theme), padding: W3WPadding(top: 10.0, left: 14.0, bottom: 10.0, right: 14.0)) }
   static public func buttonLarge(theme: W3WTheme? = .standard) -> W3WStyles { return W3WStyles(cornerRadius: .regular, font: .buttonLarge(theme: theme), padding: W3WPadding(top:  8.0, left: 10.0, bottom:  8.0, right: 10.0)) }
   static public func buttonCircular(theme: W3WTheme? = .standard) -> W3WStyles { return W3WStyles(cornerRadius: .circle, font: .buttonCircular(theme: theme), padding: W3WPadding(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)) }
   

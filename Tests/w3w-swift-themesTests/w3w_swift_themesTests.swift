@@ -10,6 +10,7 @@ final class w3w_swift_themesTests: XCTestCase {
   }
   
   
+  @available(*, deprecated, message: "this silences the deprications warning")
   func testFonts() throws {
     let fonts = W3WFonts()
     
@@ -93,6 +94,16 @@ final class w3w_swift_themesTests: XCTestCase {
     XCTAssertEqual(typefaces.caption2.size, W3WFontSizes().caption2)
     
     XCTAssertTrue(W3WTypefaces.defaultTypefaceName.contains("AppleSystemUIFont"))
+  }
+  
+  
+  func testFontWeight() {
+    
+    var x: W3WFontWeight = 12.5
+    let y: W3WFontWeight = 37.5
+    
+    x = 42.0
+    
   }
   
 }

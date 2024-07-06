@@ -29,6 +29,20 @@ public extension W3WCornerRadius {
 }
 
 
+public extension W3WFontWeight {
+  static let none: W3WFontWeight = 0.0
+  static let ultralight: W3WFontWeight = 100.0
+  static let thin: W3WFontWeight = 200.0
+  static let light: W3WFontWeight = 300.0
+  static let regular: W3WFontWeight = 400.0
+  static let medium: W3WFontWeight = 500.0
+  static let semibold: W3WFontWeight = 600.0
+  static let bold: W3WFontWeight = 700.0
+  static let heavy: W3WFontWeight = 800.0
+  static let black: W3WFontWeight = 900.0
+}
+
+
 public extension W3WIconSize {
   static let smallIcon  = W3WIconSize(value: CGSize(width: 16.0, height: 16.0))
   static let mediumIcon = W3WIconSize(value: CGSize(width: 32.0, height: 32.0))

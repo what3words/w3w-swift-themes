@@ -120,6 +120,32 @@ extension W3WTheme {
   )
 
   
+  public func buttonScheme(grade: W3WOrdinal, shape: W3WButtonShape) -> W3WScheme {
+    var colors = W3WColors()
+    var styles = W3WStyles()
+    
+    switch grade {
+      case .primary: colors    = .buttonPrimary(theme: self)
+      case .secondary: colors  = .buttonSecondary(theme: self)
+      case .tertiary: colors   = .buttonTertiary(theme: self)
+      case .quaternary: colors = .buttonQuaternary(theme: self)
+      case .quinary: colors    = .buttonQuinary(theme: self)
+      case .senary: colors     = .buttonSenary(theme: self)
+      case .septenary: colors  = .buttonSeptenary(theme: self)
+    }
+    
+    switch shape {
+      case .large: styles    = .buttonLarge(theme: self)
+      case .medium: styles   = .buttonMedium(theme: self)
+      case .small: styles    = .buttonSmall(theme: self)
+      case .circular: styles = .buttonCircular(theme: self)
+      case .oval: styles     = .buttonCircular(theme: self)
+    }
+    
+    return W3WScheme(colors: colors, styles: styles)
+  }
+  
+  
   // MARK: Deprecated Themes
 
   // design for a what3words branded tableviewcell
