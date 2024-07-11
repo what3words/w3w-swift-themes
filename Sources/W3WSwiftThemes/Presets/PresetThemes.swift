@@ -145,6 +145,20 @@ extension W3WTheme {
     return W3WScheme(colors: colors, styles: styles)
   }
   
+  public func labelScheme(grade: W3WOrdinal, fontStyle: W3WFontStyle, weight: W3WFontWeight) -> W3WScheme {
+    var colors = W3WColors()
+    var styles = W3WStyles(font: self.typefaces?[fontStyle].with(weight: .heavy))
+    
+    switch grade {
+      case .primary: colors    = W3WColors(foreground: self.labelsPrimary)
+      case .secondary: colors  = W3WColors(foreground: self.labelsSecondary)
+      case .tertiary: colors   = W3WColors(foreground: self.labelsTertiary)
+      default: colors          = W3WColors(foreground: self.labelsQuaternary)
+    }
+    
+    return W3WScheme(colors: colors, styles: styles)
+  }
+  
   
   // MARK: Deprecated Themes
 

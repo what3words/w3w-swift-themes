@@ -93,24 +93,24 @@ public struct W3WTypefaces {
 
   // change a font's weight
   
-  public func with(body: CGFloat)      -> W3WTypefaces { return W3WTypefaces(body: font(style: .body, weight: body), largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
-  public func with(largeTitle: CGFloat) -> W3WTypefaces { return W3WTypefaces(body: body, largeTitle: font(style: .largeTitle, weight: largeTitle), title1: title1, title2: title2, title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
-  public func with(title1: CGFloat)     -> W3WTypefaces { return W3WTypefaces(body: body, largeTitle: largeTitle, title1: font(style: .title1, weight: title1), title2: title2, title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
-  public func with(title2: CGFloat)    -> W3WTypefaces { return W3WTypefaces(body: body, largeTitle: largeTitle, title1: title1, title2: font(style: .title2, weight: title2), title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
-  public func with(title3: CGFloat)    -> W3WTypefaces { return W3WTypefaces(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: font(style: .title3, weight: title3), headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
-  public func with(headline: CGFloat)  -> W3WTypefaces { return W3WTypefaces(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: font(style: .headline, weight: headline), callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
-  public func with(callout: CGFloat)    -> W3WTypefaces { return W3WTypefaces(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: headline, callout: font(style: .callout, weight: callout), subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
-  public func with(subheadline: CGFloat) -> W3WTypefaces { return W3WTypefaces(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: headline, callout: callout, subheadline: font(style: .subheadline, weight: subheadline), footnote: footnote, caption1: caption1, caption2: caption2) }
-  public func with(footnote: CGFloat)    -> W3WTypefaces { return W3WTypefaces(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: font(style: .footnote, weight: footnote), caption1: caption1, caption2: caption2) }
-  public func with(caption1: CGFloat)   -> W3WTypefaces { return W3WTypefaces(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: font(style: .caption1, weight: caption1), caption2: caption2) }
-  public func with(caption2: CGFloat)  -> W3WTypefaces { return W3WTypefaces(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: font(style: .caption2, weight: caption2)) }
+  public func with(body: W3WFontWeight)      -> W3WTypefaces { return W3WTypefaces(body: font(style: .body, weight: body), largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
+  public func with(largeTitle: W3WFontWeight) -> W3WTypefaces { return W3WTypefaces(body: body, largeTitle: font(style: .largeTitle, weight: largeTitle), title1: title1, title2: title2, title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
+  public func with(title1: W3WFontWeight)     -> W3WTypefaces { return W3WTypefaces(body: body, largeTitle: largeTitle, title1: font(style: .title1, weight: title1), title2: title2, title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
+  public func with(title2: W3WFontWeight)    -> W3WTypefaces { return W3WTypefaces(body: body, largeTitle: largeTitle, title1: title1, title2: font(style: .title2, weight: title2), title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
+  public func with(title3: W3WFontWeight)    -> W3WTypefaces { return W3WTypefaces(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: font(style: .title3, weight: title3), headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
+  public func with(headline: W3WFontWeight)  -> W3WTypefaces { return W3WTypefaces(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: font(style: .headline, weight: headline), callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
+  public func with(callout: W3WFontWeight)    -> W3WTypefaces { return W3WTypefaces(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: headline, callout: font(style: .callout, weight: callout), subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
+  public func with(subheadline: W3WFontWeight) -> W3WTypefaces { return W3WTypefaces(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: headline, callout: callout, subheadline: font(style: .subheadline, weight: subheadline), footnote: footnote, caption1: caption1, caption2: caption2) }
+  public func with(footnote: W3WFontWeight)    -> W3WTypefaces { return W3WTypefaces(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: font(style: .footnote, weight: footnote), caption1: caption1, caption2: caption2) }
+  public func with(caption1: W3WFontWeight)   -> W3WTypefaces { return W3WTypefaces(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: font(style: .caption1, weight: caption1), caption2: caption2) }
+  public func with(caption2: W3WFontWeight)  -> W3WTypefaces { return W3WTypefaces(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: font(style: .caption2, weight: caption2)) }
 
   
   /// return a new font with the style and weight specified
   /// - Parameters:
   ///   - style: the font style to use
   ///   - weight: the weight for the new font
-  public func font(style: W3WFontStyle, weight: CGFloat) -> W3WFont {
+  public func font(style: W3WFontStyle, weight: W3WFontWeight) -> W3WFont {
     return with(font: self[style], weight: weight)
   }
   
@@ -119,7 +119,7 @@ public struct W3WTypefaces {
   /// - Parameters:
   ///   - font: the font to model after
   ///   - weight: the weight for the new font
-  func with(font: W3WFont, weight: CGFloat) -> W3WFont {
+  func with(font: W3WFont, weight: W3WFontWeight) -> W3WFont {
     return font.with(weight: weight)
 //    let newDescriptor = font.fontDescriptor.addingAttributes([.traits: [UIFontDescriptor.TraitKey.weight: weight]])
 //    return W3WFont(descriptor: newDescriptor, size: font.pointSize)

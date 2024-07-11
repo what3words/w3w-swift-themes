@@ -45,10 +45,9 @@ public struct W3WFont: CustomStringConvertible {
   public func with(size: CGFloat) -> W3WFont {
     return W3WFont(ctFont: CTFontCreateCopyWithAttributes(font, size, nil, nil))
   }
-  
-  
-  public func with(weight: CGFloat) -> W3WFont {
-    return W3WFont(ctFont: CTFontCreateWithFontDescriptor(self.makeDescriptor(weight: weight), size, nil))
+
+  public func with(weight: W3WFontWeight) -> W3WFont {
+    return W3WFont(ctFont: CTFontCreateWithFontDescriptor(self.makeDescriptor(weight: weight.value), size, nil))
   }
   
   
