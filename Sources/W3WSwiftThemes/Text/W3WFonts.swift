@@ -6,15 +6,17 @@
 //
 
 import CoreGraphics
+#if canImport(UIKit)
 import UIKit
-
+#endif
 
 /// This contains a set of fonts to use in an app or component.  it is based on iOS's
 /// font styles.  It can be initialized using other fonts and it will then generate a collection
 /// of fonts in appropriates sizes.
 @available(*, deprecated, message: "use W3WTypefaces instead")
 public struct W3WFonts {
-  
+#if canImport(UIKit)
+
   public var applyDynamicTypeScaling = true
   
   lazy var sizes = self.getFontSizes()
@@ -86,24 +88,24 @@ public struct W3WFonts {
 
   // change a font's weight
   
-  public func with(body: UIFont.Weight)      -> W3WFonts { return W3WFonts(body: font(style: .body, weight: body), largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
-  public func with(largeTitle: UIFont.Weight) -> W3WFonts { return W3WFonts(body: body, largeTitle: font(style: .largeTitle, weight: largeTitle), title1: title1, title2: title2, title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
-  public func with(title1: UIFont.Weight)     -> W3WFonts { return W3WFonts(body: body, largeTitle: largeTitle, title1: font(style: .title1, weight: title1), title2: title2, title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
-  public func with(title2: UIFont.Weight)    -> W3WFonts { return W3WFonts(body: body, largeTitle: largeTitle, title1: title1, title2: font(style: .title2, weight: title2), title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
-  public func with(title3: UIFont.Weight)    -> W3WFonts { return W3WFonts(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: font(style: .title3, weight: title3), headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
-  public func with(headline: UIFont.Weight)  -> W3WFonts { return W3WFonts(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: font(style: .headline, weight: headline), callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
-  public func with(callout: UIFont.Weight)    -> W3WFonts { return W3WFonts(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: headline, callout: font(style: .callout, weight: callout), subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
-  public func with(subheadline: UIFont.Weight) -> W3WFonts { return W3WFonts(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: headline, callout: callout, subheadline: font(style: .subheadline, weight: subheadline), footnote: footnote, caption1: caption1, caption2: caption2) }
-  public func with(footnote: UIFont.Weight)    -> W3WFonts { return W3WFonts(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: font(style: .footnote, weight: footnote), caption1: caption1, caption2: caption2) }
-  public func with(caption1: UIFont.Weight)   -> W3WFonts { return W3WFonts(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: font(style: .caption1, weight: caption1), caption2: caption2) }
-  public func with(caption2: UIFont.Weight)  -> W3WFonts { return W3WFonts(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: font(style: .caption2, weight: caption2)) }
+  public func with(body: W3WFontWeight)      -> W3WFonts { return W3WFonts(body: font(style: .body, weight: body), largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
+  public func with(largeTitle: W3WFontWeight) -> W3WFonts { return W3WFonts(body: body, largeTitle: font(style: .largeTitle, weight: largeTitle), title1: title1, title2: title2, title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
+  public func with(title1: W3WFontWeight)     -> W3WFonts { return W3WFonts(body: body, largeTitle: largeTitle, title1: font(style: .title1, weight: title1), title2: title2, title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
+  public func with(title2: W3WFontWeight)    -> W3WFonts { return W3WFonts(body: body, largeTitle: largeTitle, title1: title1, title2: font(style: .title2, weight: title2), title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
+  public func with(title3: W3WFontWeight)    -> W3WFonts { return W3WFonts(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: font(style: .title3, weight: title3), headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
+  public func with(headline: W3WFontWeight)  -> W3WFonts { return W3WFonts(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: font(style: .headline, weight: headline), callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
+  public func with(callout: W3WFontWeight)    -> W3WFonts { return W3WFonts(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: headline, callout: font(style: .callout, weight: callout), subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: caption2) }
+  public func with(subheadline: W3WFontWeight) -> W3WFonts { return W3WFonts(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: headline, callout: callout, subheadline: font(style: .subheadline, weight: subheadline), footnote: footnote, caption1: caption1, caption2: caption2) }
+  public func with(footnote: W3WFontWeight)    -> W3WFonts { return W3WFonts(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: font(style: .footnote, weight: footnote), caption1: caption1, caption2: caption2) }
+  public func with(caption1: W3WFontWeight)   -> W3WFonts { return W3WFonts(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: font(style: .caption1, weight: caption1), caption2: caption2) }
+  public func with(caption2: W3WFontWeight)  -> W3WFonts { return W3WFonts(body: body, largeTitle: largeTitle, title1: title1, title2: title2, title3: title3, headline: headline, callout: callout, subheadline: subheadline, footnote: footnote, caption1: caption1, caption2: font(style: .caption2, weight: caption2)) }
 
   
   /// return a new font with the style and weight specified
   /// - Parameters:
   ///   - style: the font style to use
   ///   - weight: the weight for the new font
-  public func font(style: W3WFontStyle, weight: UIFont.Weight) -> UIFont {
+  public func font(style: W3WFontStyle, weight: W3WFontWeight) -> UIFont {
     return withWeight(font: self[style], weight: weight)
   }
   
@@ -112,11 +114,11 @@ public struct W3WFonts {
   /// - Parameters:
   ///   - font: the font to model after
   ///   - weight: the weight for the new font
-  func withWeight(font: UIFont, weight: UIFont.Weight) -> UIFont {
+  func withWeight(font: UIFont, weight: W3WFontWeight) -> UIFont {
     let newDescriptor = font.fontDescriptor.addingAttributes([.traits: [UIFontDescriptor.TraitKey.weight: weight]])
     return UIFont(descriptor: newDescriptor, size: font.pointSize)
   }
-  
+
   
   /// get the preferred sizes for each style of font
   func getFontSizes() -> W3WFontSizes {
@@ -152,5 +154,24 @@ public struct W3WFonts {
     let fontScaleFactor = UIFontMetrics(forTextStyle: .body).scaledValue(for: 100.0) / 100.0
     return UIFont(descriptor: f.fontDescriptor, size: f.pointSize * fontScaleFactor)
   }
+
   
+#else
+
+  // temp fix to allow compiling on macOS
+  public func with(body: W3WFontWeight)      -> W3WFonts { self }
+  public func with(largeTitle: W3WFontWeight) -> W3WFonts { self }
+  public func with(title1: W3WFontWeight)  -> W3WFonts { self }
+  public func with(title2: W3WFontWeight)    -> W3WFonts { self }
+  public func with(title3: W3WFontWeight)    -> W3WFonts { self }
+  public func with(headline: W3WFontWeight)  -> W3WFonts { self }
+  public func with(callout: W3WFontWeight)    -> W3WFonts { self }
+  public func with(subheadline: W3WFontWeight) -> W3WFonts { self }
+  public func with(footnote: W3WFontWeight)    -> W3WFonts { self }
+  public func with(caption1: W3WFontWeight)   -> W3WFonts { self }
+  public func with(caption2: W3WFontWeight)  -> W3WFonts { self }
+  
+  
+#endif
+
 }

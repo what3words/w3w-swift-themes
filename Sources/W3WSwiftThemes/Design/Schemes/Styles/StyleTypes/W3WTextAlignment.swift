@@ -5,29 +5,45 @@
 //  Created by Thy Nguyen on 24/12/2023.
 //
 
+#if canImport(UIKit)
 import UIKit
+#endif
 
-public struct W3WTextAlignment: CustomStringConvertible {
-  public let value: NSTextAlignment
+
+public enum W3WTextAlignment: String, CustomStringConvertible {
   
-  public init(value: NSTextAlignment) {
-    self.value = value
+  case left
+  case right
+  case center
+  case natural
+  case justified
+
+  @available(*, deprecated, message: "use the enum value instead, eg: W3WTextAlsignment.left")
+  public init(value: W3WTextAlignment) {
+    self = value
   }
   
-  public var description: String {
-    switch value {
-    case .left:
-      return "left"
-    case .right:
-      return "right"
-    case .center:
-      return "center"
-    case .natural:
-      return "natural"
-    case .justified:
-      return "justified"
-    default:
-      return ""
+  
+#if canImport(UIKit)
+  public var value: NSTextAlignment {
+    switch self {
+      case .left: return NSTextAlignment.left
+      case .right: return NSTextAlignment.right
+      case .center: return NSTextAlignment.center
+      case .natural: return NSTextAlignment.natural
+      case .justified: return NSTextAlignment.justified
     }
   }
+#else
+  var value: W3WTextAlignment {
+    return self
+  }
+#endif
+
+  
+  public var description: String {
+    return rawValue
+  }
+
+  
 }

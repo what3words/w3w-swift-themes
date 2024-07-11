@@ -112,7 +112,7 @@ public struct W3WStyles: CustomDebugStringConvertible, CustomStringConvertible {
   public func with(lineThickness: W3WLineThickness?)  -> W3WStyles { return W3WStyles(border: border, cornerRadius: cornerRadius, shadow: shadow, font: font, textAlignment: textAlignment, padding: padding, rowHeight: rowHeight, lineThickness: lineThickness, visualEffect: visualEffect) }
   public func with(visualEffect: W3WVisualEffect?)   -> W3WStyles { return W3WStyles(border: border, cornerRadius: cornerRadius, shadow: shadow, font: font, textAlignment: textAlignment, padding: padding, rowHeight: rowHeight, lineThickness: lineThickness, visualEffect: visualEffect) }
 
-  @available(*, deprecated, message: "fonts:W3WFonts has been replaced with font:W3WFont")
+  @available(*, deprecated, renamed: "with(font:)", message: "replaced with(font:)")
   public func with(fonts: W3WFonts?) -> W3WStyles  { return W3WStyles(border: border, cornerRadius: cornerRadius, shadow: shadow, fonts: fonts, textAlignment: textAlignment, padding: padding, rowHeight: rowHeight, lineThickness: lineThickness, visualEffect: visualEffect) }
 
 

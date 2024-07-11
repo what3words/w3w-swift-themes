@@ -32,11 +32,11 @@ public struct W3WShadows {
 }
 
 public struct W3WTextAlignments {
-  public var left:      W3WTextAlignment? = .some(.init(value: .left))
-  public var right:     W3WTextAlignment? = .some(.init(value: .right))
-  public var centered:  W3WTextAlignment? = .some(.init(value: .center))
-  public var natural:   W3WTextAlignment? = .some(.init(value: .natural))
-  public var justified: W3WTextAlignment? = .some(.init(value: .justified))
+  public var left:      W3WTextAlignment? = .left
+  public var right:     W3WTextAlignment? = .right
+  public var centered:  W3WTextAlignment? = .center
+  public var natural:   W3WTextAlignment? = .natural
+  public var justified: W3WTextAlignment? = .justified
 }
 
 

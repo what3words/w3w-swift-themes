@@ -5,8 +5,10 @@
 //  Created by Dave Duprey on 17/05/2022.
 //
 
+import CoreGraphics
+#if canImport(UIKit)
 import UIKit
-
+#endif
 
 /// A list of drawing elements (circle line, etc) intended as a system
 /// independant way of handling icons.  Can be employed by UIKit, or SwiftUI
@@ -57,6 +59,7 @@ public struct W3WDrawing: Sequence, IteratorProtocol, ExpressibleByArrayLiteral 
   }
   
   
+#if canImport(UIKit)
   public func asCGImage(size: CGSize = W3WIconSize.largeIcon.value, colors: W3WColors) -> CGImage? {
     //let scaledSize =  CGSize(width: size.width / UIScreen.main.scale, height: size.height / UIScreen.main.scale)
     UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
@@ -66,7 +69,7 @@ public struct W3WDrawing: Sequence, IteratorProtocol, ExpressibleByArrayLiteral 
     UIGraphicsEndImageContext()
     return image
   }
-  
+#endif
   
   
   // MARK: Maths

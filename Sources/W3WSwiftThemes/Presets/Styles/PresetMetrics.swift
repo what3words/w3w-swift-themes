@@ -5,8 +5,10 @@
 //  Created by Dave Duprey on 01/09/2023.
 //
 
+import CoreGraphics
+#if canImport(UIKit)
 import UIKit
-
+#endif
 
 public extension W3WCornerRadius {
   static let none:       W3WCornerRadius =  0.0
@@ -30,16 +32,30 @@ public extension W3WCornerRadius {
 
 
 public extension W3WFontWeight {
+  #if canImport(UIKit)
   static let none: W3WFontWeight = 0.0
-  static let ultralight: W3WFontWeight = 100.0
-  static let thin: W3WFontWeight = 200.0
-  static let light: W3WFontWeight = 300.0
-  static let regular: W3WFontWeight = 400.0
-  static let medium: W3WFontWeight = 500.0
-  static let semibold: W3WFontWeight = 600.0
-  static let bold: W3WFontWeight = 700.0
-  static let heavy: W3WFontWeight = 800.0
-  static let black: W3WFontWeight = 900.0
+  static let ultralight = W3WFontWeight(value: UIFont.Weight.ultraLight.rawValue)
+  static let thin      = W3WFontWeight(value: UIFont.Weight.thin.rawValue)
+  static let light    = W3WFontWeight(value: UIFont.Weight.light.rawValue)
+  static let regular  = W3WFontWeight(value: UIFont.Weight.regular.rawValue)
+  static let medium   = W3WFontWeight(value: UIFont.Weight.medium.rawValue)
+  static let semibold = W3WFontWeight(value: UIFont.Weight.semibold.rawValue)
+  static let bold     = W3WFontWeight(value: UIFont.Weight.bold.rawValue)
+  static let heavy    = W3WFontWeight(value: UIFont.Weight.heavy.rawValue)
+  static let black    = W3WFontWeight(value: UIFont.Weight.black.rawValue)
+  #else
+  // values from here: https://bugzilla.gnome.org/show_bug.cgi?id=766148
+  static let none: W3WFontWeight = 0.0
+  static let ultralight: W3WFontWeight = -0.800000
+  static let thin: W3WFontWeight = -0.600000
+  static let light: W3WFontWeight = -0.400000
+  static let regular: W3WFontWeight = 0.000000
+  static let medium: W3WFontWeight = 0.230000
+  static let semibold: W3WFontWeight = 0.300000
+  static let bold: W3WFontWeight = 0.400000
+  static let heavy: W3WFontWeight = 0.560000
+  static let black: W3WFontWeight = 0.620000
+  #endif
 }
 
 

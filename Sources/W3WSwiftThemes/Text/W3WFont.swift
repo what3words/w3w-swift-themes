@@ -35,7 +35,6 @@ public struct W3WFont: CustomStringConvertible {
     }
   }
 
-  
   func makeDescriptor(weight: CGFloat) -> CTFontDescriptor {
     let fontDescriptorAttributes = [kCTFontFamilyNameAttribute: name, kCTFontTraitsAttribute: [ kCTFontWeightTrait: weight ]] as [CFString : Any] //kCTFontNameAttribute: "Courier",
     return CTFontDescriptorCreateWithAttributes(fontDescriptorAttributes as CFDictionary)
@@ -51,8 +50,12 @@ public struct W3WFont: CustomStringConvertible {
   }
   
   
-  var traits: CTFontSymbolicTraits {
+  var symbolicTraits: CTFontSymbolicTraits {
     return CTFontGetSymbolicTraits(font)
+  }
+  
+  var fontTraits: Dictionary<NSObject, AnyObject> {
+    return CTFontCopyTraits(font) as Dictionary
   }
   
   public var name: String {
@@ -64,13 +67,21 @@ public struct W3WFont: CustomStringConvertible {
   }
   
   public var italic: Bool {
-    return traits.contains(.italicTrait)
+    return symbolicTraits.contains(.italicTrait)
   }
   
   public var bold: Bool {
-    return traits.contains(.boldTrait)
+    return symbolicTraits.contains(.boldTrait)
   }
 
+  public var weight: CGFloat {
+      if let weightNumber = (fontTraits[kCTFontWeightTrait] as? NSNumber)?.doubleValue {
+        return weightNumber
+      } else {
+        return 0.0
+      }
+    }
+      
   public var description: String {
     return name + "(\(size))"
   }

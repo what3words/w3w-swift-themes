@@ -99,11 +99,21 @@ final class w3w_swift_themesTests: XCTestCase {
   
   func testFontWeight() {
     
-    var x: W3WFontWeight = 12.5
-    let y: W3WFontWeight = 37.5
-    
-    x = 42.0
-    
+    // neutral weight
+    XCTAssertEqual(W3WFont(name: "Helvetica", size: 32.0, weight: .none).weight, 0.0)
+    XCTAssertEqual(W3WFont(name: "Helvetica", size: 32.0, weight: .regular).weight, 0.0)
+
+    // bold are more than 0.0
+    XCTAssertGreaterThan(W3WFont(name: "Helvetica", size: 32.0, weight: .black).weight, 0.0)
+    XCTAssertGreaterThan(W3WFont(name: "Helvetica", size: 32.0, weight: .bold).weight, 0.0)
+    XCTAssertGreaterThan(W3WFont(name: "Helvetica", size: 32.0, weight: .heavy).weight, 0.0)
+    XCTAssertGreaterThan(W3WFont(name: "Helvetica", size: 32.0, weight: .medium).weight, 0.0)
+    XCTAssertGreaterThan(W3WFont(name: "Helvetica", size: 32.0, weight: .semibold).weight, 0.0)
+
+    // light are less than 0.0
+    XCTAssertLessThan(W3WFont(name: "Helvetica", size: 32.0, weight: .light).weight, 0.0)
+    XCTAssertLessThan(W3WFont(name: "Helvetica", size: 32.0, weight: .thin).weight, 0.0)
+    XCTAssertLessThan(W3WFont(name: "Helvetica", size: 32.0, weight: .ultralight).weight, 0.0)
   }
   
 }

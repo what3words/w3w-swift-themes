@@ -5,7 +5,11 @@
 //  Created by Dave Duprey on 20/04/2023.
 //
 
+import CoreGraphics
+#if canImport(UIKit)
 import UIKit
+#endif
+
 
 open class W3WImage {
 
@@ -14,10 +18,12 @@ open class W3WImage {
   
   public var configuration: NSObject?
   
+  #if canImport(UIKit)
   @available(iOS 13.0, *)
   public func setImageConfiguration(_ configuration: UIImage.Configuration) {
     self.configuration = configuration
   }
+  #endif
   
   public init(systemName: String, colors: W3WColors) {
     self.imageSource = .system(systemName)
