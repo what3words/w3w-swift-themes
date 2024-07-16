@@ -83,7 +83,7 @@ public struct W3WFont: CustomStringConvertible {
     }
       
   public var description: String {
-    return name + "(\(size))"
+    return name + "(" + String(format: "%.1f", size) + ")"
   }
 }
 
