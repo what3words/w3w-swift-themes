@@ -170,6 +170,18 @@ public class W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
     add(type: .ocr,  scheme: ocr)
   }
 
+  
+  public func reload() {
+    typefaces?.reloadFonts()
+    
+    for (set, scheme) in schemes {
+      if schemes[set]?.styles?.font != nil {
+        schemes[set] = scheme.with(font: W3WTypefaces().body)
+      }
+    }
+  }
+  
+
 
   /// copy a color set from one set to another
   public func copy(from: W3WSetTypes, to: W3WSetTypes) -> W3WTheme {

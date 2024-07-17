@@ -24,7 +24,7 @@ public struct W3WTypefaces {
   
   public var applyDynamicTypeScaling = true
   
-  lazy var sizes = self.getFontSizes()
+  //lazy var sizes = self.getFontSizes()
   
   public var largeTitle: W3WFont  = W3WFont(name: defaultTypefaceName, size: W3WFontSizes().largeTitle)
   public var title1:    W3WFont  = W3WFont(name: defaultTypefaceName, size: W3WFontSizes().title1)
@@ -38,24 +38,14 @@ public struct W3WTypefaces {
   public var caption1:   W3WFont  = W3WFont(name: defaultTypefaceName, size: W3WFontSizes().caption1)
   public var caption2:  W3WFont  = W3WFont(name: defaultTypefaceName, size: W3WFontSizes().caption2)
 
-  public var originalFont: W3WFont?
+  public var originalFont: W3WFont? = W3WFont(name: defaultTypefaceName, size: W3WFontSizes().body)
   
   public init() { }
 
   public init(font: W3WFont?) {
     self.originalFont = font
     if let font = font {
-      self.largeTitle = font.with(size: sizes.largeTitle)
-      self.title1    = font.with(size: sizes.title1)
-      self.title2   = font.with(size: sizes.title2)
-      self.title3   = font.with(size: sizes.title3)
-      self.headline  = font.with(size: sizes.headline)
-      self.body       = font.with(size: sizes.body)
-      self.callout     = font.with(size: sizes.callout)
-      self.subheadline = font.with(size: sizes.subheadline)
-      self.footnote   = font.with(size: sizes.footnote)
-      self.caption1  = font.with(size: sizes.caption1)
-      self.caption2 = font.with(size: sizes.caption2)
+      self.reloadFonts()
     }
   }
   
@@ -74,6 +64,26 @@ public struct W3WTypefaces {
     self.caption2 = caption2 ?? body
   }
 
+  
+  // MARK: Accessors
+  
+  
+  public mutating func reloadFonts() {
+    if let font = originalFont {
+      self.largeTitle = font.with(size: W3WFontSizes().largeTitle)
+      self.title1    = font.with(size: W3WFontSizes().title1)
+      self.title2   = font.with(size: W3WFontSizes().title2)
+      self.title3   = font.with(size: W3WFontSizes().title3)
+      self.headline  = font.with(size: W3WFontSizes().headline)
+      self.body       = font.with(size: W3WFontSizes().body)
+      self.callout     = font.with(size: W3WFontSizes().callout)
+      self.subheadline = font.with(size: W3WFontSizes().subheadline)
+      self.footnote   = font.with(size: W3WFontSizes().footnote)
+      self.caption1  = font.with(size: W3WFontSizes().caption1)
+      self.caption2 = font.with(size: W3WFontSizes().caption2)
+    }
+  }
+  
   
   // MARK: withs (builder modifiers)
   

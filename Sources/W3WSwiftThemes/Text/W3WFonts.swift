@@ -147,7 +147,7 @@ public struct W3WFonts {
   }
   
   
-  /// return a new font scaled for synamic type
+  /// return a new font scaled for dynamic type
   /// - Parameters:
   ///   - font: the font to model after
   func scale(font f:UIFont) -> UIFont {
