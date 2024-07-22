@@ -80,8 +80,11 @@ public extension W3WImage {
   static let sliderHorizontal3    = { return W3WImage(systemName: "slider.horizontal.3", colors: .standardIcons) }()
   static let star                 = { return W3WImage(systemName: "star", colors: .standardIcons) }()
   static let starFill             = { return W3WImage(systemName: "star.fill", colors: .standardIcons) }()
-  static let tag                 = { return W3WImage(systemName: "tag", colors: .standardIcons) }()
-  static let tagFill             = { return W3WImage(systemName: "tag.fill", colors: .standardIcons) }()
+  static let tag                  = { return W3WImage(systemName: "tag", colors: .standardIcons) }()
+  static let tagFill              = { return W3WImage(systemName: "tag.fill", colors: .standardIcons) }()
+  static let listBullet           = { return W3WImage(systemName: "list.bullet", colors: .standardIcons) }()
+  static let square               = { return W3WImage(systemName: "square", colors: .standardIcons) }()
+  static let squareFill           = { return W3WImage(systemName: "square.fill", colors: .standardIcons) }()
 
   @available(*, deprecated)
   static let ellipsisCircle   = { return W3WImage(systemName: "ellipsis.circle", colors: .standardIcons) }()
