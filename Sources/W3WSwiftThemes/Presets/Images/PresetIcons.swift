@@ -85,7 +85,9 @@ public extension W3WImage {
   static let listBullet           = { return W3WImage(systemName: "list.bullet", colors: .standardIcons) }()
   static let square               = { return W3WImage(systemName: "square", colors: .standardIcons) }()
   static let squareFill           = { return W3WImage(systemName: "square.fill", colors: .standardIcons) }()
-
+  static let heartFill            = { return W3WImage(systemName: "heart.fill", colors: .standardIcons) }()
+  static let person2Fill          = { return W3WImage(systemName: "person.2.fill", colors: .standardIcons) }()
+  
   @available(*, deprecated)
   static let ellipsisCircle   = { return W3WImage(systemName: "ellipsis.circle", colors: .standardIcons) }()
   @available(*, deprecated)

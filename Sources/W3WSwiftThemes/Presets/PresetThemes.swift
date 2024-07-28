@@ -147,7 +147,7 @@ extension W3WTheme {
   
   public func labelScheme(grade: W3WOrdinal, fontStyle: W3WFontStyle, weight: W3WFontWeight) -> W3WScheme {
     var colors = W3WColors()
-    var styles = W3WStyles(font: self.typefaces?[fontStyle].with(weight: .heavy))
+    let styles = W3WStyles(font: self.typefaces?[fontStyle].with(weight: weight))
     
     switch grade {
       case .primary: colors    = W3WColors(foreground: self.labelsPrimary)
