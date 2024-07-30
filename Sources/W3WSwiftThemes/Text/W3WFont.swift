@@ -5,10 +5,18 @@
 //  Created by Dave Duprey on 04/07/2024.
 //
 
-#if !canImport(UIKit)
 
-
+import Foundation
 import CoreText
+#if canImport(UIKit)
+import UIKit
+#endif
+#if canImport(SwiftUI)
+import SwiftUI
+#endif
+#if canImport(AppKit)
+import AppKit
+#endif
 
 
 public struct W3WFont: CustomStringConvertible {
@@ -65,6 +73,10 @@ public struct W3WFont: CustomStringConvertible {
     return CTFontCopyTraits(font) as Dictionary
   }
   
+  public var familyName: String {
+    return CTFontCopyFamilyName(font) as String
+  }
+  
   public var name: String {
     return (CTFontCopyName(font, kCTFontPostScriptNameKey) as? String) ?? "Unknown"
   }
@@ -94,8 +106,65 @@ public struct W3WFont: CustomStringConvertible {
   }
 }
 
+
+// MARK: AppKit
+
+#if canImport(AppKit)
+
+/// returns a UIFont colour
+extension W3WFont {
+  
+  public var nsFont: NSFont {
+    get {
+      NSFont(font)
+    }
+  }
+  
+}
+
 #endif
 
+
+// MARK: SwiftUI
+
+
+#if canImport(SwiftUI)
+
+/// returns a UIFont colour
+@available(iOS 13.0, *)
+extension W3WFont {
+  
+  public var suFont: Font {
+    get {
+      Font(font)
+    }
+  }
+  
+}
+
+#endif
+
+
+// MARK: UIKit
+
+
+#if canImport(UIKit)
+
+extension W3WFont {
+ 
+  public var uiFont: UIFont {
+    get {
+      let fontAttributes: [UIFontDescriptor.AttributeName: Any] = [
+        .family: familyName,
+        .traits: fontTraits
+      ]
+      return UIFont(descriptor: UIFontDescriptor(fontAttributes: fontAttributes), size: size)
+    }
+  }
+  
+}
+
+#endif
 
 
 
