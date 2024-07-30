@@ -6,6 +6,9 @@
 //
 
 import CoreGraphics
+#if canImport(UIKit)
+import UIKit
+#endif
 
 
 public class W3WFontWeight: Equatable, ExpressibleByFloatLiteral {
@@ -24,6 +27,10 @@ public class W3WFontWeight: Equatable, ExpressibleByFloatLiteral {
   static public func == (lhs: W3WFontWeight, rhs: W3WFontWeight) -> Bool {
     return lhs.value == rhs.value
   }
+
   
+  #if canImport(UIKit)
+  public var uiWeight: UIFont.Weight { get { return UIFont.Weight(rawValue: value) } }
+  #endif
 
 }

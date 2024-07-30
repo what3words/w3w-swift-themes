@@ -5,6 +5,9 @@
 //  Created by Dave Duprey on 04/07/2024.
 //
 
+#if !canImport(UIKit)
+
+
 import CoreText
 
 
@@ -21,13 +24,17 @@ public struct W3WFont: CustomStringConvertible {
   public init(name: String, size: CGFloat, weight: W3WFontWeight = .none, italic: Bool = false) {
 
     // set up description
-    let fontDescriptorAttributes = [kCTFontFamilyNameAttribute: name, kCTFontTraitsAttribute: [ kCTFontWeightTrait: weight.value ]] as [CFString : Any] //kCTFontNameAttribute: "Courier",
+    let fontDescriptorAttributes = [
+      kCTFontFamilyNameAttribute: name,
+      kCTFontTraitsAttribute: [ kCTFontWeightTrait: weight.value ]
+    ] as [CFString : Any]
+    
     let fontDescriptor           = CTFontDescriptorCreateWithAttributes(fontDescriptorAttributes as CFDictionary)
     
     // make the font
     font = CTFontCreateWithFontDescriptor(fontDescriptor, size, nil) //var identityMat = CGAffineTransform(scaleX: 1.0, y: 1.0)
-
-    // make it italic is that's whagt's needed
+    
+    // make it italic if that's what's needed
     if italic {
       if let italicVersion = CTFontCreateCopyWithSymbolicTraits(font, size, nil, .italicTrait, .italicTrait) {
         font = italicVersion
@@ -87,64 +94,7 @@ public struct W3WFont: CustomStringConvertible {
   }
 }
 
-
-
-#if canImport(UIKit)
-import UIKit
-
-/// returns a UIFont colour
-extension W3WFont {
-  
-  public var uiFont: UIFont {
-    get {
-      UIFont(name: (CTFontCopyName(font, kCTFontPostScriptNameKey) as? String) ?? "SF Pro", size: size) ?? .systemFont(ofSize: CTFontGetSize(font))
-    }
-  }
-  
-  public init(uiFont: UIFont) {
-    let traits = uiFont.fontDescriptor.object(forKey: .traits) as? [UIFontDescriptor.TraitKey: Any] ?? [:]
-    let weight = traits[.weight] as? Float ?? 17.0
-    let italic = traits[.slant] as? Float != 0.0
-    
-    self.init(name: uiFont.familyName, size: uiFont.pointSize, weight: W3WFontWeight(value: weight), italic: italic)
-  }
-  
-}
 #endif
-
-
-#if canImport(SwiftUI)
-import SwiftUI
-
-/// returns a UIFont colour
-@available(iOS 13.0, *)
-extension W3WFont {
-  
-  public var suFont: Font {
-    get {
-      Font(font)
-    }
-  }
-  
-}
-#endif
-
-
-#if canImport(AppKit)
-import AppKit
-
-/// returns a UIFont colour
-extension W3WFont {
-  
-  public var nsFont: NSFont {
-    get {
-      NSFont(font)
-    }
-  }
-  
-}
-#endif
-
 
 
 
