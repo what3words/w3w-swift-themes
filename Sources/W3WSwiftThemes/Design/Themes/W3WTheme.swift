@@ -5,13 +5,12 @@
 //  Created by Dave Duprey on 17/03/2023.
 //
 
-//import UIKit
+import Foundation
 
-
-
-public class W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
+public struct W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
     
   // this holds a dictionary of schemes.  schemes contain colours and styles for a particular type of element such as textFeilds, or buttons, etc
+  public var id: String = UUID().uuidString
   public var schemes = [W3WSetTypes : W3WScheme]()
 
   // MARK: Vars
@@ -171,9 +170,9 @@ public class W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
   }
 
   
-  public func reload() {
+  public mutating func reload() {
     typefaces?.reloadFonts()
-    
+    id = UUID().uuidString
     for (set, scheme) in schemes {
       if schemes[set]?.styles?.font != nil {
         schemes[set] = scheme.with(font: W3WTypefaces().body)
@@ -185,13 +184,13 @@ public class W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
 
   /// copy a color set from one set to another
   public func copy(from: W3WSetTypes, to: W3WSetTypes) -> W3WTheme {
-    let newTheme = W3WTheme(theme: self)
+    var newTheme = W3WTheme(theme: self)
     newTheme.schemes[to] = schemes[from]
     return newTheme
   }
 
   
-  func add(type: W3WSetTypes, scheme: W3WScheme?) {
+  mutating func add(type: W3WSetTypes, scheme: W3WScheme?) {
     if let s = scheme {
       schemes[type] = s
     }
@@ -221,9 +220,9 @@ public class W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
 
   
   public func with(styles: W3WStyles?, into: W3WSetTypes = .base) -> W3WTheme {
-    let newTheme = W3WTheme(theme: self)
-    
-    newTheme[into]?.colors = W3WColors(colors: newTheme[into]?.colors)
+    var newTheme = W3WTheme(theme: self)
+    let colors =  W3WColors(colors: newTheme[into]?.colors)
+    newTheme[into]?.colors = colors
     newTheme[into]?.styles = styles
     
     return newTheme
@@ -231,28 +230,30 @@ public class W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
   
   
   public func with(colors: W3WColors?, into: W3WSetTypes = .base) -> W3WTheme {
-    let newTheme = W3WTheme(theme: self)
-    
+    var newTheme = W3WTheme(theme: self)
+    let styles = W3WStyles(style: newTheme[into]?.styles)
     newTheme[into]?.colors = colors
-    newTheme[into]?.styles = W3WStyles(style: newTheme[into]?.styles)
+    newTheme[into]?.styles = styles
     
     return newTheme
   }
   
   
   public func with(background: W3WColor?, into: W3WSetTypes = .base) -> W3WTheme {
-    let newTheme = W3WTheme(theme: self)
+    var newTheme = W3WTheme(theme: self)
 
-    newTheme[into]?.colors = W3WColors(colors: newTheme[into]?.colors)
+    let colors = W3WColors(colors: newTheme[into]?.colors)
+    newTheme[into]?.colors = colors
     newTheme[into]?.colors?.background = background
     
     return newTheme
   }
   
   public func with(foreground: W3WColor?, into: W3WSetTypes = .base) -> W3WTheme {
-    let newTheme = W3WTheme(theme: self)
+    var newTheme = W3WTheme(theme: self)
     
-    newTheme[into]?.colors = W3WColors(colors: newTheme[into]?.colors)
+    let colors = W3WColors(colors: newTheme[into]?.colors)
+    newTheme[into]?.colors = colors
     newTheme[into]?.colors?.foreground = foreground
     
     return newTheme
@@ -260,9 +261,9 @@ public class W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
   
   
   public func with(secondary: W3WColor?, into: W3WSetTypes = .base) -> W3WTheme {
-    let newTheme = W3WTheme(theme: self)
-    
-    newTheme[into]?.colors = W3WColors(colors: newTheme[into]?.colors)
+    var newTheme = W3WTheme(theme: self)
+    let colors = W3WColors(colors: newTheme[into]?.colors)
+    newTheme[into]?.colors = colors
     newTheme[into]?.colors?.secondary = secondary
     
     return newTheme
@@ -270,9 +271,9 @@ public class W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
   
   
   public func with(tint: W3WColor?, into: W3WSetTypes = .base) -> W3WTheme {
-    let newTheme = W3WTheme(theme: self)
-    
-    newTheme[into]?.colors = W3WColors(colors: newTheme[into]?.colors)
+    var newTheme = W3WTheme(theme: self)
+    let colors = W3WColors(colors: newTheme[into]?.colors)
+    newTheme[into]?.colors = colors
     newTheme[into]?.colors?.tint = tint
     
     return newTheme
@@ -280,9 +281,9 @@ public class W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
 
   
   public func with(line: W3WColor?, into: W3WSetTypes = .base) -> W3WTheme {
-    let newTheme = W3WTheme(theme: self)
-    
-    newTheme[into]?.colors = W3WColors(colors: newTheme[into]?.colors)
+    var newTheme = W3WTheme(theme: self)
+    let colors = W3WColors(colors: newTheme[into]?.colors)
+    newTheme[into]?.colors = colors
     newTheme[into]?.colors?.line = line
     
     return newTheme
@@ -290,18 +291,20 @@ public class W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
 
   
   public func with(border: W3WColor?, into: W3WSetTypes = .base) -> W3WTheme {
-    let newTheme = W3WTheme(theme: self)
+    var newTheme = W3WTheme(theme: self)
     
-    newTheme[into]?.colors = W3WColors(colors: newTheme[into]?.colors)
+    let colors = W3WColors(colors: newTheme[into]?.colors)
+    newTheme[into]?.colors = colors
     newTheme[into]?.colors?.border = border
     
     return newTheme
   }
   
   public func with(separator: W3WColor?, into: W3WSetTypes = .base) -> W3WTheme {
-    let newTheme = W3WTheme(theme: self)
+    var newTheme = W3WTheme(theme: self)
     
-    newTheme[into]?.colors = W3WColors(colors: newTheme[into]?.colors)
+    let colors = W3WColors(colors: newTheme[into]?.colors)
+    newTheme[into]?.colors = colors
     newTheme[into]?.colors?.separator = separator
     
     return newTheme
@@ -309,29 +312,33 @@ public class W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
 
   
   public func with(padding: W3WPadding?, into: W3WSetTypes = .base) -> W3WTheme {
-    let newTheme = W3WTheme(theme: self)
-    newTheme[into]?.styles = W3WStyles(style: newTheme[into]?.styles).with(padding: padding)
+    var newTheme = W3WTheme(theme: self)
+    let colors = W3WColors(colors: newTheme[into]?.colors)
+    newTheme[into]?.colors = colors
     return newTheme
   }
   
   
   public func with(cornerRadius: W3WCornerRadius?, into: W3WSetTypes = .base) -> W3WTheme {
-    let newTheme = W3WTheme(theme: self)
-    newTheme[into]?.styles = W3WStyles(style: newTheme[into]?.styles).with(cornerRadius: cornerRadius)
+    var newTheme = W3WTheme(theme: self)
+    let styles = W3WStyles(style: newTheme[into]?.styles).with(cornerRadius: cornerRadius)
+    newTheme[into]?.styles = styles
     return newTheme
   }
   
   
   public func with(border: W3WLineThickness?, into: W3WSetTypes = .base) -> W3WTheme {
-    let newTheme = W3WTheme(theme: self)
-    newTheme[into]?.styles = W3WStyles(style: newTheme[into]?.styles).with(border: border)
+    var newTheme = W3WTheme(theme: self)
+    let styles = W3WStyles(style: newTheme[into]?.styles).with(border: border)
+    newTheme[into]?.styles = styles
     return newTheme
   }
   
   
   public func with(rowHeight: W3WRowHeight?, into: W3WSetTypes = .base) -> W3WTheme {
-    let newTheme = W3WTheme(theme: self)
-    newTheme[into]?.styles = W3WStyles(style: newTheme[into]?.styles).with(rowHeight: rowHeight )
+    var newTheme = W3WTheme(theme: self)
+    let styles = W3WStyles(style: newTheme[into]?.styles).with(rowHeight: rowHeight )
+    newTheme[into]?.styles = styles
     return newTheme
   }
   
@@ -353,4 +360,8 @@ public class W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
   
 }
 
-
+extension W3WTheme: Equatable {
+  public static func == (lhs: W3WTheme, rhs: W3WTheme) -> Bool {
+    lhs.id == rhs.id
+  }
+}
