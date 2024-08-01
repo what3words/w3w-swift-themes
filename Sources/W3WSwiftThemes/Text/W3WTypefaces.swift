@@ -17,9 +17,9 @@ import UIKit
 public struct W3WTypefaces {
 
   #if canImport(UIKit)
-  static let defaultTypefaceName = UIFont.systemFont(ofSize: W3WFontSizes().body).familyName
+    static public let defaultTypefaceName = UIFont.systemFont(ofSize: W3WFontSizes().body).familyName
   #else
-  static let defaultTypefaceName = "SF Pro"
+    static public let defaultTypefaceName = "SF Pro"
   #endif
   
   public var applyDynamicTypeScaling = true

@@ -5,7 +5,18 @@
 //  Created by Dave Duprey on 04/07/2024.
 //
 
+
+import Foundation
 import CoreText
+#if canImport(UIKit)
+import UIKit
+#endif
+#if canImport(SwiftUI)
+import SwiftUI
+#endif
+#if canImport(AppKit)
+import AppKit
+#endif
 
 
 public struct W3WFont: CustomStringConvertible {
@@ -21,13 +32,17 @@ public struct W3WFont: CustomStringConvertible {
   public init(name: String, size: CGFloat, weight: W3WFontWeight = .none, italic: Bool = false) {
 
     // set up description
-    let fontDescriptorAttributes = [kCTFontFamilyNameAttribute: name, kCTFontTraitsAttribute: [ kCTFontWeightTrait: weight.value ]] as [CFString : Any] //kCTFontNameAttribute: "Courier",
+    let fontDescriptorAttributes = [
+      kCTFontFamilyNameAttribute: name,
+      kCTFontTraitsAttribute: [ kCTFontWeightTrait: weight.value ]
+    ] as [CFString : Any]
+    
     let fontDescriptor           = CTFontDescriptorCreateWithAttributes(fontDescriptorAttributes as CFDictionary)
     
     // make the font
     font = CTFontCreateWithFontDescriptor(fontDescriptor, size, nil) //var identityMat = CGAffineTransform(scaleX: 1.0, y: 1.0)
-
-    // make it italic is that's whagt's needed
+    
+    // make it italic if that's what's needed
     if italic {
       if let italicVersion = CTFontCreateCopyWithSymbolicTraits(font, size, nil, .italicTrait, .italicTrait) {
         font = italicVersion
@@ -56,6 +71,10 @@ public struct W3WFont: CustomStringConvertible {
   
   var fontTraits: Dictionary<NSObject, AnyObject> {
     return CTFontCopyTraits(font) as Dictionary
+  }
+  
+  public var familyName: String {
+    return CTFontCopyFamilyName(font) as String
   }
   
   public var name: String {
@@ -88,33 +107,28 @@ public struct W3WFont: CustomStringConvertible {
 }
 
 
+// MARK: AppKit
 
-#if canImport(UIKit)
-import UIKit
+#if canImport(AppKit)
 
 /// returns a UIFont colour
 extension W3WFont {
   
-  public var uiFont: UIFont {
+  public var nsFont: NSFont {
     get {
-      UIFont(name: (CTFontCopyName(font, kCTFontPostScriptNameKey) as? String) ?? "SF Pro", size: size) ?? .systemFont(ofSize: CTFontGetSize(font))
+      NSFont(font)
     }
   }
   
-  public init(uiFont: UIFont) {
-    let traits = uiFont.fontDescriptor.object(forKey: .traits) as? [UIFontDescriptor.TraitKey: Any] ?? [:]
-    let weight = traits[.weight] as? Float ?? 17.0
-    let italic = traits[.slant] as? Float != 0.0
-    
-    self.init(name: uiFont.familyName, size: uiFont.pointSize, weight: W3WFontWeight(value: weight), italic: italic)
-  }
-  
 }
+
 #endif
 
 
+// MARK: SwiftUI
+
+
 #if canImport(SwiftUI)
-import SwiftUI
 
 /// returns a UIFont colour
 @available(iOS 13.0, *)
@@ -127,25 +141,30 @@ extension W3WFont {
   }
   
 }
+
 #endif
 
 
-#if canImport(AppKit)
-import AppKit
+// MARK: UIKit
 
-/// returns a UIFont colour
+
+#if canImport(UIKit)
+
 extension W3WFont {
-  
-  public var nsFont: NSFont {
+ 
+  public var uiFont: UIFont {
     get {
-      NSFont(font)
+      let fontAttributes: [UIFontDescriptor.AttributeName: Any] = [
+        .family: familyName,
+        .traits: fontTraits
+      ]
+      return UIFont(descriptor: UIFontDescriptor(fontAttributes: fontAttributes), size: size)
     }
   }
   
 }
+
 #endif
-
-
 
 
 
