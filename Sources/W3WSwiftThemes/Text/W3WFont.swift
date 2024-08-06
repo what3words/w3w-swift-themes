@@ -37,10 +37,10 @@ public struct W3WFont: CustomStringConvertible {
       kCTFontTraitsAttribute: [ kCTFontWeightTrait: weight.value ]
     ] as [CFString : Any]
     
-    let fontDescriptor           = CTFontDescriptorCreateWithAttributes(fontDescriptorAttributes as CFDictionary)
+    let fontDescriptor = CTFontDescriptorCreateWithAttributes(fontDescriptorAttributes as CFDictionary)
     
     // make the font
-    font = CTFontCreateWithFontDescriptor(fontDescriptor, size, nil) //var identityMat = CGAffineTransform(scaleX: 1.0, y: 1.0)
+    font = CTFontCreateWithFontDescriptor(fontDescriptor, size, nil)
     
     // make it italic if that's what's needed
     if italic {
@@ -57,13 +57,17 @@ public struct W3WFont: CustomStringConvertible {
   
   
   public func with(size: CGFloat) -> W3WFont {
-    return W3WFont(ctFont: CTFontCreateCopyWithAttributes(font, size, nil, nil))
+    return W3WFont(name: familyName, size: size, weight: W3WFontWeight(value: weight), italic: italic)
   }
 
   public func with(weight: W3WFontWeight) -> W3WFont {
-    return W3WFont(ctFont: CTFontCreateWithFontDescriptor(self.makeDescriptor(weight: weight.value), size, nil))
+    return W3WFont(name: familyName, size: size, weight: weight, italic: italic)
   }
-  
+
+  public func with(italic: Bool) -> W3WFont {
+    return W3WFont(name: familyName, size: size, weight: W3WFontWeight(value: weight), italic: italic)
+  }
+
   
   var symbolicTraits: CTFontSymbolicTraits {
     return CTFontGetSymbolicTraits(font)
