@@ -134,7 +134,7 @@ extension W3WColors {
   
   static public let standardButtonTinted = W3WColors(
     foreground: .standardFillsPrimary,
-    background: W3WColor(all: .blue90)
+    background: W3WColor(all: .core.blue90)
   )
   
   static public let standardButtonGray = W3WColors(
@@ -244,7 +244,7 @@ extension W3WColors {
   
   static public let w3wButtonTinted = W3WColors(
     foreground: .w3wFillsPrimary,
-    background: W3WColor(all: .blue90)
+    background: W3WColor(all: .hig.blue90)
   )
   
   static public let w3wButtonGray = W3WColors(
