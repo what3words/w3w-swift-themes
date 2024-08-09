@@ -19,10 +19,6 @@ import AppKit
 /// holds a foreground, background (in main), highlight and secondary colour, and a positive/negitive meant for okay/cancel buttons etc, sufficient for most interface items' colour needs
 public struct W3WColors {
   
-  // MARK: Vars
-  
-  
-  // autosuggest
   public var foreground: W3WColor?
   public var background: W3WColor?
   public var tint: W3WColor?
@@ -38,7 +34,8 @@ public struct W3WColors {
   public var error: W3WBasicColors?
   public var header: W3WBasicColors?
   public var line: W3WColor?
-  
+
+
   
   // MARK: Init
   
@@ -60,6 +57,7 @@ public struct W3WColors {
     self.error      = error
     self.header    = header
     self.line     = line
+
   }
   
   

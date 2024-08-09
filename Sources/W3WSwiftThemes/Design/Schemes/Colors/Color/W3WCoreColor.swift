@@ -44,7 +44,7 @@ import SwiftUI
 /// suColor, uiColor, and nsColor members.
 /// A bug in Xcode 13 meant the `suColor: Color` functions had to move
 /// to an extension in the w3w SwiftUI Interface Elements package
-public struct W3WCoreColor {
+public struct W3WCoreColor: Equatable {
   
   /// red component of the colour
   public let red:   CGFloat
@@ -76,6 +76,16 @@ public struct W3WCoreColor {
     green = CGFloat((hex >> 8) & 0xFF) / 255.0
     blue  = CGFloat(hex & 0xFF) / 255.0
     self.alpha = alpha
+  }
+  
+  
+  /// init using a hex Int value with a hex alpha, something like: W3WCoreColor(alpha: 0x128, hex: 0xE7AA42)
+  /// implemented with alpha first to helpl accomidate importing from Figma
+  public init(alpha: Int, hex: Int) {
+    red   = CGFloat((hex >> 16) & 0xFF) / 255.0
+    green = CGFloat((hex >> 8) & 0xFF) / 255.0
+    blue  = CGFloat(hex & 0xFF) / 255.0
+    self.alpha = Double(alpha) / 255.0
   }
   
   

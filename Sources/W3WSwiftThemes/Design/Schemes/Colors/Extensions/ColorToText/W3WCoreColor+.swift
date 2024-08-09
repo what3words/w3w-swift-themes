@@ -5,7 +5,11 @@
 //  Created by Dave Duprey on 16/03/2023.
 //
 
+import CoreGraphics
+import Foundation
+#if canImport(UIKit)
 import UIKit
+#endif
 
 
 extension W3WCoreColor: CustomDebugStringConvertible, CustomStringConvertible {
@@ -28,7 +32,8 @@ extension W3WCoreColor: CustomDebugStringConvertible, CustomStringConvertible {
   }
 
   
-  
+#if canImport(UIKit)
+
   func find(color: UIColor) -> String {
     var cname = "Unknown"
     var match = 3.0
@@ -64,6 +69,12 @@ extension W3WCoreColor: CustomDebugStringConvertible, CustomStringConvertible {
     return cname
   }
   
+#else
+  func find(color: UIColor) -> String {
+    return "Unknown"
+  }
+#endif
+
   
   func colorDifference(r0: CGFloat, g0: CGFloat, b0: CGFloat, r1: CGFloat, g1: CGFloat, b1: CGFloat) -> CGFloat {
     let sumR = pow(r1 - r0, 2.0)

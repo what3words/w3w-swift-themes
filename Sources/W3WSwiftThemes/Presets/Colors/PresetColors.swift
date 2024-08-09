@@ -13,6 +13,42 @@ extension W3WColors {
   // MARK: Standard Colours
   
   static public let standard = W3WColors(
+    
+    foreground: .standardLabelsPrimaryBlackInverse,
+    background: .standardSystemBackgroundBasePrimary,
+    tint:       .standardBrandBase,
+    secondary:  .standardLabelsQuaternary,
+    highlight:  W3WBasicColors(background: .standardFillsTertiary),
+    border:     .standardSeparatorOpaque
+  )
+  
+  
+  // MARK: what3words Colours
+  
+  static public let w3w = W3WColors(
+    foreground: .w3wLabelsPrimaryBlackInverse,
+    background: .w3wSystemBackgroundBasePrimary,
+    tint:       .w3wBrandBase,
+    secondary:  .w3wLabelsQuaternary,
+    highlight:  W3WBasicColors(background: .w3wFillsTertiary),
+    border:     .w3wSeparatorOpaque
+  )
+  
+  
+  // MARK: Buttons
+  
+  static public func buttonPrimary(theme: W3WTheme? = .standard)    -> W3WColors { W3WColors(foreground: theme?.labelsPrimary, background: theme?.brandBase) }
+  static public func buttonSecondary(theme: W3WTheme? = .standard)  -> W3WColors { W3WColors(foreground: theme?.labelsPrimary, background: theme?.fillsSecondary) }
+  static public func buttonTertiary(theme: W3WTheme? = .standard)   -> W3WColors { W3WColors(foreground: theme?.labelsPrimary, background: theme?.fillsTertiary) }
+  static public func buttonQuaternary(theme: W3WTheme? = .standard) -> W3WColors { W3WColors(foreground: theme?.labelsSecondary, background: theme?.fillsQuaternary) }
+  static public func buttonQuinary(theme: W3WTheme? = .standard)    -> W3WColors { W3WColors(foreground: theme?.labelsSecondary, background: theme?.fillsQuinary) }
+  static public func buttonSenary(theme: W3WTheme? = .standard)     -> W3WColors { W3WColors(foreground: theme?.labelsTertiary, background: .clear) }
+  static public func buttonSeptenary(theme: W3WTheme? = .standard)  -> W3WColors { W3WColors(foreground: theme?.labelsQuaternary) }
+  
+  // MARK: Old
+  
+  
+  static public let standardOld = W3WColors(
     foreground: .standardLabelsPrimaryBlackInverse,
     background: .standardSystemBackgroundBasePrimary,
     tint:       .standardBrandBase,
@@ -98,7 +134,7 @@ extension W3WColors {
   
   static public let standardButtonTinted = W3WColors(
     foreground: .standardFillsPrimary,
-    background: W3WColor(all: .blue90)
+    background: W3WColor(all: .core.blue90)
   )
   
   static public let standardButtonGray = W3WColors(
@@ -122,7 +158,7 @@ extension W3WColors {
   
   // MARK: what3words Colours
 
-  static public let w3w = W3WColors(
+  static public let w3wOld = W3WColors(
     foreground: .w3wLabelsPrimaryBlackInverse,
     background: .w3wSystemBackgroundBasePrimary,
     tint:       .w3wBrandBase,
@@ -208,7 +244,7 @@ extension W3WColors {
   
   static public let w3wButtonTinted = W3WColors(
     foreground: .w3wFillsPrimary,
-    background: W3WColor(all: .blue90)
+    background: W3WColor(all: .hig.blue90)
   )
   
   static public let w3wButtonGray = W3WColors(

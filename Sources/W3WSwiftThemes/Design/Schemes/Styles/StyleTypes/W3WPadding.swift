@@ -4,8 +4,17 @@
 //
 //  Created by Dave Duprey on 07/04/2022.
 //
-import UIKit
 
+#if canImport(UIKit)
+import UIKit
+#else
+public struct UIEdgeInsets: Equatable {
+  public var top: CGFloat
+  public var left: CGFloat
+  public var bottom: CGFloat
+  public var right: CGFloat
+}
+#endif
 
 /// padding values that correspond to most what3words design standards
 public struct W3WPadding: Equatable, ExpressibleByFloatLiteral {

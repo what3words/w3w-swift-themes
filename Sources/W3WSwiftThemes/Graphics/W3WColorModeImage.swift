@@ -5,7 +5,10 @@
 //  Created by Thy Nguyen on 27/03/2024.
 //
 
+#if canImport(UIKit)
 import UIKit
+#endif
+
 
 /// stores an image for each colour mode, such as "light mode" and "dark mode"
 public class W3WColorModeImage: W3WImage {
@@ -35,8 +38,10 @@ public class W3WColorModeImage: W3WImage {
   }
   
   
+#if canImport(UIKit)
   /// return the image for current color mode
   public override func get(size: W3WIconSize? = nil) -> UIImage {
     return images[W3WColor.theme]?.get(size: size) ?? UIImage()
   }
+#endif
 }
