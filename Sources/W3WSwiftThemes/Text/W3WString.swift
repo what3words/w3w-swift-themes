@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 import MapKit
-import W3WSwiftCore
 
 
 /// + operator for W3WString
@@ -89,6 +88,8 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
   }
 
   
+  #if canImport(W3WSwiftCore)
+  
   /// make a W3WString representing a distance formatted for default locale
   /// - Parameters:
   ///   - distance: The distance to show
@@ -110,6 +111,7 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
     _ = style(color: color, font: font?.uiFont)
   }
 
+  #endif
 
   /// returns the text as a NSAttributedString
   public func asAttributedString() -> NSAttributedString {
@@ -206,8 +208,9 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
   public func withSlashes(color: W3WColor = .w3wBrandBase, font: W3WFont?) -> W3WString {
     return withSlashes(color: color, font: font?.uiFont)
   }
-
   
+  #if canImport(W3WSwiftCore)
+
   /// add w3w slashes to the text only if the text is in the form of a three word address
   /// - Parameters:
   ///   - color: The colour to use
@@ -232,7 +235,8 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
     return addSlashesIfAddress(color: color, font: font?.uiFont)
   }
   
-  
+  #endif
+
   /// remove leading `///` from text
   @discardableResult
   func removeLeadingSlashes() -> W3WString {
@@ -276,7 +280,8 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
     lhs = lhs + rhs
   }
   
-  
+  #if canImport(W3WSwiftCore)
+
   /// returns a distance in the localised format (miles,km,etc)
   /// - Parameters:
   ///   - kilometers: number of kilometers to use
@@ -313,7 +318,7 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
     
     return words
   }
-
+  
   
   func compareAsWords(to: W3WString) -> Bool {
     let a1 = wordsToArray()
@@ -334,7 +339,8 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
     return W3WString(words.joined(separator: separator))
   }
 
-  
+  #endif
+
   // maybe change this to getSeparatorFor() and move it to W3WSwiftTypes
   func isJapanese() -> Bool {
     let text    = string.string
