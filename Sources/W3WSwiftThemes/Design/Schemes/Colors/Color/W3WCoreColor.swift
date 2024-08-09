@@ -79,6 +79,16 @@ public struct W3WCoreColor: Equatable {
   }
   
   
+  /// init using a hex Int value with a hex alpha, something like: W3WCoreColor(alpha: 0x128, hex: 0xE7AA42)
+  /// implemented with alpha first to helpl accomidate importing from Figma
+  public init(alpha: Int, hex: Int) {
+    red   = CGFloat((hex >> 16) & 0xFF) / 255.0
+    green = CGFloat((hex >> 8) & 0xFF) / 255.0
+    blue  = CGFloat(hex & 0xFF) / 255.0
+    self.alpha = Double(alpha) / 255.0
+  }
+  
+  
   /// make a greyscale value
   public init(grey: CGFloat, alpha: CGFloat = 1.0) {
     self.red   = grey

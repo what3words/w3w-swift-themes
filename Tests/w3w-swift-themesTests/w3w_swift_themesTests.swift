@@ -41,8 +41,8 @@ final class w3w_swift_themesTests: XCTestCase {
   }
   
   
-  func testFont() {
-    
+  func testFontConstructor() {
+
     var font = W3WFont(name: "Courier", size: 32.0, weight: 0.0, italic: false)
     XCTAssertTrue(font.name.contains("Courier"))
     XCTAssertEqual(font.size, 32.0)
@@ -69,12 +69,21 @@ final class w3w_swift_themesTests: XCTestCase {
 
     font = W3WFont.buttonCircular(theme: .standard)
     XCTAssertTrue(font.name.contains("Helvetica"))
+  }
+  
+  
+  func testFontModifiers() {
+    let font = W3WFont(name: W3WTypefaces.defaultTypefaceName, size: 32.0, weight: 0.0, italic: false)
+    XCTAssertTrue(font.with(weight: .bold).bold)
+    XCTAssertTrue(font.with(italic: true).italic)
+    XCTAssertTrue(font.with(size: 24.0).size == 24.0)
+    XCTAssertTrue(font.with(italic: false).italic == false)
 
-    //if #available(iOS 13.0, *) {
-    //  let suFont = font.suFont
-    //  print("SuFont", suFont)
-    //}
-    
+    let font2 = W3WFont(name: "Courier", size: 32.0, weight: 0.0, italic: false)
+    XCTAssertTrue(font2.with(weight: .bold).bold)
+    XCTAssertTrue(font2.with(italic: true).italic)
+    XCTAssertTrue(font2.with(size: 24.0).size == 24.0)
+    XCTAssertTrue(font2.with(italic: false).italic == false)
   }
   
   
