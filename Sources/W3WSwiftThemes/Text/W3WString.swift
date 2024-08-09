@@ -8,6 +8,9 @@
 import Foundation
 import UIKit
 import MapKit
+#if canImport(W3WSwiftCore)
+import W3WSwiftCore
+#endif
 
 
 /// + operator for W3WString
