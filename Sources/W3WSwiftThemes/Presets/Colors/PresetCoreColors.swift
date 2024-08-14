@@ -8,7 +8,7 @@
 
 extension W3WCoreColor {
     
-  struct core {
+  public struct core {
 
     // purples
     static public let purple10 = W3WCoreColor(alpha: 0xff, hex: 0x330045)
@@ -161,7 +161,7 @@ extension W3WCoreColor {
   }
   
   
-  struct hig {
+  public struct hig {
     // reds
     static public let red50         = W3WCoreColor(hex: 0xE11F26)
 
