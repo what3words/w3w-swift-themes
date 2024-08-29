@@ -83,7 +83,7 @@ extension W3WColor {
   public static let w3wFillsSecondary           = W3WColor(light: .hig.blue40, dark: .hig.blue50)
   public static let w3wFillsTertiary           = W3WColor(light: .hig.blue20, dark: .hig.blue30)
   public static let w3wFillsQuaternary         = W3WColor(light: .hig.blue90, dark: .hig.blue30)
-  public static let w3wFillsQuinary            = W3WColor.standardFillsQuaternary
+  public static let w3wFillsQuinary            = W3WColor.standardFillsQuinary
 
   public static let w3wSeparatorOpaque          = W3WColor.standardSeparatorOpaque
   public static let w3wSeparatorNonOpaque        = W3WColor.standardSeparatorNonOpaque
