@@ -150,6 +150,9 @@ public class W3WColor {
   /// stores the override for the system dark/light mode setting
   static var colorModeOverride: W3WColorMode? = nil
   
+  static public func getColorModeOverride() -> W3WColorMode? {
+    colorModeOverride
+  }
   
   /// override the system dark/light mode setting
   static public func set(mode: W3WColorMode?) {

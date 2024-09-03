@@ -5,7 +5,7 @@
 //  Created by Dave Duprey on 06/09/2022.
 //
 
-import UIKit
+import CoreGraphics
 
 
 public struct W3WIconSize: Equatable {

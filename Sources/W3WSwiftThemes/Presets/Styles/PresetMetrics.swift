@@ -5,15 +5,20 @@
 //  Created by Dave Duprey on 01/09/2023.
 //
 
+import CoreGraphics
+#if canImport(UIKit)
 import UIKit
-
+#endif
 
 public extension W3WCornerRadius {
   static let none:       W3WCornerRadius =  0.0
   static let extraSmall: W3WCornerRadius =  4.0
   static let small:      W3WCornerRadius =  8.0
+  static let regular:    W3WCornerRadius =  12.0
   static let large:      W3WCornerRadius =  16.0
   static let extraLarge: W3WCornerRadius =  32.0
+  static let oval      = W3WCornerRadius(floatLiteral: .infinity)
+  static let circle    = W3WCornerRadius(floatLiteral: .nan)
 
   @available(*, deprecated, renamed: "extraSmall")
   static let medium:   W3WCornerRadius =  4.0
@@ -23,6 +28,34 @@ public extension W3WCornerRadius {
   static let softer:     W3WCornerRadius = 14.0
   @available(*, deprecated, message: "use: large")
   static let verySoft:   W3WCornerRadius = 16.0
+}
+
+
+public extension W3WFontWeight {
+  #if canImport(UIKit)
+  static let none: W3WFontWeight = 0.0
+  static let ultralight = W3WFontWeight(value: UIFont.Weight.ultraLight.rawValue)
+  static let thin      = W3WFontWeight(value: UIFont.Weight.thin.rawValue)
+  static let light    = W3WFontWeight(value: UIFont.Weight.light.rawValue)
+  static let regular  = W3WFontWeight(value: UIFont.Weight.regular.rawValue)
+  static let medium   = W3WFontWeight(value: UIFont.Weight.medium.rawValue)
+  static let semibold = W3WFontWeight(value: UIFont.Weight.semibold.rawValue)
+  static let bold     = W3WFontWeight(value: UIFont.Weight.bold.rawValue)
+  static let heavy    = W3WFontWeight(value: UIFont.Weight.heavy.rawValue)
+  static let black    = W3WFontWeight(value: UIFont.Weight.black.rawValue)
+  #else
+  // values from here: https://bugzilla.gnome.org/show_bug.cgi?id=766148
+  static let none: W3WFontWeight = 0.0
+  static let ultralight: W3WFontWeight = -0.800000
+  static let thin: W3WFontWeight = -0.600000
+  static let light: W3WFontWeight = -0.400000
+  static let regular: W3WFontWeight = 0.000000
+  static let medium: W3WFontWeight = 0.230000
+  static let semibold: W3WFontWeight = 0.300000
+  static let bold: W3WFontWeight = 0.400000
+  static let heavy: W3WFontWeight = 0.560000
+  static let black: W3WFontWeight = 0.620000
+  #endif
 }
 
 
