@@ -70,19 +70,19 @@ extension W3WColor {
 
   // colours for what3words theme
 
-  public static let w3wBrandBase         = W3WColor(light: .hig.red50, dark: .hig.red50)
+  public static let w3wBrandBase         = W3WColor(light: .core.red50, dark: .core.red50)
 
   public static let w3wLabelsPrimary     = W3WColor.standardLabelsPrimary // W3WColor(light: .hig.grey100, dark: .hig.grey100)
-  public static let w3wLabelsSecondary    = W3WColor(light: .hig.blue50, dark: .hig.blue72)
+  public static let w3wLabelsSecondary    = W3WColor(light: .core.blue50, dark: .core.blue72)
   public static let w3wLabelsTertiary      = W3WColor(light: .core.blue20, dark: .core.grey95)
   public static let w3wLabelsQuaternary      = W3WColor(light: .core.grey52, dark: .core.grey60)
   public static let w3wLabelsPrimaryInverse    = W3WColor(light: .white, dark: .black)
   public static let w3wLabelsPrimaryBlackInverse = W3WColor(light: .black, dark: .white)
 
-  public static let w3wFillsPrimary              = W3WColor(light: .hig.red50, dark: .hig.red50)
-  public static let w3wFillsSecondary           = W3WColor(light: .hig.blue40, dark: .hig.blue50)
-  public static let w3wFillsTertiary           = W3WColor(light: .hig.blue20, dark: .hig.blue30)
-  public static let w3wFillsQuaternary         = W3WColor(light: .hig.blue90, dark: .hig.blue30)
+  public static let w3wFillsPrimary              = W3WColor(light: .core.red50, dark: .core.red50)
+  public static let w3wFillsSecondary           = W3WColor(light: .core.blue40, dark: .core.blue50)
+  public static let w3wFillsTertiary           = W3WColor(light: .core.blue20, dark: .core.blue30)
+  public static let w3wFillsQuaternary         = W3WColor(light: .core.blue90, dark: .core.blue30)
   public static let w3wFillsQuinary            = W3WColor.standardFillsQuinary
 
   public static let w3wSeparatorOpaque          = W3WColor.standardSeparatorOpaque
