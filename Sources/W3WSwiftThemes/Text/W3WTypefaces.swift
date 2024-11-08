@@ -26,19 +26,19 @@ public struct W3WTypefaces {
   
   //lazy var sizes = self.getFontSizes()
   
-  public var largeTitle: W3WFont  = W3WFont(name: defaultTypefaceName, size: W3WFontSizes().largeTitle)
-  public var title1:    W3WFont  = W3WFont(name: defaultTypefaceName, size: W3WFontSizes().title1)
-  public var title2:   W3WFont   = W3WFont(name: defaultTypefaceName, size: W3WFontSizes().title2)
-  public var title3:   W3WFont   = W3WFont(name: defaultTypefaceName, size: W3WFontSizes().title3)
-  public var headline: W3WFont   = W3WFont(name: defaultTypefaceName, size: W3WFontSizes().headline)
-  public var body:      W3WFont   = W3WFont(name: defaultTypefaceName, size: W3WFontSizes().body)
-  public var callout:    W3WFont   = W3WFont(name: defaultTypefaceName, size: W3WFontSizes().callout)
-  public var subheadline: W3WFont  = W3WFont(name: defaultTypefaceName, size: W3WFontSizes().subheadline)
-  public var footnote:    W3WFont  = W3WFont(name: defaultTypefaceName, size: W3WFontSizes().footnote)
-  public var caption1:   W3WFont  = W3WFont(name: defaultTypefaceName, size: W3WFontSizes().caption1)
-  public var caption2:  W3WFont  = W3WFont(name: defaultTypefaceName, size: W3WFontSizes().caption2)
+  public var largeTitle: W3WFont  = W3WFont(familyName: defaultTypefaceName, size: W3WFontSizes().largeTitle)
+  public var title1:    W3WFont  = W3WFont(familyName: defaultTypefaceName, size: W3WFontSizes().title1)
+  public var title2:   W3WFont   = W3WFont(familyName: defaultTypefaceName, size: W3WFontSizes().title2)
+  public var title3:   W3WFont   = W3WFont(familyName: defaultTypefaceName, size: W3WFontSizes().title3)
+  public var headline: W3WFont   = W3WFont(familyName: defaultTypefaceName, size: W3WFontSizes().headline)
+  public var body:      W3WFont   = W3WFont(familyName: defaultTypefaceName, size: W3WFontSizes().body)
+  public var callout:    W3WFont   = W3WFont(familyName: defaultTypefaceName, size: W3WFontSizes().callout)
+  public var subheadline: W3WFont  = W3WFont(familyName: defaultTypefaceName, size: W3WFontSizes().subheadline)
+  public var footnote:    W3WFont  = W3WFont(familyName: defaultTypefaceName, size: W3WFontSizes().footnote)
+  public var caption1:   W3WFont  = W3WFont(familyName: defaultTypefaceName, size: W3WFontSizes().caption1)
+  public var caption2:  W3WFont  = W3WFont(familyName: defaultTypefaceName, size: W3WFontSizes().caption2)
 
-  public var originalFont: W3WFont? = W3WFont(name: defaultTypefaceName, size: W3WFontSizes().body)
+  public var originalFont: W3WFont? = W3WFont(familyName: defaultTypefaceName, size: W3WFontSizes().body)
   
   public init() { }
 
