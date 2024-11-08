@@ -29,11 +29,11 @@ public struct W3WFont: CustomStringConvertible {
   }
   
   
-  public init(name: String, size: CGFloat, weight: W3WFontWeight = .none, italic: Bool = false) {
+  public init(familyName: String, size: CGFloat, weight: W3WFontWeight = .none, italic: Bool = false) {
 
     // set up description
     let fontDescriptorAttributes = [
-      kCTFontFamilyNameAttribute: name,
+      kCTFontFamilyNameAttribute: familyName,
       kCTFontTraitsAttribute: [ kCTFontWeightTrait: weight.value ]
     ] as [CFString : Any]
     
@@ -57,15 +57,15 @@ public struct W3WFont: CustomStringConvertible {
   
   
   public func with(size: CGFloat) -> W3WFont {
-    return W3WFont(name: familyName, size: size, weight: W3WFontWeight(value: weight), italic: italic)
+    return W3WFont(familyName: familyName, size: size, weight: W3WFontWeight(value: weight), italic: italic)
   }
 
   public func with(weight: W3WFontWeight) -> W3WFont {
-    return W3WFont(name: familyName, size: size, weight: weight, italic: italic)
+    return W3WFont(familyName: familyName, size: size, weight: weight, italic: italic)
   }
 
   public func with(italic: Bool) -> W3WFont {
-    return W3WFont(name: familyName, size: size, weight: W3WFontWeight(value: weight), italic: italic)
+    return W3WFont(familyName: familyName, size: size, weight: W3WFontWeight(value: weight), italic: italic)
   }
 
   
