@@ -6,7 +6,7 @@
 //
 
 
-enum W3WImageSource {
+public enum W3WImageSource {
   case drawing(W3WDrawing)
   case system(String)
   case file(String)

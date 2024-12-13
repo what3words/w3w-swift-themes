@@ -13,7 +13,7 @@ import UIKit
 
 open class W3WImage {
 
-  var imageSource: W3WImageSource!
+  var imageSource: [W3WColorMode: W3WImageSource] = [:]
   public var colors: W3WColors!
   
   public var configuration: NSObject?
@@ -26,20 +26,27 @@ open class W3WImage {
   #endif
   
   public init(systemName: String, colors: W3WColors) {
-    self.imageSource = .system(systemName)
+    self.imageSource[.light] = .system(systemName)
     set(colors: colors)
   }
   
   
   public init(drawing: W3WDrawing, colors: W3WColors) {
-    imageSource = .drawing(drawing)
+    imageSource[.light] = .drawing(drawing)
     set(colors: colors)
   }
   
   
   public init(file: String, colors: W3WColors) {
-    imageSource = .file(file)
+    imageSource[.light] = .file(file)
     set(colors: colors)
+  }
+
+  
+  public init(light: W3WImageSource, dark: W3WImageSource) {
+    imageSource[.light] = light
+    imageSource[.dark] = dark
+    set(colors: .standardIcons)
   }
 
   
@@ -61,15 +68,23 @@ open class W3WImage {
 
   
   public func get(size: W3WIconSize? = nil) -> UIImage {
-    switch imageSource {
-    case .drawing(let drawing):
-      return from(drawing: drawing, size: size)
-    case .system(let system):
-      return from(symbol: system, size: size)
-    case .file(let file):
-      return from(file: file, size: size)
-    case .none:
-      return UIImage()
+    var image: W3WImageSource?
+    
+    image = imageSource[W3WColor.theme]
+    
+    if image == nil {
+      image = imageSource[.light]
+    }
+    
+    switch image {
+      case .drawing(let drawing):
+        return from(drawing: drawing, size: size)
+      case .system(let system):
+        return from(symbol: system, size: size)
+      case .file(let file):
+        return from(file: file, size: size)
+      case .none:
+        return UIImage()
     }
   }
   
