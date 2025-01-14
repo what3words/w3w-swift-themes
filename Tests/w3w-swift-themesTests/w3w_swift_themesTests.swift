@@ -125,4 +125,13 @@ final class w3w_swift_themesTests: XCTestCase {
     XCTAssertLessThan(W3WFont(name: "Helvetica", size: 32.0, weight: .ultralight).weight, 0.0)
   }
   
+  
+  func testImageSource() {
+    var imageSource = [W3WColorMode: W3WImageSource]()
+
+    imageSource[.light] = .system("x")
+    imageSource[.dark] = .system("y")
+  }
+  
+  
 }

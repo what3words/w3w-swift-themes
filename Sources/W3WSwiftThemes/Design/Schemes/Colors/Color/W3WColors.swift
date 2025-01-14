@@ -31,6 +31,7 @@ public struct W3WColors {
   public var shadow: W3WColor?
   public var placeholder: W3WColor?
   public var success: W3WBasicColors?
+  public var warning: W3WBasicColors?
   public var error: W3WBasicColors?
   public var header: W3WBasicColors?
   public var line: W3WColor?
@@ -41,7 +42,7 @@ public struct W3WColors {
   
   
   /// initialise with a foreground, background, highlight and secondary colour
-  public init(foreground: W3WColor? = nil, background: W3WColor? = nil, tint: W3WColor? = nil, secondary: W3WColor? = nil, secondaryBackground: W3WColor? = nil, brand: W3WColor? = nil, highlight: W3WBasicColors? = nil, border: W3WColor? = nil, separator: W3WColor? = nil, shadow: W3WColor? = nil, placeholder: W3WColor? = nil, success: W3WBasicColors? = nil, error: W3WBasicColors? = nil, header: W3WBasicColors? = nil, line: W3WColor? = nil) {
+  public init(foreground: W3WColor? = nil, background: W3WColor? = nil, tint: W3WColor? = nil, secondary: W3WColor? = nil, secondaryBackground: W3WColor? = nil, brand: W3WColor? = nil, highlight: W3WBasicColors? = nil, border: W3WColor? = nil, separator: W3WColor? = nil, shadow: W3WColor? = nil, placeholder: W3WColor? = nil, success: W3WBasicColors? = nil, warning: W3WBasicColors? = nil, error: W3WBasicColors? = nil, header: W3WBasicColors? = nil, line: W3WColor? = nil) {
     self.foreground   = foreground
     self.background  = background
     self.tint       = tint
@@ -54,6 +55,7 @@ public struct W3WColors {
     self.shadow     = shadow
     self.placeholder = placeholder
     self.success     = success
+    self.warning    = warning
     self.error      = error
     self.header    = header
     self.line     = line
@@ -87,6 +89,7 @@ public struct W3WColors {
     self.shadow      = colors?.shadow
     self.placeholder = colors?.placeholder
     self.success     = colors?.success
+    self.warning     = colors?.warning
     self.error      = colors?.error
     self.header    = colors?.header
     self.line     = colors?.line
@@ -150,7 +153,7 @@ public struct W3WColors {
 #if canImport(UIKit)
   
   /// initialise with a foreground, background, highlight and secondary colour
-  public init(uiForeground: UIColor? = nil, uiBackground: UIColor? = nil, uiTint: UIColor? = nil, uiSecondary: UIColor? = nil, uiSecondaryBackground: UIColor? = nil, uiBrand: UIColor? = nil, highlight: W3WBasicColors? = nil, uiBorder: UIColor? = nil, uiSeparator: UIColor? = nil, uiShadow: UIColor? = nil, uiPlaceholder: UIColor? = nil, success: W3WBasicColors? = nil, error: W3WBasicColors? = nil, header: W3WBasicColors? = nil, uiLine: UIColor? = nil) {
+  public init(uiForeground: UIColor? = nil, uiBackground: UIColor? = nil, uiTint: UIColor? = nil, uiSecondary: UIColor? = nil, uiSecondaryBackground: UIColor? = nil, uiBrand: UIColor? = nil, highlight: W3WBasicColors? = nil, uiBorder: UIColor? = nil, uiSeparator: UIColor? = nil, uiShadow: UIColor? = nil, uiPlaceholder: UIColor? = nil, success: W3WBasicColors? = nil, warning: W3WBasicColors? = nil, error: W3WBasicColors? = nil, header: W3WBasicColors? = nil, uiLine: UIColor? = nil) {
     self.foreground   = (uiForeground != nil)   ? W3WColor(uiColor: uiForeground!)  : nil
     self.background   = (uiBackground != nil)   ? W3WColor(uiColor: uiBackground!)  : nil
     self.tint         = (uiTint != nil)         ? W3WColor(uiColor: uiTint!)        : nil
@@ -163,6 +166,7 @@ public struct W3WColors {
     self.shadow       = (uiShadow != nil)       ? W3WColor(uiColor: uiShadow!)      : nil
     self.placeholder  = (uiPlaceholder != nil)  ? W3WColor(uiColor: uiPlaceholder!) : nil
     self.success      = success
+    self.warning      = warning
     self.error        = error
     self.header       = header
     self.line         = (uiLine != nil)         ? W3WColor(uiColor: uiLine!) : nil
@@ -218,91 +222,97 @@ public struct W3WColors {
   
   /// return the same colorset the foreground color changed
   public func with(foreground: W3WColor? = nil) -> W3WColors {
-    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, error: error, header: header, line: line)
+    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, warning: warning, error: error, header: header, line: line)
   }
   
   
   /// return the same colorset the background color changed
   public func with(background: W3WColor? = nil) -> W3WColors {
-    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, error: error, header: header, line: line)
+    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, warning: warning, error: error, header: header, line: line)
   }
   
   
   /// return the same colorset the secondary color changed
   public func with(tint: W3WColor? = nil) -> W3WColors {
-    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, error: error, header: header, line: line)
+    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, warning: warning, error: error, header: header, line: line)
   }
   
   
   /// return the same colorset the secondary color changed
   public func with(secondary: W3WColor? = nil) -> W3WColors {
-    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, error: error, header: header, line: line)
+    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, warning: warning, error: error, header: header, line: line)
   }
   
   
   /// return the same colorset the secondary background color changed
   public func with(secondaryBackground: W3WColor? = nil) -> W3WColors {
-    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, error: error, header: header, line: line)
+    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, warning: warning, error: error, header: header, line: line)
   }
   
   
   /// return the same colorset the secondary color changed
   public func with(brand: W3WColor? = nil) -> W3WColors {
-    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, error: error, header: header, line: line)
+    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, warning: warning, error: error, header: header, line: line)
   }
   
   
   /// return the same colorset the highlight color changed
   public func with(highlight: W3WBasicColors? = nil) -> W3WColors {
-    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, error: error, header: header, line: line)
+    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, warning: warning, error: error, header: header, line: line)
   }
   
   
   /// return the same colorset the positive color changed
   public func with(border: W3WColor? = nil) -> W3WColors {
-    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, error: error, header: header, line: line)
+    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, warning: warning, error: error, header: header, line: line)
   }
   
   
   /// return the same colorset the positive color changed
   public func with(separator: W3WColor? = nil) -> W3WColors {
-    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, error: error, header: header, line: line)
+    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, warning: warning, error: error, header: header, line: line)
   }
   
   
   /// return the same colorset the secondary color changed
   public func with(shadow: W3WColor? = nil) -> W3WColors {
-    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, error: error, header: header, line: line)
+    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, warning: warning, error: error, header: header, line: line)
   }
   
   
   /// return the same colorset the positive color changed
   public func with(placeholder: W3WColor? = nil) -> W3WColors {
-    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, error: error, header: header, line: line)
+    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, warning: warning, error: error, header: header, line: line)
   }
   
   
   /// return the same colorset the positive color changed
   public func with(success: W3WBasicColors? = nil) -> W3WColors {
-    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, error: error, header: header, line: line)
+    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, warning: warning, error: error, header: header, line: line)
+  }
+  
+  
+  /// return the same colorset the positive color changed
+  public func with(warning: W3WBasicColors? = nil) -> W3WColors {
+    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, warning: warning, error: error, header: header, line: line)
   }
   
   
   /// return the same colorset the positive color changed
   public func with(error: W3WBasicColors? = nil) -> W3WColors {
-    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, error: error, header: header, line: line)
+    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, warning: warning, error: error, header: header, line: line)
   }
   
   
   /// return the same colorset the positive color changed
   public func with(header: W3WBasicColors? = nil) -> W3WColors {
-    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, error: error, header: header, line: line)
+    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, warning: warning, error: error, header: header, line: line)
   }
   
   
   /// return the same colorset the positive color changed
   public func with(line: W3WColor? = nil) -> W3WColors {
-    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, error: error, header: header, line: line)
+    return W3WColors(foreground: foreground, background: background, tint: tint, secondary: secondary, secondaryBackground: secondaryBackground, brand: brand, highlight: highlight, border: border, separator: separator, shadow: shadow, placeholder: placeholder, success: success, warning: warning, error: error, header: header, line: line)
   }
   
   

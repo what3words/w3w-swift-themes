@@ -23,6 +23,7 @@ extension W3WColors: CustomDebugStringConvertible, CustomStringConvertible {
       if let s = shadow      { retvals.append("Shadow: "      + s.description) }
       if let p = placeholder { retvals.append("Placeholder: " + p.description) }
       if let s = success     { retvals.append("Success: "     + s.description) }
+      if let w = warning     { retvals.append("Warning: "     + w.description) }
       if let e = error       { retvals.append("Error: "       + e.description) }
       if let h = header      { retvals.append("Header: "      + h.description) }
       if let l = line        { retvals.append("Line: "        + l.description) }

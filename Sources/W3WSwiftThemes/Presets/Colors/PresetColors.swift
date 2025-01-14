@@ -37,13 +37,13 @@ extension W3WColors {
   
   // MARK: Buttons
   
-  static public func buttonPrimary(theme: W3WTheme? = .standard)    -> W3WColors { W3WColors(foreground: theme?.labelsPrimary, background: theme?.brandBase) }
-  static public func buttonSecondary(theme: W3WTheme? = .standard)  -> W3WColors { W3WColors(foreground: theme?.labelsPrimary, background: theme?.fillsSecondary) }
-  static public func buttonTertiary(theme: W3WTheme? = .standard)   -> W3WColors { W3WColors(foreground: theme?.labelsPrimary, background: theme?.fillsTertiary) }
-  static public func buttonQuaternary(theme: W3WTheme? = .standard) -> W3WColors { W3WColors(foreground: theme?.labelsSecondary, background: theme?.fillsQuaternary) }
-  static public func buttonQuinary(theme: W3WTheme? = .standard)    -> W3WColors { W3WColors(foreground: theme?.labelsSecondary, background: theme?.fillsQuinary) }
-  static public func buttonSenary(theme: W3WTheme? = .standard)     -> W3WColors { W3WColors(foreground: theme?.labelsTertiary, background: .clear) }
-  static public func buttonSeptenary(theme: W3WTheme? = .standard)  -> W3WColors { W3WColors(foreground: theme?.labelsQuaternary) }
+  static public func buttonPrimary(theme: W3WTheme? = .standard)    -> W3WColors { W3WColors(foreground: theme?.labelsPrimary, background: theme?.brandBase, warning: W3WBasicColors(foreground: theme?.warningLabel, background: theme?.warningElevated), error: W3WBasicColors(foreground: theme?.errorLabel, background: theme?.errorElevated)) }
+  static public func buttonSecondary(theme: W3WTheme? = .standard)  -> W3WColors { W3WColors(foreground: theme?.labelsPrimary, background: theme?.fillsSecondary, warning: W3WBasicColors(foreground: theme?.warningLabel, background: theme?.warningElevated), error: W3WBasicColors(foreground: theme?.errorLabel, background: theme?.errorElevated)) }
+  static public func buttonTertiary(theme: W3WTheme? = .standard)   -> W3WColors { W3WColors(foreground: theme?.labelsPrimary, background: theme?.fillsTertiary, warning: W3WBasicColors(foreground: theme?.warningLabel, background: theme?.warningElevated), error: W3WBasicColors(foreground: theme?.errorLabel, background: theme?.errorElevated)) }
+  static public func buttonQuaternary(theme: W3WTheme? = .standard) -> W3WColors { W3WColors(foreground: theme?.labelsSecondary, background: theme?.fillsQuaternary, warning: W3WBasicColors(foreground: theme?.warningLabel, background: theme?.warningElevated), error: W3WBasicColors(foreground: theme?.errorLabel, background: theme?.errorElevated)) }
+  static public func buttonQuinary(theme: W3WTheme? = .standard)    -> W3WColors { W3WColors(foreground: theme?.labelsSecondary, background: theme?.fillsQuinary, warning: W3WBasicColors(foreground: theme?.warningLabel, background: theme?.warningElevated), error: W3WBasicColors(foreground: theme?.errorLabel, background: theme?.errorElevated)) }
+  static public func buttonSenary(theme: W3WTheme? = .standard)     -> W3WColors { W3WColors(foreground: theme?.labelsTertiary, background: .clear, warning: W3WBasicColors(foreground: theme?.warningLabel, background: theme?.warningElevated), error: W3WBasicColors(foreground: theme?.errorLabel, background: theme?.errorElevated)) }
+  static public func buttonSeptenary(theme: W3WTheme? = .standard)  -> W3WColors { W3WColors(foreground: theme?.labelsQuaternary, warning: W3WBasicColors(foreground: theme?.warningLabel, background: theme?.warningElevated), error: W3WBasicColors(foreground: theme?.errorLabel, background: theme?.errorElevated)) }
   
   // MARK: Old
   
@@ -129,22 +129,34 @@ extension W3WColors {
 
   static public let standardButtonFilled = W3WColors(
     foreground: .standardLabelsPrimary,
-    background: .standardFillsPrimary
+    background: .standardFillsPrimary,
+    secondaryBackground: .standardSeparatorOpaque,
+    warning: W3WBasicColors(foreground: .standardWarningLabel, background: .standardWarningElevated),
+    error: W3WBasicColors(foreground: .standardErrorLabel, background: .standardErrorElevated)
   )
   
   static public let standardButtonTinted = W3WColors(
     foreground: .standardFillsPrimary,
-    background: W3WColor(all: .core.blue90)
+    background: W3WColor(all: .core.blue90),
+    secondaryBackground: .standardSeparatorOpaque,
+    warning: W3WBasicColors(foreground: .standardWarningLabel, background: .standardWarningElevated),
+    error: W3WBasicColors(foreground: .standardErrorLabel, background: .standardErrorElevated)
   )
   
   static public let standardButtonGray = W3WColors(
     foreground: .text,
-    background: W3WColor(light: .clear, dark: .black)
+    background: W3WColor(light: .clear, dark: .black),
+    secondaryBackground: .standardSeparatorOpaque,
+    warning: W3WBasicColors(foreground: .standardWarningLabel, background: .standardWarningElevated),
+    error: W3WBasicColors(foreground: .standardErrorLabel, background: .standardErrorElevated)
   )
   
   static public let standardButtonPlain = W3WColors(
     foreground: .standardFillsPrimary,
-    background: .clear
+    background: .clear,
+    secondaryBackground: .standardSeparatorOpaque,
+    warning: W3WBasicColors(foreground: .standardWarningLabel, background: .standardWarningElevated),
+    error: W3WBasicColors(foreground: .standardErrorLabel, background: .standardErrorElevated)
   )
 
   static public let standardMaps = W3WColors(
