@@ -25,6 +25,8 @@ public extension W3WImage {
   static let w3wLogoWithColorMode = W3WColorModeImage(light: .w3wLogoWithDarkText, dark: .w3wLogoWithLightText)
   static let accessibility    = { return W3WImage(file: "accessibility", colors: .standardIcons) }()
   static let warning          = { return W3WImage(file: "warning", colors: .standardIcons) }()
+  static let mapRegular       = { return W3WImage(file: "mapIcon", colors: W3WColors()) }()
+  static let mapSatellite     = { return W3WImage(file: "sateliteIcon", colors: W3WColors()) }()
   static let scan             = { return W3WImage(drawing: .ocr, colors: .standardIcons) }()
   static let slashes          = { return W3WImage(drawing: .makeSlashes(), colors: .standardIcons) }()
   static let mic              = { return W3WImage(drawing: .micWithSlashes, colors: .standardIcons) }()
@@ -87,7 +89,9 @@ public extension W3WImage {
   static let squareFill           = { return W3WImage(systemName: "square.fill", colors: .standardIcons) }()
   static let heartFill            = { return W3WImage(systemName: "heart.fill", colors: .standardIcons) }()
   static let person2Fill          = { return W3WImage(systemName: "person.2.fill", colors: .standardIcons) }()
-  
+  static let location             = { return W3WImage(systemName: "location", colors: .standardIcons) }()
+  static let locationFill         = { return W3WImage(systemName: "location.fill", colors: .standardIcons) }()
+
   @available(*, deprecated)
   static let ellipsisCircle   = { return W3WImage(systemName: "ellipsis.circle", colors: .standardIcons) }()
   @available(*, deprecated)
