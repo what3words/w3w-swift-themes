@@ -15,6 +15,14 @@ extension W3WDrawing {
   
   public static let mapCircle: W3WDrawing = .mapCircleBackground + .makeSlashes(offset: 0.055, spacing: 0.175, width: 0.06, verticalInset: 0.32, color: .foreground)
 
+  public static let mapSquare: W3WDrawing = .squareBackground + .makeSlashes(offset: 0.055, spacing: 0.175, width: 0.06, verticalInset: 0.32, translation: CGPoint(x: 0.0, y: 0.0), color: .foreground)
+  
+
+  public static let squareBackground: W3WDrawing = [
+    .rectangle(W3WDrawRectangle(rectangle: CGRect(x: 0.075, y: 0.0, width: 0.85, height: 0.85), color: .background))
+  ]
+    
+
   public static let mapPinBackground: W3WDrawing = [
     .rectangle(W3WDrawRectangle(rectangle: CGRect(x: 0.075, y: 0.0, width: 0.85, height: 0.85), color: .background)),
     .line(W3WDrawLine(start: CGPoint(x: 0.2 + 0.1, y: 0.7 - 0.1), end: CGPoint(x: 0.5 + 0.1, y: 1.0 - 0.1), color: .background, width: 0.25))
