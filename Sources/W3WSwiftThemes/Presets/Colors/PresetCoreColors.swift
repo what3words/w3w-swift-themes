@@ -293,5 +293,6 @@ extension W3WCoreColor {
   static public let dullRed       = W3WCoreColor(hex: 0xB24000)
   static public let darkDarkBlue  = W3WCoreColor(hex: 0x001626)
   static public let lightCyan     = W3WCoreColor(hex: 0xC2E1EB)
+  static public let skyBlue       = W3WCoreColor(hex: 0x00AFFF)
 
 }

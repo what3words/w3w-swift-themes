@@ -19,7 +19,7 @@ extension W3WDrawing {
   
 
   public static let squareBackground: W3WDrawing = [
-    .rectangle(W3WDrawRectangle(rectangle: CGRect(x: 0.075, y: 0.0, width: 0.85, height: 0.85), color: .background))
+    .rectangle(W3WDrawRectangle(rectangle: CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0), color: .background))
   ]
     
 

@@ -146,6 +146,7 @@ extension W3WColor {
   static public let dullRed       = W3WColor(all: .dullRed)
   static public let darkDarkBlue  = W3WColor(all: .darkDarkBlue)
   static public let lightCyan     = W3WColor(all: .lightCyan)
+  static public let skyBlue       = W3WColor(all: .skyBlue)
 
   
 }
