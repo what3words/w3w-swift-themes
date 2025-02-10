@@ -19,8 +19,8 @@ final class w3w_swift_themesTests: XCTestCase {
   
   func testTemp() throws {
     
-    XCTAssertEqual(W3WTheme.standard.errorElevated?[.dark], .orangeDark)
-    XCTAssertEqual(W3WTheme.what3words.fillsQuaternary?[.light], .blue90)
+    XCTAssertEqual(W3WTheme.standard.errorElevated?[.dark], .hig.orangeDark)
+    XCTAssertEqual(W3WTheme.what3words.fillsQuaternary?[.light], .core.blue90)
     
   }
   
@@ -43,7 +43,7 @@ final class w3w_swift_themesTests: XCTestCase {
   
   func testFontConstructor() {
 
-    var font = W3WFont(name: "Courier", size: 32.0, weight: 0.0, italic: false)
+    var font = W3WFont(familyName: "Courier", size: 32.0, weight: 0.0, italic: false)
     XCTAssertTrue(font.name.contains("Courier"))
     XCTAssertEqual(font.size, 32.0)
     XCTAssertEqual(font.italic, false)
@@ -55,7 +55,7 @@ final class w3w_swift_themesTests: XCTestCase {
     XCTAssertTrue(!uiFont.fontDescriptor.symbolicTraits.contains(.traitBold))
     XCTAssertTrue(!uiFont.fontDescriptor.symbolicTraits.contains(.traitItalic))
 
-    font = W3WFont(name: "Helvetica", size: 32.0, weight: 1.0, italic: true)
+    font = W3WFont(familyName: "Helvetica", size: 32.0, weight: 1.0, italic: true)
     XCTAssertTrue(font.name.contains("Helvetica"))
     XCTAssertEqual(font.size, 32.0)
     XCTAssertEqual(font.italic, true)
@@ -68,18 +68,18 @@ final class w3w_swift_themesTests: XCTestCase {
     XCTAssertTrue(uiFont.fontDescriptor.symbolicTraits.contains(.traitItalic))
 
     font = W3WFont.buttonCircular(theme: .standard)
-    XCTAssertTrue(font.name.contains("Helvetica"))
+    XCTAssertTrue(font.name.contains("SFUI"))
   }
   
   
   func testFontModifiers() {
-    let font = W3WFont(name: W3WTypefaces.defaultTypefaceName, size: 32.0, weight: 0.0, italic: false)
+    let font = W3WFont(familyName: W3WTypefaces.defaultTypefaceName, size: 32.0, weight: 0.0, italic: false)
     XCTAssertTrue(font.with(weight: .bold).bold)
     XCTAssertTrue(font.with(italic: true).italic)
     XCTAssertTrue(font.with(size: 24.0).size == 24.0)
     XCTAssertTrue(font.with(italic: false).italic == false)
 
-    let font2 = W3WFont(name: "Courier", size: 32.0, weight: 0.0, italic: false)
+    let font2 = W3WFont(familyName: "Courier", size: 32.0, weight: 0.0, italic: false)
     XCTAssertTrue(font2.with(weight: .bold).bold)
     XCTAssertTrue(font2.with(italic: true).italic)
     XCTAssertTrue(font2.with(size: 24.0).size == 24.0)
@@ -109,20 +109,29 @@ final class w3w_swift_themesTests: XCTestCase {
   func testFontWeight() {
     
     // neutral weight
-    XCTAssertEqual(W3WFont(name: "Helvetica", size: 32.0, weight: .none).weight, 0.0)
-    XCTAssertEqual(W3WFont(name: "Helvetica", size: 32.0, weight: .regular).weight, 0.0)
+    XCTAssertEqual(W3WFont(familyName: "Helvetica", size: 32.0, weight: .none).weight, 0.0)
+    XCTAssertEqual(W3WFont(familyName: "Helvetica", size: 32.0, weight: .regular).weight, 0.0)
 
     // bold are more than 0.0
-    XCTAssertGreaterThan(W3WFont(name: "Helvetica", size: 32.0, weight: .black).weight, 0.0)
-    XCTAssertGreaterThan(W3WFont(name: "Helvetica", size: 32.0, weight: .bold).weight, 0.0)
-    XCTAssertGreaterThan(W3WFont(name: "Helvetica", size: 32.0, weight: .heavy).weight, 0.0)
-    XCTAssertGreaterThan(W3WFont(name: "Helvetica", size: 32.0, weight: .medium).weight, 0.0)
-    XCTAssertGreaterThan(W3WFont(name: "Helvetica", size: 32.0, weight: .semibold).weight, 0.0)
+    XCTAssertGreaterThan(W3WFont(familyName: "Helvetica", size: 32.0, weight: .black).weight, 0.0)
+    XCTAssertGreaterThan(W3WFont(familyName: "Helvetica", size: 32.0, weight: .bold).weight, 0.0)
+    XCTAssertGreaterThan(W3WFont(familyName: "Helvetica", size: 32.0, weight: .heavy).weight, 0.0)
+    XCTAssertGreaterThan(W3WFont(familyName: "Helvetica", size: 32.0, weight: .medium).weight, 0.0)
+    XCTAssertGreaterThan(W3WFont(familyName: "Helvetica", size: 32.0, weight: .semibold).weight, 0.0)
 
     // light are less than 0.0
-    XCTAssertLessThan(W3WFont(name: "Helvetica", size: 32.0, weight: .light).weight, 0.0)
-    XCTAssertLessThan(W3WFont(name: "Helvetica", size: 32.0, weight: .thin).weight, 0.0)
-    XCTAssertLessThan(W3WFont(name: "Helvetica", size: 32.0, weight: .ultralight).weight, 0.0)
+    XCTAssertLessThan(W3WFont(familyName: "Helvetica", size: 32.0, weight: .light).weight, 0.0)
+    XCTAssertLessThan(W3WFont(familyName: "Helvetica", size: 32.0, weight: .thin).weight, 0.0)
+    XCTAssertLessThan(W3WFont(familyName: "Helvetica", size: 32.0, weight: .ultralight).weight, 0.0)
   }
+  
+  
+  func testImageSource() {
+    var imageSource = [W3WColorMode: W3WImageSource]()
+
+    imageSource[.light] = .system("x")
+    imageSource[.dark] = .system("y")
+  }
+  
   
 }

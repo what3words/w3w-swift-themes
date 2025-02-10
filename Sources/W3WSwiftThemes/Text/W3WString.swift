@@ -90,9 +90,29 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
     style(color: color, font: font?.uiFont)
   }
 
+
+  /// make a W3WString representing a distance formatted for default locale
+  /// - Parameters:
+  ///   - distance: The distance to show
+  ///   - color: The colour to use
+  ///   - font: The font to use
+  public init(meters: Double) {
+    string = NSMutableAttributedString(string: distanceToString(meters: meters))
+  }
+
   
   #if canImport(W3WSwiftCore)
   
+  /// make a W3WString representing a distance formatted for default locale
+  /// - Parameters:
+  ///   - distance: The distance to show
+  ///   - color: The colour to use
+  ///   - font: The font to use
+  public init(distance: W3WDistance) {
+    string = NSMutableAttributedString(string: distanceToString(distance: distance))
+  }
+
+
   /// make a W3WString representing a distance formatted for default locale
   /// - Parameters:
   ///   - distance: The distance to show
@@ -282,6 +302,31 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
   static public func +=( lhs: inout W3WString, rhs: W3WString) {
     lhs = lhs + rhs
   }
+
+  
+  /// returns a distance in the localised format (miles,km,etc)
+  /// - Parameters:
+  ///   - kilometers: number of kilometers to use
+  func distanceToString(meters: Double) -> String {
+    var string = ""
+    
+    let formatter = MKDistanceFormatter()
+    formatter.unitStyle = .abbreviated
+    
+    // note: W3WSettings.measurement might be .userPreference, in which case formatter.units is let to it's default
+    #if canImport(W3WSwiftCore)
+    if W3WSettings.measurement == .metric {
+      formatter.units = .metric
+    } else if W3WSettings.measurement == .imperial {
+      formatter.units = .imperial
+    }
+    #endif
+
+    string = formatter.string(fromDistance: meters)
+    
+    return string
+  }
+
   
   #if canImport(W3WSwiftCore)
 
@@ -289,21 +334,7 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
   /// - Parameters:
   ///   - kilometers: number of kilometers to use
   func distanceToString(distance: W3WDistance) -> String {
-    var string = ""
-    
-    let formatter = MKDistanceFormatter()
-    formatter.unitStyle = .abbreviated
-    
-    // note: W3WSettings.measurement might be .userPreference, in which case formatter.units is let to it's default
-    if W3WSettings.measurement == .metric {
-      formatter.units = .metric
-    } else if W3WSettings.measurement == .imperial {
-      formatter.units = .imperial
-    }
-
-    string = formatter.string(fromDistance: distance.meters)
-    
-    return string
+    distanceToString(meters: distance.meters)
   }
   
 

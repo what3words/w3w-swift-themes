@@ -28,6 +28,12 @@ public struct W3WFont: CustomStringConvertible {
     self.font = ctFont
   }
   
+
+  @available(*, deprecated, renamed: "init(familyName:size:weight:italic:)")
+  public init(name: String, size: CGFloat, weight: W3WFontWeight = .none, italic: Bool = false) {
+    self.init(familyName: name, size: size, weight: weight, italic: italic)
+  }
+  
   
   public init(familyName: String, size: CGFloat, weight: W3WFontWeight = .none, italic: Bool = false) {
 
