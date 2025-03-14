@@ -343,6 +343,39 @@ public struct W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
   }
   
   
+  public func with(typefaces: W3WTypefaces) -> W3WTheme {
+    W3WTheme(
+      brandBase: brandBase, labelsPrimary: labelsPrimary, labelsSecondary: labelsSecondary,
+      labelsTertiary: labelsTertiary, labelsQuaternary: labelsQuaternary, labelsPrimaryInverse: labelsPrimaryInverse, labelsPrimaryBlackInverse: labelsPrimaryBlackInverse,
+      fillsPrimary: fillsPrimary, fillsSecondary: fillsSecondary, fillsTertiary: fillsTertiary, fillsQuaternary: fillsQuaternary, fillsQuinary: fillsQuinary,
+      separatorOpaque: separatorOpaque, separatorNonOpaque: separatorNonOpaque,
+      systemBackgroundBasePrimary: systemBackgroundBasePrimary, systemBackgroundBaseSecondary: systemBackgroundBaseSecondary, systemBackgroundBaseTertiary: systemBackgroundBaseTertiary,
+      systemBackgroundElevatedPrimary: systemBackgroundElevatedPrimary, systemBackgroundElevatedSecondary: systemBackgroundElevatedSecondary, systemBackgroundElevatedTertiary: systemBackgroundElevatedTertiary,
+      groupedBackgroundBasePrimary: groupedBackgroundBasePrimary, groupedBackgroundBaseSecondary: groupedBackgroundBaseSecondary, groupedBackgroundBaseTertiary: groupedBackgroundBaseTertiary,
+      groupedBackgroundElevatedPrimary: groupedBackgroundElevatedPrimary, groupedBackgroundElevatedSecondary: groupedBackgroundElevatedSecondary, groupedBackgroundElevatedTertiary: groupedBackgroundElevatedTertiary,
+      successBase: successBase, successElevated: successElevated, successLabel: successLabel,
+      warningBase: warningBase, warningElevated: warningElevated, warningLabel: warningLabel,
+      errorBase: errorBase, errorElevated: errorElevated, errorLabel: errorLabel,
+      typefaces: typefaces,
+      base: schemes[.base]!, buttons: schemes[.buttons], textFields: schemes[.textFields], labels: schemes[.labels],
+      maps: schemes[.maps], cells: schemes[.cells], icons: schemes[.icons], voice: schemes[.voice], ocr: schemes[.ocr]
+    )
+  }
+  
+  
+  public func with(body: W3WFont)        -> W3WTheme { return with(typefaces: typefaces?.with(body: body)             ?? W3WTypefaces()) }
+  public func with(largeTitle: W3WFont)  -> W3WTheme { return with(typefaces: typefaces?.with(largeTitle: largeTitle) ?? W3WTypefaces()) }
+  public func with(title1: W3WFont)      -> W3WTheme { return with(typefaces: typefaces?.with(title1: title1)         ?? W3WTypefaces()) }
+  public func with(title2: W3WFont)      -> W3WTheme { return with(typefaces: typefaces?.with(title2: title2)         ?? W3WTypefaces()) }
+  public func with(title3: W3WFont)      -> W3WTheme { return with(typefaces: typefaces?.with(title3: title3)         ?? W3WTypefaces()) }
+  public func with(headline: W3WFont)    -> W3WTheme { return with(typefaces: typefaces?.with(headline: headline)     ?? W3WTypefaces()) }
+  public func with(callout: W3WFont)     -> W3WTheme { return with(typefaces: typefaces?.with(callout: callout)        ?? W3WTypefaces()) }
+  public func with(subheadline: W3WFont) -> W3WTheme { return with(typefaces: typefaces?.with(subheadline: subheadline) ?? W3WTypefaces()) }
+  public func with(footnote: W3WFont)    -> W3WTheme { return with(typefaces: typefaces?.with(footnote: footnote)      ?? W3WTypefaces()) }
+  public func with(caption1: W3WFont)    -> W3WTheme { return with(typefaces: typefaces?.with(caption1: caption1)     ?? W3WTypefaces()) }
+  public func with(caption2: W3WFont)    -> W3WTheme { return with(typefaces: typefaces?.with(caption2: caption2)     ?? W3WTypefaces()) }
+
+  
   public var description: String {
     return debugDescription
   }

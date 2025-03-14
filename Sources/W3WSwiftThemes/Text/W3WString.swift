@@ -148,6 +148,16 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
   }
   
   
+  public var count: Int {
+    get { asString().count }
+  }
+  
+  
+  public var isEmpty: Bool {
+    get { asString().isEmpty }
+  }
+  
+  
   func makeAttributes(color: W3WColor? = nil, font: UIFont? = nil, underlined: Bool = false) -> [NSAttributedString.Key: AnyObject] {
     var style = [NSAttributedString.Key: AnyObject]()
     
@@ -284,7 +294,6 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
         string.addAttributes(style, range: match.range)
       }
     }
-
   }
 
 
@@ -298,6 +307,19 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
   }
 
 
+  /// find substrings in the text and apply styles to them
+  /// - Parameters:
+  ///   - word: The subtext to find
+  ///   - color: The colour to use
+  ///   - font: The font to use
+  public func highlight(range: NSRange, color: W3WColor? = nil, font: W3WFont? = nil) {
+    let style = makeAttributes(color: color, font: font?.uiFont)
+    if count >= range.location + range.length {
+      string.addAttributes(style, range: range)
+    }
+  }
+
+  
   /// add two W3WStrings together
   static public func +=( lhs: inout W3WString, rhs: W3WString) {
     lhs = lhs + rhs

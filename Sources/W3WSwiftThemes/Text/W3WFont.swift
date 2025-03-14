@@ -35,6 +35,13 @@ public struct W3WFont: CustomStringConvertible {
   }
   
   
+  static public var `default`: W3WFont {
+    get {
+      W3WFont(familyName: W3WTypefaces.defaultTypefaceName, size: W3WTypefaces().getFontSizes().body)
+    }
+  }
+  
+  
   public init(familyName: String, size: CGFloat, weight: W3WFontWeight = .none, italic: Bool = false) {
 
     // set up description
@@ -110,6 +117,23 @@ public struct W3WFont: CustomStringConvertible {
         return 0.0
       }
     }
+  
+  
+  // MARK: font sizes
+  
+
+  public var largeTitle:  W3WFont  { get { W3WTypefaces(font: self).largeTitle  } }
+  public var title1:      W3WFont  { get { W3WTypefaces(font: self).title1      } }
+  public var title2:      W3WFont  { get { W3WTypefaces(font: self).title2      } }
+  public var title3:      W3WFont  { get { W3WTypefaces(font: self).title3      } }
+  public var headline:    W3WFont  { get { W3WTypefaces(font: self).headline    } }
+  public var body:        W3WFont  { get { W3WTypefaces(font: self).body        } }
+  public var callout:     W3WFont  { get { W3WTypefaces(font: self).callout     } }
+  public var subheadline: W3WFont  { get { W3WTypefaces(font: self).subheadline } }
+  public var footnote:    W3WFont  { get { W3WTypefaces(font: self).footnote    } }
+  public var caption1:    W3WFont  { get { W3WTypefaces(font: self).caption1    } }
+  public var caption2:    W3WFont  { get { W3WTypefaces(font: self).caption2    } }
+
       
   public var description: String {
     return name + "(" + String(format: "%.1f", size) + ")"
