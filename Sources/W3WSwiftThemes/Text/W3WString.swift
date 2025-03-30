@@ -101,41 +101,6 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
   }
 
   
-  #if canImport(W3WSwiftCore)
-  
-  /// make a W3WString representing a distance formatted for default locale
-  /// - Parameters:
-  ///   - distance: The distance to show
-  ///   - color: The colour to use
-  ///   - font: The font to use
-  public init(distance: W3WDistance) {
-    string = NSMutableAttributedString(string: distanceToString(distance: distance))
-  }
-
-
-  /// make a W3WString representing a distance formatted for default locale
-  /// - Parameters:
-  ///   - distance: The distance to show
-  ///   - color: The colour to use
-  ///   - font: The font to use
-  public init(distance: W3WDistance, color: W3WColor? = nil, font: UIFont? = nil) {
-    string = NSMutableAttributedString(string: distanceToString(distance: distance))
-    _ = style(color: color, font: font)
-  }
-
-
-  /// make a W3WString representing a distance formatted for default locale
-  /// - Parameters:
-  ///   - distance: The distance to show
-  ///   - color: The colour to use
-  ///   - font: The font to use
-  public init(distance: W3WDistance, color: W3WColor? = nil, font: W3WFont?) {
-    string = NSMutableAttributedString(string: distanceToString(distance: distance))
-    _ = style(color: color, font: font?.uiFont)
-  }
-
-  #endif
-
   /// returns the text as a NSAttributedString
   public func asAttributedString() -> NSAttributedString {
     return string
@@ -145,6 +110,16 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
   /// returns the text as a String
   public func asString() -> String {
     return string.string
+  }
+  
+  
+  public var count: Int {
+    get { asString().count }
+  }
+  
+  
+  public var isEmpty: Bool {
+    get { asString().isEmpty }
   }
   
   
@@ -232,33 +207,6 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
     return withSlashes(color: color, font: font?.uiFont)
   }
   
-  #if canImport(W3WSwiftCore)
-
-  /// add w3w slashes to the text only if the text is in the form of a three word address
-  /// - Parameters:
-  ///   - color: The colour to use
-  ///   - font: The font to use
-  @discardableResult
-  public func addSlashesIfAddress(color: W3WColor = .w3wBrandBase, font: UIFont? = nil) -> W3WString {
-    if W3WRegex.isPossible3wa(text: asString()) {
-      string = removeLeadingSlashes().string
-      return withSlashes(color: color, font: font)
-    }
-    
-    return self
-  }
-  
-  
-  /// add w3w slashes to the text only if the text is in the form of a three word address
-  /// - Parameters:
-  ///   - color: The colour to use
-  ///   - font: The font to use
-  @discardableResult
-  public func addSlashesIfAddress(color: W3WColor = .w3wBrandBase, font: W3WFont?) -> W3WString {
-    return addSlashesIfAddress(color: color, font: font?.uiFont)
-  }
-  
-  #endif
 
   /// remove leading `///` from text
   @discardableResult
@@ -284,7 +232,6 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
         string.addAttributes(style, range: match.range)
       }
     }
-
   }
 
 
@@ -298,6 +245,19 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
   }
 
 
+  /// find substrings in the text and apply styles to them
+  /// - Parameters:
+  ///   - word: The subtext to find
+  ///   - color: The colour to use
+  ///   - font: The font to use
+  public func highlight(range: NSRange, color: W3WColor? = nil, font: W3WFont? = nil) {
+    let style = makeAttributes(color: color, font: font?.uiFont)
+    if count >= range.location + range.length {
+      string.addAttributes(style, range: range)
+    }
+  }
+
+  
   /// add two W3WStrings together
   static public func +=( lhs: inout W3WString, rhs: W3WString) {
     lhs = lhs + rhs
@@ -327,53 +287,6 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
     return string
   }
 
-  
-  #if canImport(W3WSwiftCore)
-
-  /// returns a distance in the localised format (miles,km,etc)
-  /// - Parameters:
-  ///   - kilometers: number of kilometers to use
-  func distanceToString(distance: W3WDistance) -> String {
-    distanceToString(meters: distance.meters)
-  }
-  
-
-  /// breaks the text into an array of string by word
-  func wordsToArray() -> [String] {
-    let text    = string.string
-    let regex   = try! NSRegularExpression(pattern: W3WRegex.regex_3wa_word)
-    let matches = regex.matches(in: text, range: NSRange(text.startIndex..., in:text))
-    
-    var words = [String]()
-    for match in matches {
-      let word = String(text[Range(match.range, in: text)!]).lowercased()
-      words.append(word)
-    }
-    
-    return words
-  }
-  
-  
-  func compareAsWords(to: W3WString) -> Bool {
-    let a1 = wordsToArray()
-    let a2 = to.wordsToArray()
-    
-    if a1[0] == a2[0] && a1[1] == a2[1] && a1[2] == a2[2] {
-      return true
-    } else {
-      return false
-    }
-  }
-  
-  
-  func fixDidYouMean() -> W3WString {
-    let words = wordsToArray()
-    let separator = isJapanese() ? "。" : "."
-
-    return W3WString(words.joined(separator: separator))
-  }
-
-  #endif
 
   // maybe change this to getSeparatorFor() and move it to W3WSwiftTypes
   func isJapanese() -> Bool {
@@ -419,5 +332,116 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
     }
   }
   
+#if canImport(W3WSwiftCore)
+
+  /// make a W3WString representing a distance formatted for default locale
+  /// - Parameters:
+  ///   - distance: The distance to show
+  ///   - color: The colour to use
+  ///   - font: The font to use
+  public init(distance: W3WDistance) {
+    string = NSMutableAttributedString(string: distanceToString(distance: distance))
+  }
+
+
+  /// make a W3WString representing a distance formatted for default locale
+  /// - Parameters:
+  ///   - distance: The distance to show
+  ///   - color: The colour to use
+  ///   - font: The font to use
+  public init(distance: W3WDistance, color: W3WColor? = nil, font: UIFont? = nil) {
+    string = NSMutableAttributedString(string: distanceToString(distance: distance))
+    _ = style(color: color, font: font)
+  }
+
+
+  /// make a W3WString representing a distance formatted for default locale
+  /// - Parameters:
+  ///   - distance: The distance to show
+  ///   - color: The colour to use
+  ///   - font: The font to use
+  public init(distance: W3WDistance, color: W3WColor? = nil, font: W3WFont?) {
+    string = NSMutableAttributedString(string: distanceToString(distance: distance))
+    _ = style(color: color, font: font?.uiFont)
+  }
+
+#endif
+
+#if canImport(W3WSwiftCore)
+
+  /// add w3w slashes to the text only if the text is in the form of a three word address
+  /// - Parameters:
+  ///   - color: The colour to use
+  ///   - font: The font to use
+  @discardableResult
+  public func addSlashesIfAddress(color: W3WColor = .w3wBrandBase, font: UIFont? = nil) -> W3WString {
+    if W3WRegex.isPossible3wa(text: asString()) {
+      string = removeLeadingSlashes().string
+      return withSlashes(color: color, font: font)
+    }
+    
+    return self
+  }
+
+
+  /// add w3w slashes to the text only if the text is in the form of a three word address
+  /// - Parameters:
+  ///   - color: The colour to use
+  ///   - font: The font to use
+  @discardableResult
+  public func addSlashesIfAddress(color: W3WColor = .w3wBrandBase, font: W3WFont?) -> W3WString {
+    return addSlashesIfAddress(color: color, font: font?.uiFont)
+  }
+
+#endif
+
   
+#if canImport(W3WSwiftCore)
+
+  /// returns a distance in the localised format (miles,km,etc)
+  /// - Parameters:
+  ///   - kilometers: number of kilometers to use
+  func distanceToString(distance: W3WDistance) -> String {
+    distanceToString(meters: distance.meters)
+  }
+  
+
+  /// breaks the text into an array of string by word
+  func wordsToArray() -> [String] {
+    let text    = string.string
+    let regex   = try! NSRegularExpression(pattern: W3WRegex.regex_3wa_word)
+    let matches = regex.matches(in: text, range: NSRange(text.startIndex..., in:text))
+    
+    var words = [String]()
+    for match in matches {
+      let word = String(text[Range(match.range, in: text)!]).lowercased()
+      words.append(word)
+    }
+    
+    return words
+  }
+  
+  
+  func compareAsWords(to: W3WString) -> Bool {
+    let a1 = wordsToArray()
+    let a2 = to.wordsToArray()
+    
+    if a1[0] == a2[0] && a1[1] == a2[1] && a1[2] == a2[2] {
+      return true
+    } else {
+      return false
+    }
+  }
+  
+  
+  func fixDidYouMean() -> W3WString {
+    let words = wordsToArray()
+    let separator = isJapanese() ? "。" : "."
+
+    return W3WString(words.joined(separator: separator))
+  }
+
+#endif
+
+
 }
