@@ -133,7 +133,7 @@ open class W3WImage {
     
     // I think that there should be an "else" here, but no time to change and test ATM
 
-    if #available(iOS 13.0, *) { // if we have SF Symbols available at all
+    else if #available(iOS 13.0, *) { // if we have SF Symbols available at all
       // if there is a tint colour
       if let tint = colors?.tint?.current.uiColor {
         resultImage = UIImage(systemName: symbol)?.withTintColor(tint)
