@@ -38,6 +38,7 @@ public extension W3WImage {
   static let micFilledRed     = { return W3WImage(drawing: .micFilledWithSlashes, colors: .standardIcons.with(brand: .w3wBrandBase)) }()
   static let mapSquare        = { return W3WImage(drawing: .mapSquare, colors: .standardIcons) }()
 
+  static let w3wLock             = { return W3WImage(file: "w3wLock", colors: .standardIcons) }()
   static let arrowLeft           = { return W3WImage(systemName: "arrow.left", colors: .standardIcons) }()
   static let accessibilityFill   = { return W3WImage(systemName: "accessibility.fill", colors: .standardIcons) }()
   static let badgeFill           = { return W3WImage(systemName: "app.badge.fill", colors: .standardIcons) }()
