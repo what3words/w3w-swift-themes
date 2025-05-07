@@ -122,8 +122,8 @@ public extension W3WRowHeight {
 
 
 public extension W3WShadow {
-  static let none = W3WShadow(color: .mediumGrey, radius: 0.0, offsetX: 0, offsetY: 0)
-  static let low = W3WShadow(color: .mediumGrey, opacity: 0.33, radius: 2.0, offsetX: 0, offsetY: 0)
-  static let medium = W3WShadow(color: .mediumGrey, opacity: 0.33, radius: 4.0, offsetX: 0, offsetY: 0)
-  static let high = W3WShadow(color: .mediumGrey, opacity: 0.33, radius: 5.0, offsetX: 0, offsetY: 0)
+  static let none = W3WShadow(radius: 0.0, offsetX: 0, offsetY: 0)
+  static let low = W3WShadow(opacity: 0.33, radius: 2.0, offsetX: 0, offsetY: 0)
+  static let medium = W3WShadow(opacity: 0.33, radius: 4.0, offsetX: 0, offsetY: 0)
+  static let high = W3WShadow(opacity: 0.33, radius: 5.0, offsetX: 0, offsetY: 0)
 }
