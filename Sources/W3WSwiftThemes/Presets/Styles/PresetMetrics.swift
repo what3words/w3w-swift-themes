@@ -100,14 +100,16 @@ public extension W3WMargin {
 
 
 public extension W3WPadding {
-  static let none:   W3WPadding =  0.0
-  static let single: W3WPadding =  1.0
-  static let fine:   W3WPadding =  2.0
-  static let thin:   W3WPadding =  4.0
-  static let light:  W3WPadding =  8.0
-  static let medium: W3WPadding = 12.0
-  static let bold:   W3WPadding = 16.0
-  static let heavy:  W3WPadding = 24.0
+  static let none:        W3WPadding =  0.0
+  static let single:      W3WPadding =  1.0
+  static let fine:        W3WPadding =  2.0
+  static let thin:        W3WPadding =  4.0
+  static let extraLight:  W3WPadding =  6.0
+  static let light:       W3WPadding =  8.0
+  static let extraMedium: W3WPadding = 10.0
+  static let medium:      W3WPadding = 12.0
+  static let bold:        W3WPadding = 16.0
+  static let heavy:       W3WPadding = 24.0
 }
 
 
@@ -122,8 +124,8 @@ public extension W3WRowHeight {
 
 
 public extension W3WShadow {
-  static let none = W3WShadow(color: .mediumGrey, radius: 0.0, offsetX: 0, offsetY: 0)
-  static let low = W3WShadow(color: .mediumGrey, opacity: 0.33, radius: 2.0, offsetX: 0, offsetY: 0)
-  static let medium = W3WShadow(color: .mediumGrey, opacity: 0.33, radius: 4.0, offsetX: 0, offsetY: 0)
-  static let high = W3WShadow(color: .mediumGrey, opacity: 0.33, radius: 5.0, offsetX: 0, offsetY: 0)
+  static let none = W3WShadow(radius: 0.0, offsetX: 0, offsetY: 0)
+  static let low = W3WShadow(opacity: 0.33, radius: 2.0, offsetX: 0, offsetY: 0)
+  static let medium = W3WShadow(opacity: 0.33, radius: 4.0, offsetX: 0, offsetY: 0)
+  static let high = W3WShadow(opacity: 0.33, radius: 5.0, offsetX: 0, offsetY: 0)
 }

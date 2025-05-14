@@ -54,6 +54,7 @@ public struct W3WScheme {
   public func with(error: W3WBasicColors? = nil) -> W3WScheme   { return self.with(colors: colors?.with(error: error)) }
   public func with(header: W3WBasicColors? = nil) -> W3WScheme  { return self.with(colors: colors?.with(header: header)) }
   public func with(line: W3WColor? = nil) -> W3WScheme          { return self.with(colors: colors?.with(line: line)) }
+  public func with(shadowColor: W3WColor? = nil) -> W3WScheme   { return self.with(colors: colors?.with(shadow: shadowColor)) }
   
   // styles
   
