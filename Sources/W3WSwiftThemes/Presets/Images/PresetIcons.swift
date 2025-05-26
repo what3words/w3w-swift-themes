@@ -134,7 +134,10 @@ public extension W3WImage {
     systemName: "location",
     colors: W3WColors(foreground: .orange, background: .yellow, tint: .red, secondary: .green)
   ) }()
-
+  static let paperPlaneFilled = { return W3WImage(systemName: "paperplane.fill", colors: .standardIcons) }()
+  static let w3wVoiceChat     = { return W3WImage(file: "w3w.voice.chat", colors: .emptyColorSet) }()
+  static let w3wScanChat      = { return W3WImage(file: "w3w.scan.chat", colors: .emptyColorSet) }()
+  static let w3wVoiceChatOffile      = { return W3WImage(file: "w3w.voice.offline", colors: .emptyColorSet) }()
   @available(*, deprecated)
   static let ellipsisCircle   = { return W3WImage(systemName: "ellipsis.circle", colors: .standardIcons) }()
   @available(*, deprecated)
