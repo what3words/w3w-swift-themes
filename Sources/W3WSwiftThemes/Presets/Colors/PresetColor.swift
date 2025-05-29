@@ -8,7 +8,7 @@
 
 extension W3WColor {
   
-  // basic colours
+  // MARK: -  basic colours
   
   static public let clear      = W3WColor(all: .clear)
   static public let white      = W3WColor(all: .white)
@@ -20,7 +20,7 @@ extension W3WColor {
   static public let secondary     = W3WColor(light: .darkBlue,   dark: .royalBlue)
   static public let tint           = W3WColor(light: .core.red50, dark: .core.red50)
 
-  // colours for standard theme
+  // MARK: -  colours for standard theme
   
   public static let standardBrandBase    = W3WColor(light: .hig.blueLight, dark: .hig.blueDark)
 
@@ -131,7 +131,7 @@ extension W3WColor {
   public static let w3wErrorLabel        = W3WColor(light: .core.coral20, dark: .core.coral90)
   public static let w3wErrorLabelDark   = W3WColor(light: .core.coral20, dark: .core.coral20)
 
-  // brand responsive
+  // MARK: -  brand responsive
   
   static public let yellow         = W3WColor(light: .yellow50, dark: .yellow40)
   static public let orange        = W3WColor(light: .orange50, dark: .orange60)
@@ -143,7 +143,7 @@ extension W3WColor {
   static public let skyBlue       = W3WColor(light: .core.blue62, dark: .core.blue64)
   static public let blue          = W3WColor(light: .blue40, dark: .blue60)
 
-  // brand static
+  // MARK: -  brand static
   
   static public let aqua          = W3WColor(all: .aqua)
   static public let charcoal      = W3WColor(all: .charcoal)
@@ -167,4 +167,7 @@ extension W3WColor {
   static public let darkDarkBlue  = W3WColor(all: .darkDarkBlue)
   static public let lightCyan     = W3WColor(all: .lightCyan)
 
+  
+  // MARK: - Universal
+  static public let universalSystemBackground = W3WColor(light: .core.grey100, dark: .core.grey10)
 }
