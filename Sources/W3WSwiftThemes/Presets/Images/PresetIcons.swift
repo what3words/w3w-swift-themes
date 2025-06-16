@@ -86,6 +86,11 @@ public extension W3WImage {
   static let sliderHorizontal3    = { return W3WImage(systemName: "slider.horizontal.3", colors: .standardIcons) }()
   static let star                 = { return W3WImage(systemName: "star", colors: .standardIcons) }()
   static let starFill             = { return W3WImage(systemName: "star.fill", colors: .standardIcons) }()
+  static let tableCells           = { return W3WImage(systemName: "tablecells", colors: .standardIcons) }()
+  static let tableCellsFill       = { return W3WImage(systemName: "tablecells.fill", colors: .standardIcons) }()
+  static let photo                = { return W3WImage(systemName: "photo", colors: .standardIcons) }()
+  static let photoFill            = { return W3WImage(systemName: "photo.fill", colors: .standardIcons) }()
+  static let document             = { return W3WImage(file: "document", colors: .standardIcons) }()
   static let tag                  = { return W3WImage(systemName: "tag", colors: .standardIcons) }()
   static let tagFill              = { return W3WImage(systemName: "tag.fill", colors: .standardIcons) }()
   static let listBullet           = { return W3WImage(systemName: "list.bullet", colors: .standardIcons) }()
@@ -130,6 +135,9 @@ public extension W3WImage {
   static let aiChatFilled         = { return W3WImage(file: "aiChatFilled", colors: .standardIcons) }()
   static let aiChatOutlined       = { return W3WImage(file: "aiChatOutlined", colors: .standardIcons) }()
   static let voiceChat            = { return W3WImage(file: "voiceChat", colors: .standardIcons) }()
+  static let w3wProVoice          = { return W3WImage(file: "w3wProVoice", colors: .standardIcons) }()
+  static let w3wScan              = { return W3WImage(file: "w3wScan", colors: .standardIcons) }()
+  static let w3wClose             = { return W3WImage(file: "w3wClose", colors: .standardIcons) }()
   static let mapGpsDefault        = { return W3WImage(
     systemName: "location",
     colors: W3WColors(foreground: .orange, background: .yellow, tint: .red, secondary: .green)
