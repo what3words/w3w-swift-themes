@@ -100,6 +100,10 @@ public extension W3WImage {
   static let person2Fill          = { return W3WImage(systemName: "person.2.fill", colors: .standardIcons) }()
   static let location             = { return W3WImage(systemName: "location", colors: .standardIcons) }()
   static let locationFill         = { return W3WImage(systemName: "location.fill", colors: .standardIcons) }()
+  static let stop         = { return W3WImage(systemName: "stop", colors: .standardIcons) }()
+  static let stopFill         = { return W3WImage(systemName: "stop.fill", colors: .standardIcons) }()
+  static let stopCircle         = { return W3WImage(systemName: "stop.circle", colors: .standardIcons) }()
+  static let stopCircleFill         = { return W3WImage(systemName: "stop.circle.fill", colors: .standardIcons) }()
   static let aiChatLogoFilledBlack         = { return W3WImage(file: "aiChatLogoFilledBlack", colors: .emptyColorSet) }()
   static let aiChatLogoFilledDark         = { return W3WImage(file: "aiChatLogoFilledDark", colors: .emptyColorSet) }()
   static let aiChatLogoFilledLight         = { return W3WImage(file: "aiChatLogoFilledLight", colors: .emptyColorSet) }()
@@ -152,5 +156,5 @@ public extension W3WImage {
   static let speakerWave3Fill = { return W3WImage(systemName: "speaker.wave.3.fill", colors: .standardIcons) }()
   @available(*, deprecated)
   static let xmarkCircle      = { return W3WImage(systemName: "xmark.circle", colors: .standardIcons) }()
-
+  static let xmarkCircleFill      = { return W3WImage(systemName: "xmark.circle.fill", colors: .standardIcons) }()
 }
