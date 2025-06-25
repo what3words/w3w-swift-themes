@@ -304,8 +304,14 @@ extension W3WCoreColor {
     static public let grey24        = W3WCoreColor(hex: 0x38383A)
     static public let grey30        = W3WCoreColor(hex: 0x3A3A3C)
     static public let grey32        = W3WCoreColor(hex: 0x3C3C43)
+    static public let grey52        = W3WCoreColor(hex: 0x73777C)
+    static public let grey54        = W3WCoreColor(hex: 0x767680)
+    static public let grey95        = W3WCoreColor(hex: 0xF0F0F3)
+    static public let grey99        = W3WCoreColor(hex: 0xf2f2f7)
     static public let grey100       = W3WCoreColor(hex: 0xffffff)
     static public let grey32Alpha36 = W3WCoreColor.hig.grey32.with(alpha: 0.36)
+    static public let grey54Alpha16 = W3WCoreColor.hig.grey54.with(alpha: 0.16)
+    static public let grey54Alpha32 = W3WCoreColor.hig.grey54.with(alpha: 0.32)
     
     // corals
     static public let coral20     = W3WCoreColor(hex: 0x640D00)
