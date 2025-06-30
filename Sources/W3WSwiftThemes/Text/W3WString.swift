@@ -193,7 +193,7 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
   /// - Parameters:
   ///   - color: The colour to use
   ///   - font: The font to use
-  ///   - addLeadingSlashes
+  ///   - language: An optional `W3WLanguage` that determines the writing direction. Defaults to left-to-right if nil or unknown.
   public func withSlashes(
     color: W3WColor = .w3wBrandBase,
     font: UIFont? = nil,
