@@ -24,7 +24,7 @@ public func +(left: W3WString, right: W3WString) -> W3WString {
 /// Allows simple concatination via +, and uses W3WColor
 public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
   public typealias StringLiteralType = String
-
+    
   var string = NSMutableAttributedString()
 
   public init() {
@@ -193,9 +193,21 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
   /// - Parameters:
   ///   - color: The colour to use
   ///   - font: The font to use
-  public func withSlashes(color: W3WColor = .w3wBrandBase, font: UIFont? = nil) -> W3WString {
-    string = removeLeadingSlashes().string
-    return W3WString("///", color: color, font: font) + self
+  ///   - language: An optional `W3WLanguage` that determines the writing direction. Defaults to left-to-right if nil or unknown.
+  public func withSlashes(
+    color: W3WColor = .w3wBrandBase,
+    font: UIFont? = nil,
+    language: W3WLanguage? = nil
+  ) -> W3WString {
+    switch language?.direction() {
+    case .leftToRight, .topToBottom, .bottomToTop, nil:
+      string = removeLeadingSlashes().string
+      return W3WString("///", color: color, font: font) + self
+      
+    case .rightToLeft:
+      string = removeTrailingSlashes().string
+      return self + W3WString("///", color: color, font: font)
+    }
   }
   
   
@@ -218,6 +230,17 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
   }
   
 
+  /// remove trailing `///` from text
+  @discardableResult
+  func removeTrailingSlashes() -> W3WString {
+    while string.string.last == "/" {
+      let lastIndex = string.length - 1
+      string.deleteCharacters(in: NSRange(location: lastIndex, length: 1))
+    }
+    return self
+  }
+  
+  
   /// find substrings in the text and apply styles to them
   /// - Parameters:
   ///   - word: The subtext to find
