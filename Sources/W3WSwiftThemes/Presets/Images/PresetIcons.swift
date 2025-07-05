@@ -157,4 +157,6 @@ public extension W3WImage {
   @available(*, deprecated)
   static let xmarkCircle      = { return W3WImage(systemName: "xmark.circle", colors: .standardIcons) }()
   static let xmarkCircleFill      = { return W3WImage(systemName: "xmark.circle.fill", colors: .standardIcons) }()
+  static let w3wCar = { return W3WImage(systemName: "car", colors: .standardIcons) }()
+  static let w3wTextDocument = { return W3WImage(systemName: "text.document", colors: .standardIcons) }()
 }
