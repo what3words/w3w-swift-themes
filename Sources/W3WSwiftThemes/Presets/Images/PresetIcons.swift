@@ -159,5 +159,4 @@ public extension W3WImage {
   static let xmarkCircleFill      = { return W3WImage(systemName: "xmark.circle.fill", colors: .standardIcons) }()
   static let w3wCar = { return W3WImage(systemName: "car", colors: .standardIcons) }()
   static let w3wTextDocument = { return W3WImage(systemName: "text.document", colors: .standardIcons) }()
-  static let w3wRoute = { return W3WImage(systemName: "  arrow.trianglehead.turn.up.right.diamond", colors: .standardIcons) }()
 }
