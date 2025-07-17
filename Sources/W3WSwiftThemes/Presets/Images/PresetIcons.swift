@@ -90,6 +90,12 @@ public extension W3WImage {
   static let tableCellsFill       = { return W3WImage(systemName: "tablecells.fill", colors: .standardIcons) }()
   static let photo                = { return W3WImage(systemName: "photo", colors: .standardIcons) }()
   static let photoFill            = { return W3WImage(systemName: "photo.fill", colors: .standardIcons) }()
+  static let photoBadgePlus       = {
+    if #available(iOS 17, *) {
+      return W3WImage(systemName: "photo.badge.plus", colors: .standardIcons)
+    }
+    return photo
+  }()
   static let document             = { return W3WImage(file: "document", colors: .standardIcons) }()
   static let tag                  = { return W3WImage(systemName: "tag", colors: .standardIcons) }()
   static let tagFill              = { return W3WImage(systemName: "tag.fill", colors: .standardIcons) }()
