@@ -183,7 +183,7 @@ extension W3WCoreColor {
     static public let grey96 = W3WCoreColor(alpha: 0xff, hex: 0xf3f3f6)
     static public let grey97 = W3WCoreColor(alpha: 0xff, hex: 0xeef1f6)
     static public let grey98 = W3WCoreColor(alpha: 0xff, hex: 0xf9f9fc)
-    static public let grey99 = W3WCoreColor(alpha: 0xff, hex: 0xfcfcff)
+    static public let grey99 = W3WCoreColor(alpha: 0xff, hex: 0xf2f2f7)
     static public let grey100 = W3WCoreColor(alpha: 0xff, hex: 0xffffff)
     static public let grey0Alpha24   = W3WCoreColor.core.grey0.with(alpha: 0.24)
     static public let grey42Alpha65  = W3WCoreColor.core.grey42.with(alpha: 0.65)
