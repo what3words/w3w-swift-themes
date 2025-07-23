@@ -188,6 +188,36 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
     string = mString
   }
 
+  
+  /// add w3w slashes to the text
+  /// - Parameters:
+  ///   - color: The colour to use
+  ///   - font: The font to use
+  public func withSlashes(color: W3WColor = .w3wBrandBase, font: UIFont? = nil) -> W3WString {
+    string = removeLeadingSlashes().string
+    return W3WString("///", color: color, font: font) + self
+  }
+  
+  
+  /// add w3w slashes to the text
+  /// - Parameters:
+  ///   - color: The colour to use
+  ///   - font: The font to use
+  public func withSlashes(color: W3WColor = .w3wBrandBase, font: W3WFont?) -> W3WString {
+    return withSlashes(color: color, font: font?.uiFont)
+  }
+  
+  
+  /// remove leading `///` from text
+  @discardableResult
+  func removeLeadingSlashes() -> W3WString {
+    while string.string.first == "/" {
+      string.deleteCharacters(in: NSRange(location: 0, length: 1))
+    }
+    return self
+  }
+
+  
   /// find substrings in the text and apply styles to them
   /// - Parameters:
   ///   - word: The subtext to find
