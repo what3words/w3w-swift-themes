@@ -24,8 +24,8 @@ public func +(left: W3WString, right: W3WString) -> W3WString {
 /// Allows simple concatination via +, and uses W3WColor
 public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
   public typealias StringLiteralType = String
-
-  var string = NSMutableAttributedString()
+    
+  public var string = NSMutableAttributedString()
 
   public init() {
   }
@@ -187,7 +187,7 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
     mString.mutableString.trimmingCharacters(in: characterSet)
     string = mString
   }
-  
+
   
   /// add w3w slashes to the text
   /// - Parameters:
@@ -207,7 +207,7 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
     return withSlashes(color: color, font: font?.uiFont)
   }
   
-
+  
   /// remove leading `///` from text
   @discardableResult
   func removeLeadingSlashes() -> W3WString {
@@ -216,8 +216,8 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
     }
     return self
   }
-  
 
+  
   /// find substrings in the text and apply styles to them
   /// - Parameters:
   ///   - word: The subtext to find
@@ -366,35 +366,6 @@ public class W3WString: CustomStringConvertible, ExpressibleByStringLiteral {
   }
 
 #endif
-
-#if canImport(W3WSwiftCore)
-
-  /// add w3w slashes to the text only if the text is in the form of a three word address
-  /// - Parameters:
-  ///   - color: The colour to use
-  ///   - font: The font to use
-  @discardableResult
-  public func addSlashesIfAddress(color: W3WColor = .w3wBrandBase, font: UIFont? = nil) -> W3WString {
-    if W3WRegex.isPossible3wa(text: asString()) {
-      string = removeLeadingSlashes().string
-      return withSlashes(color: color, font: font)
-    }
-    
-    return self
-  }
-
-
-  /// add w3w slashes to the text only if the text is in the form of a three word address
-  /// - Parameters:
-  ///   - color: The colour to use
-  ///   - font: The font to use
-  @discardableResult
-  public func addSlashesIfAddress(color: W3WColor = .w3wBrandBase, font: W3WFont?) -> W3WString {
-    return addSlashesIfAddress(color: color, font: font?.uiFont)
-  }
-
-#endif
-
   
 #if canImport(W3WSwiftCore)
 

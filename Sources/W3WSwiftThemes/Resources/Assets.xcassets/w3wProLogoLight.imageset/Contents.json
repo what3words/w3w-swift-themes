@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "Logo=w3w + Pro, Mode=Light, Lock=Off 1.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}

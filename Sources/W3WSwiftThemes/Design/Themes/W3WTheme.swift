@@ -29,6 +29,7 @@ public struct W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
   public var fillsTertiary: W3WColor?
   public var fillsQuaternary: W3WColor?
   public var fillsQuinary: W3WColor?
+  public var fillsSenary: W3WColor?
 
   public var separatorOpaque: W3WColor?
   public var separatorNonOpaque: W3WColor?
@@ -98,7 +99,7 @@ public struct W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
   /// initialise with a foreground, background, highlight and secondary colour
   public init(brandBase: W3WColor? = nil, labelsPrimary: W3WColor? = nil, labelsSecondary: W3WColor? = nil, 
               labelsTertiary: W3WColor? = nil, labelsQuaternary: W3WColor? = nil, labelsPrimaryInverse: W3WColor? = nil, labelsPrimaryBlackInverse: W3WColor? = nil, 
-              fillsPrimary: W3WColor? = nil, fillsSecondary: W3WColor? = nil, fillsTertiary: W3WColor? = nil, fillsQuaternary: W3WColor? = nil, fillsQuinary: W3WColor? = nil,
+              fillsPrimary: W3WColor? = nil, fillsSecondary: W3WColor? = nil, fillsTertiary: W3WColor? = nil, fillsQuaternary: W3WColor? = nil, fillsQuinary: W3WColor? = nil, fillsSenary: W3WColor? = nil,
               separatorOpaque: W3WColor? = nil, separatorNonOpaque: W3WColor? = nil,
               systemBackgroundBasePrimary: W3WColor? = nil, systemBackgroundBaseSecondary: W3WColor? = nil, systemBackgroundBaseTertiary: W3WColor? = nil,
               systemBackgroundElevatedPrimary: W3WColor? = nil, systemBackgroundElevatedSecondary: W3WColor? = nil, systemBackgroundElevatedTertiary: W3WColor? = nil,
@@ -124,7 +125,8 @@ public struct W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
     self.fillsTertiary = fillsTertiary
     self.fillsQuaternary = fillsQuaternary
     self.fillsQuinary = fillsQuinary
-
+    self.fillsSenary = fillsSenary
+    
     self.separatorOpaque = separatorOpaque
     self.separatorNonOpaque = separatorNonOpaque
     
@@ -347,7 +349,7 @@ public struct W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
     W3WTheme(
       brandBase: brandBase, labelsPrimary: labelsPrimary, labelsSecondary: labelsSecondary,
       labelsTertiary: labelsTertiary, labelsQuaternary: labelsQuaternary, labelsPrimaryInverse: labelsPrimaryInverse, labelsPrimaryBlackInverse: labelsPrimaryBlackInverse,
-      fillsPrimary: fillsPrimary, fillsSecondary: fillsSecondary, fillsTertiary: fillsTertiary, fillsQuaternary: fillsQuaternary, fillsQuinary: fillsQuinary,
+      fillsPrimary: fillsPrimary, fillsSecondary: fillsSecondary, fillsTertiary: fillsTertiary, fillsQuaternary: fillsQuaternary, fillsQuinary: fillsQuinary, fillsSenary: fillsSenary,
       separatorOpaque: separatorOpaque, separatorNonOpaque: separatorNonOpaque,
       systemBackgroundBasePrimary: systemBackgroundBasePrimary, systemBackgroundBaseSecondary: systemBackgroundBaseSecondary, systemBackgroundBaseTertiary: systemBackgroundBaseTertiary,
       systemBackgroundElevatedPrimary: systemBackgroundElevatedPrimary, systemBackgroundElevatedSecondary: systemBackgroundElevatedSecondary, systemBackgroundElevatedTertiary: systemBackgroundElevatedTertiary,
