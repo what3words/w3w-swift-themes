@@ -23,6 +23,7 @@ extension W3WColor {
   // MARK: -  colours for standard theme
   
   public static let standardBrandBase    = W3WColor(light: .hig.blueLight, dark: .hig.blueDark)
+  public static let standardBrandBaseSecondary    = W3WColor(light: .hig.blueLight, dark: .hig.blueDark)
 
   public static let standardLabelsPrimary   = W3WColor(light: .core.grey100, dark: .core.grey100)
   public static let standardLabelsSecondary   = W3WColor(light: .hig.blueLight, dark:.hig.blueDark)
@@ -80,6 +81,7 @@ extension W3WColor {
   // colours for what3words theme
 
   public static let w3wBrandBase         = W3WColor(light: .core.red50, dark: .core.red50)
+  public static let w3wBrandBaseSecondary = W3WColor(light: .core.blue20, dark: .core.blue20)
 
   public static let w3wLabelsPrimary     = W3WColor.standardLabelsPrimary // W3WColor(light: .hig.grey100, dark: .hig.grey100)
   public static let w3wLabelsSecondary    = W3WColor(light: .core.blue50, dark: .core.blue72)
