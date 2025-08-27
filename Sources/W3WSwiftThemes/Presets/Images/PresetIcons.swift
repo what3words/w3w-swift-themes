@@ -139,6 +139,7 @@ public extension W3WImage {
   static let w3wProLogo             = W3WColorModeImage(light: .w3wProLogoLight, dark: .w3wProLogoDark)
   static let w3wProAILogoDark         = { return W3WImage(file: "w3wProAILogoDark", colors: .emptyColorSet) }()
   static let w3wProAILogoLight         = { return W3WImage(file: "w3wProAILogoLight", colors: .emptyColorSet) }()
+  static let w3wLogoPro           = { return W3WImage(file: "w3wLogoPro", colors: .emptyColorSet) }()
   static let w3wProAILogo         = W3WColorModeImage(light: .w3wProAILogoLight, dark: .w3wProAILogoDark)
   static let slashAiLogoDark      = { return W3WImage(file: "slashAiLogoDark", colors: .emptyColorSet) }()
   static let slashAiLogoLight     = { return W3WImage(file: "slashAiLogoLight", colors: .emptyColorSet) }()
