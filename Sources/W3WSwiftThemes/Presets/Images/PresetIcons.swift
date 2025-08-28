@@ -39,6 +39,7 @@ public extension W3WImage {
   static let mapSquare        = { return W3WImage(drawing: .mapSquare, colors: .standardIcons) }()
 
   static let w3wLock             = { return W3WImage(file: "w3wLock", colors: .standardIcons) }()
+  static let w3wLockRed          = { return W3WImage(file: "w3wLockRed", colors: .standardIcons) }()
   static let arrowLeft           = { return W3WImage(systemName: "arrow.left", colors: .standardIcons) }()
   static let accessibilityFill   = { return W3WImage(systemName: "accessibility.fill", colors: .standardIcons) }()
   static let badgeFill           = { return W3WImage(systemName: "app.badge.fill", colors: .standardIcons) }()
@@ -58,6 +59,7 @@ public extension W3WImage {
   static let chevronRight        = { return W3WImage(systemName: "chevron.right", colors: .standardIcons) }()
   static let ellipsisCircleFill  = { return W3WImage(systemName: "ellipsis.circle", colors: .standardIcons) }()
   static let gearshape            = { return W3WImage(systemName: "gearshape", colors: .standardIcons) }()
+  static let appConnectedToAppBelowFill = { return W3WImage(systemName: "app.connected.to.app.below.fill", colors: .standardIcons) }()
   static let gearshapeFill          = { return W3WImage(systemName: "gearshape.fill", colors: .standardIcons) }()
   static let globe                    = { return W3WImage(systemName: "globe", colors: .standardIcons) }()
   static let infoCircle                 = { return W3WImage(systemName: "info.circle", colors: .standardIcons) }()
@@ -137,6 +139,7 @@ public extension W3WImage {
   static let w3wProLogo             = W3WColorModeImage(light: .w3wProLogoLight, dark: .w3wProLogoDark)
   static let w3wProAILogoDark         = { return W3WImage(file: "w3wProAILogoDark", colors: .emptyColorSet) }()
   static let w3wProAILogoLight         = { return W3WImage(file: "w3wProAILogoLight", colors: .emptyColorSet) }()
+  static let w3wLogoPro           = { return W3WImage(file: "w3wLogoPro", colors: .emptyColorSet) }()
   static let w3wProAILogo         = W3WColorModeImage(light: .w3wProAILogoLight, dark: .w3wProAILogoDark)
   static let slashAiLogoDark      = { return W3WImage(file: "slashAiLogoDark", colors: .emptyColorSet) }()
   static let slashAiLogoLight     = { return W3WImage(file: "slashAiLogoLight", colors: .emptyColorSet) }()
