@@ -174,4 +174,7 @@ public extension W3WImage {
       return W3WImage(systemName: "doc.text", colors: .standardIcons)
     }
   }()
+  
+  static let w3wTrash = { return W3WImage(systemName: "trash", colors: .standardIcons) }()
+  static let w3wTrashFill = { return W3WImage(systemName: "trash.fill", colors: .standardIcons) }()
 }
