@@ -258,11 +258,11 @@ extension W3WCoreColor {
     static public let orange40      = W3WCoreColor(hex: 0x661C17)
     static public let orange20      = W3WCoreColor(hex: 0x330E0C)
     static public let orange10      = W3WCoreColor(hex: 0x3E0500)
-    static public let orangeAlpha80 = W3WCoreColor.hig.orangeDark.with(alpha: 0.80)
-    static public let orangeAlpha60 = W3WCoreColor.hig.orangeDark.with(alpha: 0.60)
-    static public let orangeAlpha40 = W3WCoreColor.hig.orangeDark.with(alpha: 0.40)
-    static public let orangeAlpha20 = W3WCoreColor.hig.orangeDark.with(alpha: 0.20)
-    static public let orangeLight    = W3WCoreColor.core.orangeLight // this colour was changed 2025-01
+    static public let orangeAlpha80 = W3WCoreColor.hig.orangeDarkOld.with(alpha: 0.80)
+    static public let orangeAlpha60 = W3WCoreColor.hig.orangeDarkOld.with(alpha: 0.60)
+    static public let orangeAlpha40 = W3WCoreColor.hig.orangeDarkOld.with(alpha: 0.40)
+    static public let orangeAlpha20 = W3WCoreColor.hig.orangeDarkOld.with(alpha: 0.20)
+    static public let orangeLight   = W3WCoreColor.core.orangeLight // this colour was changed 2025-01
     static public let orangeLightOld = W3WCoreColor(hex: 0xFF3B30) // this is the old value
     static public let orangeDarkOld = W3WCoreColor(hex: 0xFF453A)  // this colour was changed 2025-01
     static public let orangeDark    = W3WCoreColor(alpha: 0xff, hex: 0xff7f43) // this is the old colour
@@ -304,8 +304,10 @@ extension W3WCoreColor {
     static public let grey24        = W3WCoreColor(hex: 0x38383A)
     static public let grey30        = W3WCoreColor(hex: 0x3A3A3C)
     static public let grey32        = W3WCoreColor(hex: 0x3C3C43)
+    static public let grey38        = W3WCoreColor(hex: 0x616161)
     static public let grey52        = W3WCoreColor(hex: 0x73777C)
     static public let grey54        = W3WCoreColor(hex: 0x767680)
+    static public let grey75        = W3WCoreColor(hex: 0xBFBFBF)
     static public let grey95        = W3WCoreColor(hex: 0xF0F0F3)
     static public let grey99        = W3WCoreColor(hex: 0xf2f2f7)
     static public let grey100       = W3WCoreColor(hex: 0xffffff)
