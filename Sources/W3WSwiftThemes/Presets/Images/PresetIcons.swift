@@ -167,6 +167,8 @@ public extension W3WImage {
   static let xmarkCircle      = { return W3WImage(systemName: "xmark.circle", colors: .standardIcons) }()
   static let xmarkCircleFill      = { return W3WImage(systemName: "xmark.circle.fill", colors: .standardIcons) }()
   static let w3wCar = { return W3WImage(systemName: "car", colors: .standardIcons) }()
+  static let w3wShield = { return W3WImage(systemName: "shield", colors: .standardIcons) }()
+  static let w3wShieldFill = { return W3WImage(systemName: "shield.fill", colors: .standardIcons) }()
   static let w3wTextDocument = {
     if #available(iOS 18.0, *) {
       return W3WImage(systemName: "text.document", colors: .standardIcons)
