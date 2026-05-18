@@ -173,9 +173,19 @@ extension UIImage {
     UIRectFill(drawRect)
     // Draw an image over the space with a blend mode of .destinationIn, which is a mode that treats the image as an image mask
     draw(in: drawRect, blendMode: .destinationIn, alpha: 1.0)
-    
+
     let tintedImage = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
     return tintedImage!
+  }
+
+  /// Returns a copy of the image with `imageOrientation == .up` and the EXIF rotation
+  /// baked into the underlying pixel data. `UIImage(cgImage:)` defaults to `.up`, so the
+  /// `cgImage` of a non-normalized image displays rotated when re-wrapped downstream.
+  public func normalizedOrientation() -> UIImage {
+    if imageOrientation == .up { return self }
+    return UIGraphicsImageRenderer(size: size).image { _ in
+      draw(in: CGRect(origin: .zero, size: size))
+    }
   }
 }
