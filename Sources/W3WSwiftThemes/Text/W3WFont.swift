@@ -165,7 +165,7 @@ extension W3WFont {
 #if canImport(SwiftUI)
 
 /// returns a UIFont colour
-@available(iOS 13.0, *)
+@available(iOS 13.0, watchOS 6.0, *)
 extension W3WFont {
   
   public var suFont: Font {
