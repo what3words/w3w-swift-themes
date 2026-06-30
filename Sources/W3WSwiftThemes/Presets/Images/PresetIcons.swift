@@ -73,6 +73,8 @@ public extension W3WImage {
   static let micSystem                 = { return W3WImage(systemName: "mic", colors: .standardIcons) }()
   static let moonFill                 = { return W3WImage(systemName: "moon.fill", colors: .standardIcons) }()
   static let moon                    = { return W3WImage(systemName: "moon", colors: .standardIcons) }()
+  static let sunMax                  = { return W3WImage(systemName: "sun.max", colors: .standardIcons) }()
+  static let iphone                  = { return W3WImage(systemName: "iphone", colors: .standardIcons) }()
   static let plus                   = { return W3WImage(systemName: "plus", colors: .standardIcons) }()
   static let rays                  = { return W3WImage(systemName: "rays", colors: .standardIcons) }()
   static let rulerFill            = { return W3WImage(systemName: "ruler.fill", colors: .standardIcons) }()
