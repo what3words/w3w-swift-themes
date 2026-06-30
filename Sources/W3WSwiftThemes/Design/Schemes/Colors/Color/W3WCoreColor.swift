@@ -185,7 +185,7 @@ public struct W3WCoreColor: Equatable {
   public var color:   UIColor { get { return uiColor } }
   
 #if canImport(SwiftUI)
-  @available(iOS 13.0, *)
+  @available(iOS 13.0, watchOS 6.0, *)
   public var suColor: Color {
     get {
       return Color(uiColor)
