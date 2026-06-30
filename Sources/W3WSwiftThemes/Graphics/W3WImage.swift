@@ -19,7 +19,7 @@ open class W3WImage {
   public var configuration: NSObject?
   
   #if canImport(UIKit)
-  @available(iOS 13.0, *)
+  @available(iOS 13.0, watchOS 6.0, *)
   public func setImageConfiguration(_ configuration: UIImage.Configuration) {
     self.configuration = configuration
   }
@@ -95,12 +95,16 @@ open class W3WImage {
   
   
   func from(file: String, size: W3WIconSize? = nil) -> UIImage {
-    guard let maskImage = UIImage(named: file, in: Bundle.module, compatibleWith: nil) else {
-      return UIImage()
-    }
+    #if os(watchOS)
+    guard let maskImage = UIImage(named: file, in: Bundle.module, with: nil) else { return UIImage() }
+    #else
+    guard let maskImage = UIImage(named: file, in: Bundle.module, compatibleWith: nil) else { return UIImage() }
+    #endif
+    #if canImport(UIKit) && !os(watchOS)
     if let color = colors?.foreground?.current.uiColor {
       return maskImage.mask(with: color, size: size?.value)
     }
+    #endif
     return maskImage
   }
   
@@ -109,7 +113,7 @@ open class W3WImage {
     var resultImage: UIImage? = nil
     
     // if SF Symbols can take multi-colour, and colours are available
-    if #available(iOS 15.0, *) {
+    if #available(iOS 15.0, watchOS 8.0, *) {
       var colorArray = [UIColor]()
       
       if let foreground = colors?.foreground?.current.uiColor {
@@ -133,7 +137,7 @@ open class W3WImage {
     
     // I think that there should be an "else" here, but no time to change and test ATM
 
-    else if #available(iOS 13.0, *) { // if we have SF Symbols available at all
+    else if #available(iOS 13.0, watchOS 6.0, *) { // if we have SF Symbols available at all
       // if there is a tint colour
       if let tint = colors?.tint?.current.uiColor {
         resultImage = UIImage(systemName: symbol)?.withTintColor(tint)
@@ -162,6 +166,8 @@ open class W3WImage {
 }
 
 
+// UIGraphicsBeginImageContextWithOptions and UIGraphicsImageRenderer are unavailable on watchOS
+#if canImport(UIKit) && !os(watchOS)
 extension UIImage {
   func mask(with color: UIColor, size: CGSize? = nil) -> UIImage {
     let targetSize = size ?? self.size
@@ -189,3 +195,4 @@ extension UIImage {
     }
   }
 }
+#endif
