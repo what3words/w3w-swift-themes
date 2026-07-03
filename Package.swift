@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "w3w-swift-themes",
 
-    platforms: [.watchOS(.v6)],
+    platforms: [.iOS("16.1"), .watchOS(.v6)],
 
     products: [.library(name: "W3WSwiftThemes", targets: ["W3WSwiftThemes"])],
     targets: [
