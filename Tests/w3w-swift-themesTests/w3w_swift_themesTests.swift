@@ -20,7 +20,7 @@ final class w3w_swift_themesTests: XCTestCase {
   func testTemp() throws {
     
     XCTAssertEqual(W3WTheme.standard.errorElevated?[.dark], .hig.orangeDark)
-    XCTAssertEqual(W3WTheme.what3words.fillsQuaternary?[.light], .core.blue90)
+    XCTAssertEqual(W3WTheme.what3words.fillsQuaternary?[.light], .core.blue80)
     
   }
   

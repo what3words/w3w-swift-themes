@@ -95,9 +95,9 @@ extension W3WColor {
   public static let w3wFillsPrimary              = W3WColor(light: .core.red50, dark: .core.red50)
   public static let w3wFillsSecondary           = W3WColor(light: .core.blue40, dark: .core.blue50)
   public static let w3wFillsTertiary           = W3WColor(light: .core.blue20, dark: .core.blue30)
-  public static let w3wFillsQuaternary         = W3WColor(light: .core.blue90, dark: .core.blue30)
-  public static let w3wFillsQuinary            = W3WColor(light: .core.blue20, dark: .core.grey99)
-  public static let w3wFillsSenary             = W3WColor(light: .core.grey54Alpha16, dark: .core.grey54Alpha32)
+  public static let w3wFillsQuaternary         = W3WColor(light: .core.blue80, dark: .core.blue30)
+  public static let w3wFillsQuinary            = W3WColor(light: .core.blue90, dark: .core.blue40)
+  public static let w3wFillsSenary             = W3WColor(light: .core.grey87, dark: .core.grey32)
 
   public static let w3wSeparatorOpaque          = W3WColor.standardSeparatorOpaque
   public static let w3wSeparatorNonOpaque        = W3WColor.standardSeparatorNonOpaque
