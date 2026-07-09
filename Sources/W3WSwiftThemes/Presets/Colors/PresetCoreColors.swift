@@ -9,6 +9,7 @@
 extension W3WCoreColor {
   
   public struct core {
+    static public let grey32Alpha36 = W3WCoreColor.core.grey32.with(alpha: 0.36)
     
     // purples
     static public let purple10 = W3WCoreColor(alpha: 0xff, hex: 0x330045)
@@ -195,6 +196,11 @@ extension W3WCoreColor {
   
   
   public struct hig {
+    static public let grey56 = W3WCoreColor(hex: 0x747480)
+    static public let grey60 = W3WCoreColor(hex: 0x8E8E93)
+    static public let grey82 = W3WCoreColor(hex: 0xC6C6C8)
+    static public let grey42 = W3WCoreColor(hex: 0x545458)
+    static public let grey42Alpha65 = W3WCoreColor.hig.grey42.with(alpha: 0.65)
     // reds
     static public let red50         = W3WCoreColor(hex: 0xE11F26)
     
@@ -290,8 +296,8 @@ extension W3WCoreColor {
     static public let yellow10       = W3WCoreColor(hex: 0x221B00)
     static public let yellowAlpha80  = W3WCoreColor.hig.yellowLight.with(alpha: 0.80)
     static public let yellowAlpha60  = W3WCoreColor.hig.yellowLight.with(alpha: 0.60)
-    static public let yellowAlpha40  = W3WCoreColor.hig.yellowLight.with(alpha: 0.40)
-    static public let yellowAlpha20  = W3WCoreColor.hig.yellowLight.with(alpha: 0.20)
+    static public let yellowAlpha40  = W3WCoreColor.hig.yellowLightOld.with(alpha: 0.40)
+    static public let yellowAlpha20  = W3WCoreColor.hig.yellowLightOld.with(alpha: 0.20)
     static public let yellowLight    = W3WCoreColor(hex: 0xf8c03c) // this core colour was changed 2025-01
     static public let yellowLightOld = W3WCoreColor(hex: 0xFFCC00) // this is the old value
     static public let yellowDark     = W3WCoreColor(alpha: 0xff, hex: 0xcda700) // this core colour was changed 2025-01
