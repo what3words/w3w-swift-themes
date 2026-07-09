@@ -45,20 +45,20 @@ extension W3WColor {
   public static let standardSeparatorNonOpaque        = W3WColor(light: .hig.grey32Alpha36, dark: .core.grey42Alpha65)
   
   public static let standardSystemBackgroundBasePrimary  = W3WColor(light: .core.grey100, dark: .core.grey0)
-  public static let standardSystemBackgroundBaseSecondary = W3WColor(light: .core.grey99, dark: .core.grey10)
-  public static let standardSystemBackgroundBaseTertiary   = W3WColor(light: .core.grey100, dark: .core.grey20)
+  public static let standardSystemBackgroundBaseSecondary = W3WColor(light: .core.grey99, dark: .hig.grey10)
+  public static let standardSystemBackgroundBaseTertiary   = W3WColor(light: .core.grey100, dark: .hig.grey20)
 
-  public static let standardSystemBackgroundElevatedPrimary  = W3WColor(light: .core.grey100, dark: .core.grey10)
-  public static let standardSystemBackgroundElevatedSecondary = W3WColor(light: .core.grey99,  dark: .core.grey20)
-  public static let standardSystemBackgroundElevatedTertiary   = W3WColor(light: .core.grey100, dark: .core.grey30)
+  public static let standardSystemBackgroundElevatedPrimary  = W3WColor(light: .core.grey100, dark: .hig.grey10)
+  public static let standardSystemBackgroundElevatedSecondary = W3WColor(light: .core.grey99,  dark: .hig.grey20)
+  public static let standardSystemBackgroundElevatedTertiary   = W3WColor(light: .core.grey100, dark: .hig.grey30)
 
   public static let standardGroupedBackgroundBasePrimary        = W3WColor(light: .core.grey99, dark: .core.grey0)
-  public static let standardGroupedBackgroundBaseSecondary      = W3WColor(light: .core.grey100, dark: .core.grey10)
-  public static let standardGroupedBackgroundBaseTertiary       = W3WColor(light: .core.grey99, dark: .core.grey20)
+  public static let standardGroupedBackgroundBaseSecondary      = W3WColor(light: .core.grey100, dark: .hig.grey10)
+  public static let standardGroupedBackgroundBaseTertiary       = W3WColor(light: .core.grey99, dark: .hig.grey20)
 
-  public static let standardGroupedBackgroundElevatedPrimary    = W3WColor(light: .core.grey99, dark: .core.grey10)
-  public static let standardGroupedBackgroundElevatedSecondary  = W3WColor(light: .core.grey100, dark: .core.grey20)
-  public static let standardGroupedBackgroundElevatedTertiary  = W3WColor(light: .core.grey99, dark: .core.grey30)
+  public static let standardGroupedBackgroundElevatedPrimary    = W3WColor(light: .core.grey99, dark: .hig.grey10)
+  public static let standardGroupedBackgroundElevatedSecondary  = W3WColor(light: .core.grey100, dark: .hig.grey20)
+  public static let standardGroupedBackgroundElevatedTertiary  = W3WColor(light: .core.grey99, dark: .hig.grey30)
 
   public static let standardSuccessBase                      = W3WColor(light: .core.greenAlpha20, dark: .core.greenAlpha60)
   public static let standardSuccessElevated                = W3WColor(light: .hig.greenLight, dark: .hig.greenDark)
@@ -102,21 +102,21 @@ extension W3WColor {
   public static let w3wSeparatorOpaque          = W3WColor.standardSeparatorOpaque
   public static let w3wSeparatorNonOpaque        = W3WColor.standardSeparatorNonOpaque
   
-  public static let w3wSystemBackgroundBasePrimary  = W3WColor.standardSystemBackgroundBasePrimary
-  public static let w3wSystemBackgroundBaseSecondary = W3WColor.standardSystemBackgroundBaseSecondary
-  public static let w3wSystemBackgroundBaseTertiary   = W3WColor.standardSystemBackgroundBaseTertiary
+  public static let w3wSystemBackgroundBasePrimary  = W3WColor(light: .core.grey100, dark: .core.grey0)
+  public static let w3wSystemBackgroundBaseSecondary = W3WColor(light: .core.grey98, dark: .core.grey10)
+  public static let w3wSystemBackgroundBaseTertiary   = W3WColor(light: .core.grey100, dark: .core.grey20)
 
-  public static let w3wSystemBackgroundElevatedPrimary  = W3WColor.standardSystemBackgroundElevatedPrimary
-  public static let w3wSystemBackgroundElevatedSecondary = W3WColor.standardSystemBackgroundElevatedSecondary
-  public static let w3wSystemBackgroundElevatedTertiary   = W3WColor.standardSystemBackgroundElevatedTertiary
+  public static let w3wSystemBackgroundElevatedPrimary  = W3WColor(light: .core.grey100, dark: .core.grey10)
+  public static let w3wSystemBackgroundElevatedSecondary = W3WColor(light: .core.grey98, dark: .core.grey20)
+  public static let w3wSystemBackgroundElevatedTertiary   = W3WColor(light: .core.grey100, dark: .core.grey30)
 
-  public static let w3wGroupedBackgroundBasePrimary        = W3WColor.standardGroupedBackgroundBasePrimary
-  public static let w3wGroupedBackgroundBaseSecondary      = W3WColor.standardGroupedBackgroundBaseSecondary
-  public static let w3wGroupedBackgroundBaseTertiary       = W3WColor.standardGroupedBackgroundBaseTertiary
+  public static let w3wGroupedBackgroundBasePrimary        = W3WColor(light: .core.grey98, dark: .core.grey0)
+  public static let w3wGroupedBackgroundBaseSecondary      = W3WColor(light: .core.grey100, dark: .core.grey10)
+  public static let w3wGroupedBackgroundBaseTertiary       = W3WColor(light: .core.grey98, dark: .core.grey20)
 
-  public static let w3wGroupedBackgroundElevatedPrimary    = W3WColor.standardGroupedBackgroundElevatedPrimary
-  public static let w3wGroupedBackgroundElevatedSecondary  = W3WColor.standardGroupedBackgroundElevatedSecondary
-  public static let w3wGroupedBackgroundElevatedTertiary  = W3WColor.standardGroupedBackgroundElevatedTertiary
+  public static let w3wGroupedBackgroundElevatedPrimary    = W3WColor(light: .core.grey98, dark: .core.grey10)
+  public static let w3wGroupedBackgroundElevatedSecondary  = W3WColor(light: .core.grey100, dark: .core.grey20)
+  public static let w3wGroupedBackgroundElevatedTertiary  = W3WColor(light: .core.grey98, dark: .core.grey30)
 
   public static let w3wSuccessBase                      = W3WColor(light: .core.greenAlpha20, dark: .core.greenAlpha40)
   public static let w3wSuccessElevated                = W3WColor(light: .core.green50, dark: .core.green60)
