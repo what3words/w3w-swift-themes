@@ -34,9 +34,9 @@ extension W3WColor {
   public static let standardLabelsPrimaryWhite         = W3WColor(light: .core.grey100, dark: .core.grey100)
   public static let standardLabelsTertiatyInverse       = W3WColor(light: .core.grey100, dark: .core.grey30)
 
-  public static let standardFillsPrimary                = W3WColor(light: .hig.blueLight, dark: .hig.blueDark)
-  public static let standardFillsSecondary              = W3WColor(light: .core.blue40, dark: .core.blue60)
-  public static let standardFillsTertiary              = W3WColor(light: .core.blue20, dark: .core.blue50)
+  public static let standardFillsPrimary                = W3WColor(light: .hig.blueLightOld, dark: .hig.blueDarkOld)
+  public static let standardFillsSecondary              = W3WColor(light: .hig.blue40, dark: .hig.blue60)
+  public static let standardFillsTertiary              = W3WColor(light: .hig.blue20, dark: .hig.blue50)
   public static let standardFillsQuaternary           = W3WColor(light: .hig.blueAlpha15, dark: .hig.blueAlpha24)
   public static let standardFillsQuinary             = W3WColor(light: .core.grey100, dark: .core.grey100)
   public static let standardFillsSenary             = W3WColor(light: .core.grey54Alpha16, dark: .core.grey54Alpha32)
