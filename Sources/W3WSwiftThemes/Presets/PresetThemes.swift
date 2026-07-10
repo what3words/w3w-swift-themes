@@ -53,7 +53,11 @@ extension W3WTheme {
     errorBase: .standardErrorBase,
     errorElevated: .standardErrorElevated,
     errorLabel: .standardErrorLabel,
-    
+
+    defaultBase: .standardDefaultBase,
+    defaultElevated: .standardDefaultElevated,
+    defaultLabel: .standardDefaultLabel,
+
     typefaces: W3WTypefaces(),
 
     base:      .standard,
@@ -107,6 +111,10 @@ extension W3WTheme {
     errorBase: .w3wErrorBase,
     errorElevated: .w3wErrorElevated,
     errorLabel: .w3wErrorLabel,
+
+    defaultBase: .w3wDefaultBase,
+    defaultElevated: .w3wDefaultElevated,
+    defaultLabel: .w3wDefaultLabel,
 
     typefaces: W3WTypefaces(),
 

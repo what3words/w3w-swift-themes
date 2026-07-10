@@ -22,8 +22,8 @@ extension W3WColor {
 
   // MARK: -  colours for standard theme
   
-  public static let standardBrandBase    = W3WColor(light: .hig.blueLight, dark: .hig.blueDark)
-  public static let standardBrandBaseSecondary    = W3WColor(light: .hig.blueLight, dark: .hig.blueDark)
+  public static let standardBrandBase    = W3WColor(light: .hig.blueLightOld, dark: .hig.blueDarkOld)
+  public static let standardBrandBaseSecondary    = W3WColor(light: .hig.blueLightOld, dark: .hig.blueDarkOld)
 
   public static let standardLabelsPrimary   = W3WColor(light: .hig.grey0, dark: .hig.grey100)
   public static let standardLabelsSecondary   = W3WColor(light: .hig.blueLightOld, dark: .hig.blueDarkOld)
@@ -74,6 +74,10 @@ extension W3WColor {
   public static let standardErrorElevated     = W3WColor(light: .hig.orangeLightOld, dark: .hig.orangeDarkOld)
   public static let standardErrorLabel       = W3WColor(light: .hig.orange20, dark: .hig.orange20)
   public static let standardErrorLabelDark  = W3WColor(light: .core.orange20, dark: .core.orange20)
+
+  public static let standardDefaultBase       = W3WColor(light: .hig.blueAlpha24, dark: .hig.blueAlpha60)
+  public static let standardDefaultElevated   = W3WColor(light: .hig.blueLightOld, dark: .hig.blueDarkOld)
+  public static let standardDefaultLabel      = W3WColor(light: .hig.blue20, dark: .hig.blue20)
 
   public static let standardGridSatellite   = W3WColor(light: .core.grey100alpha16, dark: .core.grey100alpha24)
   public static let standardGridCartography = W3WColor(light: .core.grey0Alpha24, dark: .core.grey100alpha24)
@@ -133,17 +137,21 @@ extension W3WColor {
   public static let w3wErrorLabel        = W3WColor(light: .core.orange20, dark: .core.purple99)
   public static let w3wErrorLabelDark   = W3WColor(light: .core.orange20, dark: .core.orange20)
 
+  public static let w3wDefaultBase          = W3WColor(light: .core.blue90, dark: .core.blue40)
+  public static let w3wDefaultElevated      = W3WColor(light: .core.blue76, dark: .core.blue50)
+  public static let w3wDefaultLabel         = W3WColor(light: .core.blue20, dark: .core.blue99)
+
   // MARK: -  brand responsive
   
-  static public let yellow         = W3WColor(light: .yellow50, dark: .yellow40)
-  static public let orange        = W3WColor(light: .orange50, dark: .orange60)
+  static public let yellow         = W3WColor(light: .hig.yellowLight, dark: .hig.yellowDark)
+  static public let orange        = W3WColor(light: .hig.orangeLight, dark: .hig.orangeDark)
   static public let coral         = W3WColor(light: .core.coral50, dark: .core.coral60)
   static public let pink          = W3WColor(light: .core.pinkLight, dark: .core.pinkDark)
   static public let purple        = W3WColor(light: .core.purple40, dark: .core.purple50)
   static public let green         = W3WColor(light: .green50, dark: .green60)
   static public let powderBlue    = W3WColor(light: .core.blue76, dark: .core.blue72)
   static public let skyBlue       = W3WColor(light: .core.blue62, dark: .core.blue64)
-  static public let blue          = W3WColor(light: .blue40, dark: .blue60)
+  static public let blue          = W3WColor(light: .core.blue52, dark: .core.blue60)
 
   // MARK: -  brand static
   

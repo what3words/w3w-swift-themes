@@ -62,6 +62,10 @@ public struct W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
   public var errorElevated: W3WColor?
   public var errorLabel: W3WColor?
 
+  public var defaultBase: W3WColor?
+  public var defaultElevated: W3WColor?
+  public var defaultLabel: W3WColor?
+
   public var typefaces: W3WTypefaces?
 
   
@@ -108,6 +112,7 @@ public struct W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
               successBase: W3WColor? = nil, successElevated: W3WColor? = nil, successLabel: W3WColor? = nil,
               warningBase: W3WColor? = nil, warningElevated: W3WColor? = nil, warningLabel: W3WColor? = nil,
               errorBase: W3WColor? = nil, errorElevated: W3WColor? = nil, errorLabel: W3WColor? = nil,
+              defaultBase: W3WColor? = nil, defaultElevated: W3WColor? = nil, defaultLabel: W3WColor? = nil,
               typefaces: W3WTypefaces? = W3WTypefaces(),
               base: W3WScheme = .w3w, buttons: W3WScheme? = nil, textFields: W3WScheme? = nil, labels: W3WScheme? = nil,
               maps: W3WScheme? = nil, cells: W3WScheme? = nil, icons: W3WScheme? = nil, voice: W3WScheme? = nil, ocr: W3WScheme? = nil) {
@@ -157,7 +162,11 @@ public struct W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
     self.errorBase = errorBase
     self.errorElevated = errorElevated
     self.errorLabel = errorLabel
-    
+
+    self.defaultBase = defaultBase
+    self.defaultElevated = defaultElevated
+    self.defaultLabel = defaultLabel
+
     self.typefaces = typefaces
 
     schemes[.base] = base
@@ -358,6 +367,7 @@ public struct W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
       successBase: successBase, successElevated: successElevated, successLabel: successLabel,
       warningBase: warningBase, warningElevated: warningElevated, warningLabel: warningLabel,
       errorBase: errorBase, errorElevated: errorElevated, errorLabel: errorLabel,
+      defaultBase: defaultBase, defaultElevated: defaultElevated, defaultLabel: defaultLabel,
       typefaces: typefaces,
       base: schemes[.base]!, buttons: schemes[.buttons], textFields: schemes[.textFields], labels: schemes[.labels],
       maps: schemes[.maps], cells: schemes[.cells], icons: schemes[.icons], voice: schemes[.voice], ocr: schemes[.ocr]
