@@ -66,12 +66,12 @@ extension W3WColor {
   public static let standardSuccessLabelDark            = W3WColor(light: .core.green20, dark: .core.green20)
 
   public static let standardWarningBase               = W3WColor(light: .hig.yellowAlpha20, dark: .hig.yellowAlpha40)
-  public static let standardWarningElevated         = W3WColor(light: .hig.yellowLightOld, dark: .hig.yellowDarkOld)
+  public static let standardWarningElevated         = W3WColor(light: .hig.yellowLight, dark: .hig.yellowDark)
   public static let standardWarningLabel           = W3WColor(light: .hig.yellow20, dark: .hig.yellow20)
   public static let standardWarningLabelDark      = W3WColor(light: .core.yellow20, dark: .core.yellow20)
 
   public static let standardErrorBase          = W3WColor(light: .hig.orangeAlpha20, dark: .hig.orangeAlpha40)
-  public static let standardErrorElevated     = W3WColor(light: .hig.orangeLightOld, dark: .hig.orangeDarkOld)
+  public static let standardErrorElevated     = W3WColor(light: .hig.orangeLight, dark: .hig.orangeDarkOld)
   public static let standardErrorLabel       = W3WColor(light: .hig.orange20, dark: .hig.orange20)
   public static let standardErrorLabelDark  = W3WColor(light: .core.orange20, dark: .core.orange20)
 
@@ -128,13 +128,13 @@ extension W3WColor {
   public static let w3wSuccessLabelDark            = W3WColor(light: .core.green20, dark: .core.green20)
 
   public static let w3wWarningBase               = W3WColor(light: .core.yellowAlpha20, dark: .core.yellowAlpha40)
-  public static let w3wWarningElevated          = W3WColor(light: .core.yellow70, dark: .core.yellow50)
-  public static let w3wWarningLabel            = W3WColor(light: .core.yellow20, dark: .core.yellow90)
+  public static let w3wWarningElevated          = W3WColor(light: .core.yellow70, dark: .core.yellow20Alpha60)
+  public static let w3wWarningLabel            = W3WColor(light: .core.yellow20, dark: .core.coral99)
   public static let w3wWarningLabelDark       = W3WColor(light: .core.yellow20, dark: .core.yellow20)
 
   public static let w3wErrorBase           = W3WColor(light: .core.coralAlpha20, dark: .core.coralAlpha40)
-  public static let w3wErrorElevated      = W3WColor(light: .core.orange70, dark: .core.orange30)
-  public static let w3wErrorLabel        = W3WColor(light: .core.orange20, dark: .core.purple99)
+  public static let w3wErrorElevated      = W3WColor(light: .core.coral70, dark: .core.coral30)
+  public static let w3wErrorLabel        = W3WColor(light: .core.orange20, dark: .core.coral99)
   public static let w3wErrorLabelDark   = W3WColor(light: .core.orange20, dark: .core.orange20)
 
   public static let w3wDefaultBase          = W3WColor(light: .core.blue90, dark: .core.blue40)
@@ -143,8 +143,8 @@ extension W3WColor {
 
   // MARK: -  brand responsive
   
-  static public let yellow         = W3WColor(light: .hig.yellowLight, dark: .hig.yellowDark)
-  static public let orange        = W3WColor(light: .hig.orangeLight, dark: .hig.orangeDark)
+  static public let yellow         = W3WColor(light: .core.yellow50, dark: .core.yellow40)
+  static public let orange        = W3WColor(light: .core.orange50, dark: .core.orange60)
   static public let coral         = W3WColor(light: .core.coral50, dark: .core.coral60)
   static public let pink          = W3WColor(light: .core.pinkLight, dark: .core.pinkDark)
   static public let purple        = W3WColor(light: .core.purple40, dark: .core.purple50)
