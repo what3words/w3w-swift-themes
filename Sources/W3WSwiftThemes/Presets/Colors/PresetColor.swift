@@ -25,6 +25,16 @@ extension W3WColor {
   public static let standardBrandBase    = W3WColor(light: .hig.blueLightOld, dark: .hig.blueDarkOld)
   public static let standardBrandBaseSecondary    = W3WColor(light: .hig.blueLightOld, dark: .hig.blueDarkOld)
 
+  public static let standardBrandCustomYellow     = W3WColor(light: .primitive.yellow50, dark: .primitive.yellow40)
+  public static let standardBrandCustomOrange     = W3WColor(light: .primitive.orange50, dark: .primitive.orange60)
+  public static let standardBrandCustomCoral      = W3WColor(light: .primitive.coral50, dark: .primitive.coral60)
+  public static let standardBrandCustomPink       = W3WColor(light: .primitive.pink40, dark: .primitive.pink50)
+  public static let standardBrandCustomPurple     = W3WColor(light: .primitive.purple40, dark: .primitive.purple50)
+  public static let standardBrandCustomGreen      = W3WColor(light: .primitive.green50, dark: .primitive.green60)
+  public static let standardBrandCustomPowderBlue = W3WColor(light: .primitive.blue76, dark: .primitive.blue72)
+  public static let standardBrandCustomSkyBlue    = W3WColor(light: .primitive.blue62, dark: .primitive.blue64)
+  public static let standardBrandCustomBlue       = W3WColor(light: .primitive.blue52, dark: .primitive.blue60)
+
   public static let standardLabelsPrimary   = W3WColor(light: .hig.grey0, dark: .hig.grey100)
   public static let standardLabelsSecondary   = W3WColor(light: .hig.blueLightOld, dark: .hig.blueDarkOld)
   public static let standardLabelsTertiary      = W3WColor(light: .hig.grey30, dark: .hig.grey100)
@@ -32,7 +42,9 @@ extension W3WColor {
   public static let standardLabelsPrimaryInverse    = W3WColor(light: .hig.grey100, dark: .hig.grey0)
   public static let standardLabelsPrimaryBlackInverse = W3WColor(light: .hig.grey0, dark: .hig.grey100)
   public static let standardLabelsPrimaryWhite         = W3WColor(light: .hig.grey100, dark: .hig.grey100)
-  public static let standardLabelsTertiatyInverse       = W3WColor(light: .hig.grey100, dark: .hig.grey30)
+  public static let standardLabelsTertiaryInverse       = W3WColor(light: .hig.grey100, dark: .hig.grey30)
+  @available(*, deprecated, renamed: "standardLabelsTertiaryInverse")
+  public static let standardLabelsTertiatyInverse       = W3WColor.standardLabelsTertiaryInverse
 
   public static let standardFillsPrimary                = W3WColor(light: .hig.blueLightOld, dark: .hig.blueDarkOld)
   public static let standardFillsSecondary              = W3WColor(light: .hig.blue40, dark: .hig.blue60)
@@ -40,6 +52,8 @@ extension W3WColor {
   public static let standardFillsQuaternary           = W3WColor(light: .hig.blueAlpha15, dark: .hig.blueAlpha24)
   public static let standardFillsQuinary             = W3WColor(light: .hig.grey100, dark: .hig.grey100)
   public static let standardFillsSenary             = W3WColor(light: .hig.grey54Alpha16, dark: .hig.grey54Alpha32)
+  public static let standardFillsSeptenary          = W3WColor(light: .hig.grey54Alpha12, dark: .hig.grey54Alpha24)
+  public static let standardFillsOctonary           = W3WColor(light: .hig.grey100, dark: .hig.grey50)
 
   public static let standardSeparatorOpaque          = W3WColor(light: .hig.grey82, dark: .hig.grey24)
   public static let standardSeparatorNonOpaque        = W3WColor(light: .hig.grey32Alpha36, dark: .hig.grey42Alpha65)
@@ -79,13 +93,23 @@ extension W3WColor {
   public static let standardDefaultElevated   = W3WColor(light: .hig.blueLightOld, dark: .hig.blueDarkOld)
   public static let standardDefaultLabel      = W3WColor(light: .hig.blue20, dark: .hig.blue20)
 
-  public static let standardGridSatellite   = W3WColor(light: .core.grey100alpha16, dark: .core.grey100alpha24)
-  public static let standardGridCartography = W3WColor(light: .core.grey0Alpha24, dark: .core.grey100alpha24)
+  public static let standardGridSatellite   = W3WColor(light: .hig.grey100Alpha16, dark: .hig.grey100Alpha24)
+  public static let standardGridCartography = W3WColor(light: .hig.grey0Alpha24, dark: .hig.grey100Alpha24)
 
   // colours for what3words theme
 
   public static let w3wBrandBase         = W3WColor(light: .core.red50, dark: .core.red50)
   public static let w3wBrandBaseSecondary = W3WColor(light: .core.blue20, dark: .core.blue20)
+
+  public static let w3wBrandCustomYellow     = W3WColor(light: .primitive.yellow50, dark: .primitive.yellow40)
+  public static let w3wBrandCustomOrange     = W3WColor(light: .primitive.orange50, dark: .primitive.orange60)
+  public static let w3wBrandCustomCoral      = W3WColor(light: .primitive.coral50, dark: .primitive.coral60)
+  public static let w3wBrandCustomPink       = W3WColor(light: .primitive.pink40, dark: .primitive.pink50)
+  public static let w3wBrandCustomPurple     = W3WColor(light: .primitive.purple40, dark: .primitive.purple50)
+  public static let w3wBrandCustomGreen      = W3WColor(light: .primitive.green50, dark: .primitive.green60)
+  public static let w3wBrandCustomPowderBlue = W3WColor(light: .primitive.blue76, dark: .primitive.blue72)
+  public static let w3wBrandCustomSkyBlue    = W3WColor(light: .primitive.blue62, dark: .primitive.blue64)
+  public static let w3wBrandCustomBlue       = W3WColor(light: .primitive.blue52, dark: .primitive.blue60)
 
   public static let w3wLabelsPrimary     = W3WColor(light: .core.grey0, dark: .core.grey100) // W3WColor(light: .hig.grey100, dark: .hig.grey100)
   public static let w3wLabelsSecondary    = W3WColor(light: .core.blue50, dark: .core.blue72)
@@ -94,7 +118,9 @@ extension W3WColor {
   public static let w3wLabelsPrimaryInverse    = W3WColor(light: .core.grey100, dark: .core.grey0)
   public static let w3wLabelsPrimaryBlackInverse = W3WColor(light: .core.grey0, dark: .core.grey100)
   public static let w3wLabelsPrimaryWhite         = W3WColor(light: .core.grey100, dark: .core.grey100)
-  public static let w3wLabelsTertiatyInverse      = W3WColor(light: .core.grey95, dark: .core.blue20)
+  public static let w3wLabelsTertiaryInverse      = W3WColor(light: .core.grey95, dark: .core.blue20)
+  @available(*, deprecated, renamed: "w3wLabelsTertiaryInverse")
+  public static let w3wLabelsTertiatyInverse      = W3WColor.w3wLabelsTertiaryInverse
 
   public static let w3wFillsPrimary              = W3WColor(light: .core.red50, dark: .core.red50)
   public static let w3wFillsSecondary           = W3WColor(light: .core.blue40, dark: .core.blue50)
@@ -102,6 +128,8 @@ extension W3WColor {
   public static let w3wFillsQuaternary         = W3WColor(light: .core.blue80, dark: .core.blue30)
   public static let w3wFillsQuinary            = W3WColor(light: .core.blue90, dark: .core.blue40)
   public static let w3wFillsSenary             = W3WColor(light: .core.grey87, dark: .core.grey32)
+  public static let w3wFillsSeptenary          = W3WColor(light: .core.grey54Alpha12, dark: .core.grey32Alpha36)
+  public static let w3wFillsOctonary           = W3WColor(light: .core.grey100, dark: .core.grey50)
 
   public static let w3wSeparatorOpaque          = W3WColor(light: .core.grey82, dark: .core.grey24)
   public static let w3wSeparatorNonOpaque        = W3WColor(light: .core.grey32Alpha36, dark: .core.grey42Alpha65)
@@ -122,17 +150,17 @@ extension W3WColor {
   public static let w3wGroupedBackgroundElevatedSecondary  = W3WColor(light: .core.grey100, dark: .core.grey20)
   public static let w3wGroupedBackgroundElevatedTertiary  = W3WColor(light: .core.grey98, dark: .core.grey30)
 
-  public static let w3wSuccessBase                      = W3WColor(light: .core.greenAlpha20, dark: .core.greenAlpha40)
+  public static let w3wSuccessBase                      = W3WColor(light: .core.green99, dark: .core.green30)
   public static let w3wSuccessElevated                = W3WColor(light: .core.green50, dark: .core.green40)
   public static let w3wSuccessLabel                  = W3WColor(light: .core.green20, dark: .core.green99)
   public static let w3wSuccessLabelDark            = W3WColor(light: .core.green20, dark: .core.green20)
 
-  public static let w3wWarningBase               = W3WColor(light: .core.yellowAlpha20, dark: .core.yellowAlpha40)
+  public static let w3wWarningBase               = W3WColor(light: .core.yellow90, dark: .core.yellow30)
   public static let w3wWarningElevated          = W3WColor(light: .core.yellow70, dark: .core.yellow20Alpha60)
   public static let w3wWarningLabel            = W3WColor(light: .core.yellow20, dark: .core.coral99)
   public static let w3wWarningLabelDark       = W3WColor(light: .core.yellow20, dark: .core.yellow20)
 
-  public static let w3wErrorBase           = W3WColor(light: .core.coralAlpha20, dark: .core.coralAlpha40)
+  public static let w3wErrorBase           = W3WColor(light: .core.red95, dark: .core.coral50)
   public static let w3wErrorElevated      = W3WColor(light: .core.coral70, dark: .core.coral30)
   public static let w3wErrorLabel        = W3WColor(light: .core.orange20, dark: .core.coral99)
   public static let w3wErrorLabelDark   = W3WColor(light: .core.orange20, dark: .core.orange20)
@@ -140,6 +168,9 @@ extension W3WColor {
   public static let w3wDefaultBase          = W3WColor(light: .core.blue90, dark: .core.blue40)
   public static let w3wDefaultElevated      = W3WColor(light: .core.blue76, dark: .core.blue50)
   public static let w3wDefaultLabel         = W3WColor(light: .core.blue20, dark: .core.blue99)
+
+  public static let w3wGridSatellite   = W3WColor(light: .core.grey100alpha24, dark: .core.grey100alpha24)
+  public static let w3wGridCartography = W3WColor(light: .core.grey41Alpha16, dark: .core.grey100alpha16)
 
   // MARK: -  brand responsive
   

@@ -199,6 +199,8 @@ extension W3WCoreColor {
     static public let grey54Alpha32  = W3WCoreColor.core.grey54.with(alpha: 0.32)
     static public let grey100alpha16 = W3WCoreColor.core.grey100.with(alpha: 0.16)
     static public let grey100alpha24 = W3WCoreColor.core.grey100.with(alpha: 0.24)
+    static public let grey41         = W3WCoreColor(alpha: 0xff, hex: 0x696b6d)
+    static public let grey41Alpha16  = W3WCoreColor.core.grey41.with(alpha: 0.16)
   }
   
   
@@ -330,6 +332,9 @@ extension W3WCoreColor {
     static public let grey32Alpha36 = W3WCoreColor.hig.grey32.with(alpha: 0.36)
     static public let grey54Alpha16 = W3WCoreColor.hig.grey54.with(alpha: 0.16)
     static public let grey54Alpha32 = W3WCoreColor.hig.grey54.with(alpha: 0.32)
+    static public let grey0Alpha24   = W3WCoreColor.hig.grey0.with(alpha: 0.24)
+    static public let grey100Alpha16 = W3WCoreColor.hig.grey100.with(alpha: 0.16)
+    static public let grey100Alpha24 = W3WCoreColor.hig.grey100.with(alpha: 0.24)
     
     // corals
     static public let coral20     = W3WCoreColor(hex: 0x640D00)
@@ -342,6 +347,29 @@ extension W3WCoreColor {
     // pinks
     static public let pinkLight    = W3WCoreColor(hex: 0xB90063)
     static public let pinkDark     = W3WCoreColor(hex: 0xE3187C)
+  }
+
+
+  // Figma .Primitives collection (colors/X/Y → primitive.xY) — theme-agnostic, shared by standard* and w3w* brand presets
+  public struct primitive {
+    static public let yellow50 = W3WCoreColor(hex: 0xF8C03C)
+    static public let yellow40 = W3WCoreColor(hex: 0xCDA700)
+    static public let orange50 = W3WCoreColor(hex: 0xFF7332)
+    static public let orange60 = W3WCoreColor(hex: 0xFF7F43)
+    static public let coral50  = W3WCoreColor(hex: 0xF2826A)
+    static public let coral60  = W3WCoreColor(hex: 0xFC927C)
+    static public let pink40   = W3WCoreColor(hex: 0xB90063)
+    static public let pink50   = W3WCoreColor(hex: 0xE3187C)
+    static public let purple40 = W3WCoreColor(hex: 0x8B4CA1)
+    static public let purple50 = W3WCoreColor(hex: 0xAC4BD0)
+    static public let green50  = W3WCoreColor(hex: 0x53C18A)
+    static public let green60  = W3WCoreColor(hex: 0x6ECB9C)
+    static public let blue76   = W3WCoreColor(hex: 0xB6DCF5)
+    static public let blue72   = W3WCoreColor(hex: 0x8DD4EB)
+    static public let blue62   = W3WCoreColor(hex: 0x14B5FF)
+    static public let blue64   = W3WCoreColor(hex: 0x00AFFF)
+    static public let blue52   = W3WCoreColor(hex: 0x1C86CC)
+    static public let blue60   = W3WCoreColor(hex: 0x4097D5)
   }
   
   
