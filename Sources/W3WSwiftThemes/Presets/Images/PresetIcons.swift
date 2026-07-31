@@ -106,6 +106,7 @@ public extension W3WImage {
   static let listBullet           = { return W3WImage(systemName: "list.bullet", colors: .standardIcons) }()
   static let square               = { return W3WImage(systemName: "square", colors: .standardIcons) }()
   static let squareFill           = { return W3WImage(systemName: "square.fill", colors: .standardIcons) }()
+  static let note                 = { return W3WImage(systemName: "note", colors: .standardIcons) }()
   static let heartFill            = { return W3WImage(systemName: "heart.fill", colors: .standardIcons) }()
   static let person2Fill          = { return W3WImage(systemName: "person.2.fill", colors: .standardIcons) }()
   static let location             = { return W3WImage(systemName: "location", colors: .standardIcons) }()
