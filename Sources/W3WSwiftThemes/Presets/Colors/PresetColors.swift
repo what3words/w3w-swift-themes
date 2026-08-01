@@ -37,7 +37,7 @@ extension W3WColors {
   
   // MARK: Buttons
   
-  static public func buttonPrimary(theme: W3WTheme? = .standard)    -> W3WColors { W3WColors(foreground: theme?.labelsPrimary, background: theme?.brandBase, warning: W3WBasicColors(foreground: theme?.warningLabel, background: theme?.warningElevated), error: W3WBasicColors(foreground: theme?.errorLabel, background: theme?.errorElevated)) }
+  static public func buttonPrimary(theme: W3WTheme? = .standard)    -> W3WColors { W3WColors(foreground: theme?.labelsPrimaryWhite ?? theme?.labelsPrimary, background: theme?.brandBase, warning: W3WBasicColors(foreground: theme?.warningLabel, background: theme?.warningElevated), error: W3WBasicColors(foreground: theme?.errorLabel, background: theme?.errorElevated)) }
   static public func buttonSecondary(theme: W3WTheme? = .standard)  -> W3WColors { W3WColors(foreground: theme?.labelsPrimary, background: theme?.fillsSecondary, warning: W3WBasicColors(foreground: theme?.warningLabel, background: theme?.warningElevated), error: W3WBasicColors(foreground: theme?.errorLabel, background: theme?.errorElevated)) }
   static public func buttonTertiary(theme: W3WTheme? = .standard)   -> W3WColors { W3WColors(foreground: theme?.labelsPrimary, background: theme?.fillsTertiary, warning: W3WBasicColors(foreground: theme?.warningLabel, background: theme?.warningElevated), error: W3WBasicColors(foreground: theme?.errorLabel, background: theme?.errorElevated)) }
   static public func buttonQuaternary(theme: W3WTheme? = .standard) -> W3WColors { W3WColors(foreground: theme?.labelsSecondary, background: theme?.fillsQuaternary, warning: W3WBasicColors(foreground: theme?.warningLabel, background: theme?.warningElevated), error: W3WBasicColors(foreground: theme?.errorLabel, background: theme?.errorElevated)) }
@@ -124,7 +124,7 @@ extension W3WColors {
     error: W3WBasicColors(
       foreground: .standardErrorLabel,
       background: .standardErrorElevated),
-    line: .standardLabelsPrimary
+    line: .standardLabelsPrimaryWhite
   )
 
   static public let standardButtonFilled = W3WColors(
@@ -246,7 +246,7 @@ extension W3WColors {
     error: W3WBasicColors(
       foreground: .w3wErrorLabel,
       background: .w3wErrorElevated),
-    line: .w3wLabelsPrimary
+    line: .w3wLabelsPrimaryWhite
   )
 
   static public let w3wButtonFilled = W3WColors(

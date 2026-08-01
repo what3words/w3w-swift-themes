@@ -24,12 +24,15 @@ extension W3WTheme {
     labelsQuaternary: .standardLabelsQuaternary,
     labelsPrimaryInverse: .standardLabelsPrimaryInverse,
     labelsPrimaryBlackInverse: .standardLabelsPrimaryBlackInverse,
+    labelsPrimaryWhite: .standardLabelsPrimaryWhite,
     fillsPrimary: .standardFillsPrimary,
     fillsSecondary: .standardFillsSecondary,
     fillsTertiary: .standardFillsTertiary,
     fillsQuaternary: .standardFillsQuaternary,
     fillsQuinary: .standardFillsQuinary,
     fillsSenary: .standardFillsSenary,
+    fillsSeptenary: .standardFillsSeptenary,
+    fillsOctonary: .standardFillsOctonary,
     separatorOpaque: .standardSeparatorOpaque,
     separatorNonOpaque: .standardSeparatorNonOpaque,
     systemBackgroundBasePrimary: .standardSystemBackgroundBasePrimary,
@@ -53,7 +56,11 @@ extension W3WTheme {
     errorBase: .standardErrorBase,
     errorElevated: .standardErrorElevated,
     errorLabel: .standardErrorLabel,
-    
+
+    defaultBase: .standardDefaultBase,
+    defaultElevated: .standardDefaultElevated,
+    defaultLabel: .standardDefaultLabel,
+
     typefaces: W3WTypefaces(),
 
     base:      .standard,
@@ -78,12 +85,15 @@ extension W3WTheme {
     labelsQuaternary: .w3wLabelsQuaternary,
     labelsPrimaryInverse: .w3wLabelsPrimaryInverse,
     labelsPrimaryBlackInverse: .w3wLabelsPrimaryBlackInverse,
+    labelsPrimaryWhite: .w3wLabelsPrimaryWhite,
     fillsPrimary: .w3wFillsPrimary,
     fillsSecondary: .w3wFillsSecondary,
     fillsTertiary: .w3wFillsTertiary,
     fillsQuaternary: .w3wFillsQuaternary,
     fillsQuinary: .w3wFillsQuinary,
     fillsSenary: .w3wFillsSenary,
+    fillsSeptenary: .w3wFillsSeptenary,
+    fillsOctonary: .w3wFillsOctonary,
     separatorOpaque: .w3wSeparatorOpaque,
     separatorNonOpaque: .w3wSeparatorNonOpaque,
     systemBackgroundBasePrimary: .w3wSystemBackgroundBasePrimary,
@@ -107,6 +117,10 @@ extension W3WTheme {
     errorBase: .w3wErrorBase,
     errorElevated: .w3wErrorElevated,
     errorLabel: .w3wErrorLabel,
+
+    defaultBase: .w3wDefaultBase,
+    defaultElevated: .w3wDefaultElevated,
+    defaultLabel: .w3wDefaultLabel,
 
     typefaces: W3WTypefaces(),
 

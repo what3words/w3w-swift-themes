@@ -23,6 +23,7 @@ public struct W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
   public var labelsQuaternary: W3WColor?
   public var labelsPrimaryInverse: W3WColor?
   public var labelsPrimaryBlackInverse: W3WColor?
+  public var labelsPrimaryWhite: W3WColor?
 
   public var fillsPrimary: W3WColor?
   public var fillsSecondary: W3WColor?
@@ -30,6 +31,8 @@ public struct W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
   public var fillsQuaternary: W3WColor?
   public var fillsQuinary: W3WColor?
   public var fillsSenary: W3WColor?
+  public var fillsSeptenary: W3WColor?
+  public var fillsOctonary: W3WColor?
 
   public var separatorOpaque: W3WColor?
   public var separatorNonOpaque: W3WColor?
@@ -61,6 +64,10 @@ public struct W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
   public var errorBase: W3WColor?
   public var errorElevated: W3WColor?
   public var errorLabel: W3WColor?
+
+  public var defaultBase: W3WColor?
+  public var defaultElevated: W3WColor?
+  public var defaultLabel: W3WColor?
 
   public var typefaces: W3WTypefaces?
 
@@ -98,8 +105,8 @@ public struct W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
   
   /// initialise with a foreground, background, highlight and secondary colour
   public init(brandBase: W3WColor? = nil, labelsPrimary: W3WColor? = nil, labelsSecondary: W3WColor? = nil, 
-              labelsTertiary: W3WColor? = nil, labelsQuaternary: W3WColor? = nil, labelsPrimaryInverse: W3WColor? = nil, labelsPrimaryBlackInverse: W3WColor? = nil, 
-              fillsPrimary: W3WColor? = nil, fillsSecondary: W3WColor? = nil, fillsTertiary: W3WColor? = nil, fillsQuaternary: W3WColor? = nil, fillsQuinary: W3WColor? = nil, fillsSenary: W3WColor? = nil,
+              labelsTertiary: W3WColor? = nil, labelsQuaternary: W3WColor? = nil, labelsPrimaryInverse: W3WColor? = nil, labelsPrimaryBlackInverse: W3WColor? = nil, labelsPrimaryWhite: W3WColor? = nil,
+              fillsPrimary: W3WColor? = nil, fillsSecondary: W3WColor? = nil, fillsTertiary: W3WColor? = nil, fillsQuaternary: W3WColor? = nil, fillsQuinary: W3WColor? = nil, fillsSenary: W3WColor? = nil, fillsSeptenary: W3WColor? = nil, fillsOctonary: W3WColor? = nil,
               separatorOpaque: W3WColor? = nil, separatorNonOpaque: W3WColor? = nil,
               systemBackgroundBasePrimary: W3WColor? = nil, systemBackgroundBaseSecondary: W3WColor? = nil, systemBackgroundBaseTertiary: W3WColor? = nil,
               systemBackgroundElevatedPrimary: W3WColor? = nil, systemBackgroundElevatedSecondary: W3WColor? = nil, systemBackgroundElevatedTertiary: W3WColor? = nil,
@@ -108,6 +115,7 @@ public struct W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
               successBase: W3WColor? = nil, successElevated: W3WColor? = nil, successLabel: W3WColor? = nil,
               warningBase: W3WColor? = nil, warningElevated: W3WColor? = nil, warningLabel: W3WColor? = nil,
               errorBase: W3WColor? = nil, errorElevated: W3WColor? = nil, errorLabel: W3WColor? = nil,
+              defaultBase: W3WColor? = nil, defaultElevated: W3WColor? = nil, defaultLabel: W3WColor? = nil,
               typefaces: W3WTypefaces? = W3WTypefaces(),
               base: W3WScheme = .w3w, buttons: W3WScheme? = nil, textFields: W3WScheme? = nil, labels: W3WScheme? = nil,
               maps: W3WScheme? = nil, cells: W3WScheme? = nil, icons: W3WScheme? = nil, voice: W3WScheme? = nil, ocr: W3WScheme? = nil) {
@@ -119,6 +127,7 @@ public struct W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
     self.labelsQuaternary = labelsQuaternary
     self.labelsPrimaryInverse = labelsPrimaryInverse
     self.labelsPrimaryBlackInverse = labelsPrimaryBlackInverse
+    self.labelsPrimaryWhite = labelsPrimaryWhite
 
     self.fillsPrimary = fillsPrimary
     self.fillsSecondary = fillsSecondary
@@ -126,6 +135,8 @@ public struct W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
     self.fillsQuaternary = fillsQuaternary
     self.fillsQuinary = fillsQuinary
     self.fillsSenary = fillsSenary
+    self.fillsSeptenary = fillsSeptenary
+    self.fillsOctonary = fillsOctonary
     
     self.separatorOpaque = separatorOpaque
     self.separatorNonOpaque = separatorNonOpaque
@@ -157,7 +168,11 @@ public struct W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
     self.errorBase = errorBase
     self.errorElevated = errorElevated
     self.errorLabel = errorLabel
-    
+
+    self.defaultBase = defaultBase
+    self.defaultElevated = defaultElevated
+    self.defaultLabel = defaultLabel
+
     self.typefaces = typefaces
 
     schemes[.base] = base
@@ -348,8 +363,8 @@ public struct W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
   public func with(typefaces: W3WTypefaces) -> W3WTheme {
     W3WTheme(
       brandBase: brandBase, labelsPrimary: labelsPrimary, labelsSecondary: labelsSecondary,
-      labelsTertiary: labelsTertiary, labelsQuaternary: labelsQuaternary, labelsPrimaryInverse: labelsPrimaryInverse, labelsPrimaryBlackInverse: labelsPrimaryBlackInverse,
-      fillsPrimary: fillsPrimary, fillsSecondary: fillsSecondary, fillsTertiary: fillsTertiary, fillsQuaternary: fillsQuaternary, fillsQuinary: fillsQuinary, fillsSenary: fillsSenary,
+      labelsTertiary: labelsTertiary, labelsQuaternary: labelsQuaternary, labelsPrimaryInverse: labelsPrimaryInverse, labelsPrimaryBlackInverse: labelsPrimaryBlackInverse, labelsPrimaryWhite: labelsPrimaryWhite,
+      fillsPrimary: fillsPrimary, fillsSecondary: fillsSecondary, fillsTertiary: fillsTertiary, fillsQuaternary: fillsQuaternary, fillsQuinary: fillsQuinary, fillsSenary: fillsSenary, fillsSeptenary: fillsSeptenary, fillsOctonary: fillsOctonary,
       separatorOpaque: separatorOpaque, separatorNonOpaque: separatorNonOpaque,
       systemBackgroundBasePrimary: systemBackgroundBasePrimary, systemBackgroundBaseSecondary: systemBackgroundBaseSecondary, systemBackgroundBaseTertiary: systemBackgroundBaseTertiary,
       systemBackgroundElevatedPrimary: systemBackgroundElevatedPrimary, systemBackgroundElevatedSecondary: systemBackgroundElevatedSecondary, systemBackgroundElevatedTertiary: systemBackgroundElevatedTertiary,
@@ -358,6 +373,7 @@ public struct W3WTheme: CustomDebugStringConvertible, CustomStringConvertible {
       successBase: successBase, successElevated: successElevated, successLabel: successLabel,
       warningBase: warningBase, warningElevated: warningElevated, warningLabel: warningLabel,
       errorBase: errorBase, errorElevated: errorElevated, errorLabel: errorLabel,
+      defaultBase: defaultBase, defaultElevated: defaultElevated, defaultLabel: defaultLabel,
       typefaces: typefaces,
       base: schemes[.base]!, buttons: schemes[.buttons], textFields: schemes[.textFields], labels: schemes[.labels],
       maps: schemes[.maps], cells: schemes[.cells], icons: schemes[.icons], voice: schemes[.voice], ocr: schemes[.ocr]

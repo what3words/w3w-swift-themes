@@ -9,6 +9,14 @@
 extension W3WCoreColor {
   
   public struct core {
+    static public let pink40 = W3WCoreColor(hex: 0xB90063)
+    static public let pink50 = W3WCoreColor(hex: 0xE3187C)
+    static public let grey54Alpha12 = W3WCoreColor(alpha: 0x1F, hex: 0x767680)
+    static public let coral70 = W3WCoreColor(hex: 0xFF9A85)
+    static public let coral30 = W3WCoreColor(hex: 0xCA4F36)
+    static public let coral99 = W3WCoreColor(hex: 0xFFFBFF)
+    static public let yellow20Alpha60 = W3WCoreColor(alpha: 0x99, hex: 0x372700)
+    static public let grey32Alpha36 = W3WCoreColor.core.grey32.with(alpha: 0.36)
     
     // purples
     static public let purple10 = W3WCoreColor(alpha: 0xff, hex: 0x330045)
@@ -34,8 +42,8 @@ extension W3WCoreColor {
     static public let orange20 = W3WCoreColor(alpha: 0xff, hex: 0x640d00)
     static public let orange30 = W3WCoreColor(alpha: 0xff, hex: 0xca4f36)
     static public let orange40 = W3WCoreColor(alpha: 0xff, hex: 0xf26c50)
-    static public let orange50 = W3WCoreColor(alpha: 0xff, hex: 0xf2826a)
-    static public let orange60 = W3WCoreColor(alpha: 0xff, hex: 0xfc927c)
+    static public let orange50 = W3WCoreColor(hex: 0xFF7332)
+    static public let orange60 = W3WCoreColor(hex: 0xFF7F43)
     static public let orange70 = W3WCoreColor(alpha: 0xff, hex: 0xff9a85)
     static public let orange80 = W3WCoreColor(alpha: 0xff, hex: 0xffb4a4)
     static public let orange90 = W3WCoreColor(alpha: 0xff, hex: 0xffdad3)
@@ -50,14 +58,14 @@ extension W3WCoreColor {
 
     // yellows
     static public let yellow10 = W3WCoreColor(alpha: 0xff, hex: 0x221b00)
-    static public let yellow20 = W3WCoreColor(alpha: 0xff, hex: 0x2f2500)
-    static public let yellow30 = W3WCoreColor(alpha: 0xff, hex: 0x4e3e01)
-    static public let yellow40 = W3WCoreColor(alpha: 0xff, hex: 0xc7aa00)
-    static public let yellow50 = W3WCoreColor(alpha: 0xff, hex: 0xf6d31f)
+    static public let yellow20 = W3WCoreColor(hex: 0x372700)
+    static public let yellow30 = W3WCoreColor(hex: 0xAE8D00)
+    static public let yellow40 = W3WCoreColor(hex: 0xCDA700)
+    static public let yellow50 = W3WCoreColor(hex: 0xF8C03C)
     static public let yellow60 = W3WCoreColor(alpha: 0xff, hex: 0xffe262)
-    static public let yellow70 = W3WCoreColor(alpha: 0xff, hex: 0xffec8a)
+    static public let yellow70 = W3WCoreColor(hex: 0xFFD36C)
     static public let yellow80 = W3WCoreColor(alpha: 0xff, hex: 0xfff09e)
-    static public let yellow90 = W3WCoreColor(alpha: 0xff, hex: 0xfff4b2)
+    static public let yellow90 = W3WCoreColor(hex: 0xFFEEB9)
     static public let yellow95 = W3WCoreColor(alpha: 0xff, hex: 0xfff0bf)
     static public let yellow99 = W3WCoreColor(alpha: 0xff, hex: 0xfffbff)
     static public let yellowAlpha80 = W3WCoreColor(alpha: 0xcc, hex: 0xf6d31f)
@@ -191,10 +199,20 @@ extension W3WCoreColor {
     static public let grey54Alpha32  = W3WCoreColor.core.grey54.with(alpha: 0.32)
     static public let grey100alpha16 = W3WCoreColor.core.grey100.with(alpha: 0.16)
     static public let grey100alpha24 = W3WCoreColor.core.grey100.with(alpha: 0.24)
+    static public let grey41         = W3WCoreColor(alpha: 0xff, hex: 0x696b6d)
+    static public let grey41Alpha16  = W3WCoreColor.core.grey41.with(alpha: 0.16)
   }
   
   
   public struct hig {
+    static public let grey54Alpha12 = W3WCoreColor(alpha: 0x1F, hex: 0x767680)
+    static public let grey54Alpha24 = W3WCoreColor(alpha: 0x3D, hex: 0x767680)
+    static public let grey50 = W3WCoreColor(hex: 0x636366)
+    static public let grey56 = W3WCoreColor(hex: 0x747480)
+    static public let grey60 = W3WCoreColor(hex: 0x8E8E93)
+    static public let grey82 = W3WCoreColor(hex: 0xC6C6C8)
+    static public let grey42 = W3WCoreColor(hex: 0x545458)
+    static public let grey42Alpha65 = W3WCoreColor.hig.grey42.with(alpha: 0.65)
     // reds
     static public let red50         = W3WCoreColor(hex: 0xE11F26)
     
@@ -217,12 +235,12 @@ extension W3WCoreColor {
     static public let blueAlpha15   = W3WCoreColor.hig.blueLightOld.with(alpha: 0.15)
     static public let blueLightOld  = W3WCoreColor(hex: 0x007AFF)
     static public let blueDarkOld     = W3WCoreColor(hex: 0x0A84FF)
-    static public let powderBlueLight = core.blue76
+    static public let powderBlueLight = W3WCoreColor(hex: 0xB6DCF5)
     static public let powderBlueDark  = blue72
-    static public let skyBlueLight   = core.skyBlueLight
-    static public let skyBlueDark   = core.skyBlueDark
-    static public let blueLight    = core.blue52
-    static public let blueDark     = core.blue60
+    static public let skyBlueLight   = W3WCoreColor(hex: 0x14B5FF)
+    static public let skyBlueDark   = W3WCoreColor(hex: 0x00AFFF)
+    static public let blueLight    = W3WCoreColor(hex: 0x007AFF)
+    static public let blueDark     = W3WCoreColor(hex: 0x0A84FF)
 
     // cyans
     static public let cyan80        = W3WCoreColor(hex: 0x5452cc)
@@ -248,8 +266,8 @@ extension W3WCoreColor {
     static public let greenAlpha20  = W3WCoreColor.hig.greenLightOld.with(alpha: 0.20)
     static public let greenLightOld = W3WCoreColor(hex: 0x34C759) // this is the old value
     static public let greenDarkOld  = W3WCoreColor(hex: 0x30D158) // this is the old value
-    static public let greenLight   = green50 // this colour was changed 2025-01
-    static public let greenDark    = core.green60 // this colour was changed 2025-01
+    static public let greenLight   = W3WCoreColor(hex: 0x34C759) // this colour was changed 2025-01
+    static public let greenDark    = W3WCoreColor(hex: 0x30D158) // this colour was changed 2025-01
 
     // oranges
     static public let orange80      = W3WCoreColor(hex: 0xCC372E)
@@ -262,10 +280,10 @@ extension W3WCoreColor {
     static public let orangeAlpha60 = W3WCoreColor.hig.orangeDarkOld.with(alpha: 0.60)
     static public let orangeAlpha40 = W3WCoreColor.hig.orangeDarkOld.with(alpha: 0.40)
     static public let orangeAlpha20 = W3WCoreColor.hig.orangeDarkOld.with(alpha: 0.20)
-    static public let orangeLight   = W3WCoreColor.core.orangeLight // this colour was changed 2025-01
+    static public let orangeLight   = W3WCoreColor(hex: 0xFF3B30) // this colour was changed 2025-01
     static public let orangeLightOld = W3WCoreColor(hex: 0xFF3B30) // this is the old value
     static public let orangeDarkOld = W3WCoreColor(hex: 0xFF453A)  // this colour was changed 2025-01
-    static public let orangeDark    = W3WCoreColor(alpha: 0xff, hex: 0xff7f43) // this is the old colour
+    static public let orangeDark    = W3WCoreColor(hex: 0xFF453A) // this is the old colour
 
     // purples
     static public let purple80      = W3WCoreColor(hex: 0x9E4BCC)
@@ -279,7 +297,7 @@ extension W3WCoreColor {
     static public let purpleLightOld = W3WCoreColor(hex: 0xAC52DE) // this is the old value
     static public let purpleLight    = W3WCoreColor(alpha: 0xff, hex: 0x8b4ca1) // this value was change 2025-01
     static public let purpleDarkOld  = W3WCoreColor(hex: 0xBF5AF2) // this is the old value
-    static public let purpleDark   = W3WCoreColor.core.purple50 // this value was change 2025-01
+    static public let purpleDark   = W3WCoreColor(hex: 0xAC4BD0) // this value was change 2025-01
 
     // yellows
     static public let yellow80       = W3WCoreColor(hex: 0xCCA300)
@@ -290,11 +308,11 @@ extension W3WCoreColor {
     static public let yellow10       = W3WCoreColor(hex: 0x221B00)
     static public let yellowAlpha80  = W3WCoreColor.hig.yellowLight.with(alpha: 0.80)
     static public let yellowAlpha60  = W3WCoreColor.hig.yellowLight.with(alpha: 0.60)
-    static public let yellowAlpha40  = W3WCoreColor.hig.yellowLight.with(alpha: 0.40)
-    static public let yellowAlpha20  = W3WCoreColor.hig.yellowLight.with(alpha: 0.20)
-    static public let yellowLight    = W3WCoreColor(hex: 0xf8c03c) // this core colour was changed 2025-01
+    static public let yellowAlpha40  = W3WCoreColor.hig.yellowLightOld.with(alpha: 0.40)
+    static public let yellowAlpha20  = W3WCoreColor.hig.yellowLightOld.with(alpha: 0.20)
+    static public let yellowLight    = W3WCoreColor(hex: 0xFFCC00) // this core colour was changed 2025-01
     static public let yellowLightOld = W3WCoreColor(hex: 0xFFCC00) // this is the old value
-    static public let yellowDark     = W3WCoreColor(alpha: 0xff, hex: 0xcda700) // this core colour was changed 2025-01
+    static public let yellowDark     = W3WCoreColor(hex: 0xFFD60A) // this core colour was changed 2025-01
     static public let yellowDarkOld  = W3WCoreColor(hex: 0xFFD60A) // this is the old value
 
     // greys
@@ -314,6 +332,9 @@ extension W3WCoreColor {
     static public let grey32Alpha36 = W3WCoreColor.hig.grey32.with(alpha: 0.36)
     static public let grey54Alpha16 = W3WCoreColor.hig.grey54.with(alpha: 0.16)
     static public let grey54Alpha32 = W3WCoreColor.hig.grey54.with(alpha: 0.32)
+    static public let grey0Alpha24   = W3WCoreColor.hig.grey0.with(alpha: 0.24)
+    static public let grey100Alpha16 = W3WCoreColor.hig.grey100.with(alpha: 0.16)
+    static public let grey100Alpha24 = W3WCoreColor.hig.grey100.with(alpha: 0.24)
     
     // corals
     static public let coral20     = W3WCoreColor(hex: 0x640D00)
@@ -321,11 +342,34 @@ extension W3WCoreColor {
     static public let coral60     = W3WCoreColor(hex: 0xFC927C)
     static public let coral90     = W3WCoreColor(hex: 0xFFDDD6)
     static public let coralLight  = hig.orange50
-    static public let coralDark   = core.orange60
+    static public let coralDark   = W3WCoreColor(hex: 0xFC927C)
     
     // pinks
-    static public let pinkLight    = W3WCoreColor.core.pinkLight
-    static public let pinkDark     = W3WCoreColor.core.pinkDark
+    static public let pinkLight    = W3WCoreColor(hex: 0xB90063)
+    static public let pinkDark     = W3WCoreColor(hex: 0xE3187C)
+  }
+
+
+  // Figma .Primitives collection (colors/X/Y → primitive.xY) — theme-agnostic, shared by standard* and w3w* brand presets
+  public struct primitive {
+    static public let yellow50 = W3WCoreColor(hex: 0xF8C03C)
+    static public let yellow40 = W3WCoreColor(hex: 0xCDA700)
+    static public let orange50 = W3WCoreColor(hex: 0xFF7332)
+    static public let orange60 = W3WCoreColor(hex: 0xFF7F43)
+    static public let coral50  = W3WCoreColor(hex: 0xF2826A)
+    static public let coral60  = W3WCoreColor(hex: 0xFC927C)
+    static public let pink40   = W3WCoreColor(hex: 0xB90063)
+    static public let pink50   = W3WCoreColor(hex: 0xE3187C)
+    static public let purple40 = W3WCoreColor(hex: 0x8B4CA1)
+    static public let purple50 = W3WCoreColor(hex: 0xAC4BD0)
+    static public let green50  = W3WCoreColor(hex: 0x53C18A)
+    static public let green60  = W3WCoreColor(hex: 0x6ECB9C)
+    static public let blue76   = W3WCoreColor(hex: 0xB6DCF5)
+    static public let blue72   = W3WCoreColor(hex: 0x8DD4EB)
+    static public let blue62   = W3WCoreColor(hex: 0x14B5FF)
+    static public let blue64   = W3WCoreColor(hex: 0x00AFFF)
+    static public let blue52   = W3WCoreColor(hex: 0x1C86CC)
+    static public let blue60   = W3WCoreColor(hex: 0x4097D5)
   }
   
   
